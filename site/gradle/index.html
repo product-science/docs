@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gradle-instructions" class="md-skip">
+        <a href="#gradle-instructions-android" class="md-skip">
           Skip to content
         </a>
       
@@ -328,9 +328,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#gradle-instructions-android" class="md-nav__link">
+    Gradle Instructions - Android
+  </a>
+  
+    <nav class="md-nav" aria-label="Gradle Instructions - Android">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    Preparation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization-loop" class="md-nav__link">
+    Optimization Loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gradle-instructions" class="md-nav__link">
     Gradle Instructions
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thats-it" class="md-nav__link">
+    That’s it!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#separate-build-configuration" class="md-nav__link">
+    Separate build configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -374,9 +415,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#gradle-instructions-android" class="md-nav__link">
+    Gradle Instructions - Android
+  </a>
+  
+    <nav class="md-nav" aria-label="Gradle Instructions - Android">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    Preparation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization-loop" class="md-nav__link">
+    Optimization Loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gradle-instructions" class="md-nav__link">
     Gradle Instructions
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thats-it" class="md-nav__link">
+    That’s it!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#separate-build-configuration" class="md-nav__link">
+    Separate build configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -396,10 +478,98 @@
 
   <h1>Gradle</h1>
 
-<h2 id="gradle-instructions">Gradle Instructions</h2>
-<ul>
-<li><code>Gradle Details</code> - Coming Soon</li>
-</ul>
+<h2 id="gradle-instructions-android">Gradle Instructions - Android</h2>
+<h3 id="preparation">Preparation</h3>
+<ol>
+<li>Set up Gradle build with the Product Science plugin from the Product Science Github repo (see instructions below.)</li>
+<li>Determine a named developer resource for Product Science to partner with for generating new builds</li>
+<li>Ideally create a trigger for Product Science to generate new builds to increase speed of the Optimization process</li>
+</ol>
+<h3 id="optimization-loop">Optimization Loop</h3>
+<p>The Loop is repeated by your developers 20+ times initially and 5+ times with every major update.</p>
+<ol>
+<li>[Your devs]  Build the app with PSi Gradle plugin</li>
+<li>Ideally Product Science is provided with a trigger to create automation- otherwise a named developer can be supplied to rebuild</li>
+<li>[Your devs]  Provide a cloud link to your .apk</li>
+<li>[Product Science] Runs the app and collects app performance data</li>
+<li>Optimization may finish and we proceed to Insight Generation</li>
+<li>[Product Science] Feeds the app performance data to Product Science optimization algorithms</li>
+<li>[Product Science] Algorithms update model in the Product Science Github repo</li>
+<li>[Your devs] Next build will use the new model from the Product Science Github repo automatically</li>
+</ol>
+<h3 id="gradle-instructions">Gradle Instructions</h3>
+<ol>
+<li>Key Generation Methodology- PSi:  </li>
+<li>Generates a token (key) via GitHub</li>
+<li>Saves key in Bitwarden credential storage</li>
+<li>Shares token with Bitwarden Send </li>
+<li>
+<p>Keys have an expiration date</p>
+</li>
+<li>
+<p>Configure <code>gradle.properties</code> in Gradle home directory
+<code>github_user=&lt;supplied-by-PSi&gt;</code><br />
+<code>github_key=&lt;supplied-by-PSi&gt;</code></p>
+</li>
+</ol>
+<p>For example:<br />
+<img src="./images/creds.png" alt="image" width="640"/></p>
+<ol>
+<li>
+<p>In build.gradle add the maven build info to the repositories for project and subprojects:
+<div class="highlight"><pre><span></span><code>maven {
+    url &quot;https://maven.pkg.github.com/product-science/PSAndroid&quot;
+    credentials {
+        username = github_user
+        password = github_key
+    }
+}
+</code></pre></div>
+For example:<br />
+<img src="./images/maven1.png" alt="image" width="640"/><br />
+and<br />
+For example:<br />
+<img src="./images/maven2.png" alt="image" width="640"/></p>
+</li>
+<li>
+<p>Add the PSi Classpath to Dependencies</p>
+</li>
+</ol>
+<p>Note that we are using a demo app for this example called “Signal” to visualize the process</p>
+<div class="highlight"><pre><span></span><code>classpath &quot;com.productscience.transformer:transformer-plugin:0.8.25_S&quot;
+classpath &quot;com.productscience.transformer:transformer-instrumentation:0.8.25_S&quot;
+</code></pre></div>
+<p>For example:<br />
+&lt;img src="./images/classpath.png" alt="image" width="640"/</p>
+<ol>
+<li>Add <code>&lt;profileable android:shell="true" /&gt;</code> into <code>AndroidManifest.xml</code> to enable profiling</li>
+</ol>
+<p>For example:<br />
+<img src="./images/manifest.png" alt="image" width="640"/></p>
+<ol>
+<li>Apply the PSi transformer.plugin 
+apply plugin: <code>"com.productscience.transformer.plugin" to app/build.gradle</code></li>
+</ol>
+<p>For example:<br />
+<img src="./images/transformer.png" alt="image" width="640"/></p>
+<ol>
+<li>Create a file called <code>productscience.properties</code> and add the PSi config/token to it</li>
+</ol>
+<div class="highlight"><pre><span></span><code>productscience.github.config=product-science:airbnb-configs:ps-airbnb.yaml:master
+productscience.github.token=&lt;supplied-by-PSI&gt;
+</code></pre></div>
+<h3 id="thats-it">That’s it!</h3>
+<p>Now you can build your app with Gradle</p>
+<p>For example:<br />
+<img src="./images/build.png" alt="image" width="640"/></p>
+<h3 id="separate-build-configuration">Separate build configuration</h3>
+<p>For the future work convenience it’s best to create a separate build configuration with PSi.
+A special flag enableProductScience can be used for these purposes:
+<img src="./images/separate1.png" alt="image" width="640"/><br />
+<img src="./images/separate2.png" alt="image" width="640"/><br />
+<img src="./images/separate3.png" alt="image" width="640"/>  </p>
+<p>Then you can build your app with PSi using the flag:</p>
+<p><img src="./images/build2.png" alt="image" width="640"/></p>
 
               
             </article>
