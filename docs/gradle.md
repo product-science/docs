@@ -30,10 +30,10 @@ The Loop is repeated by your developers 20+ times initially and 5+ times with ev
 `github_key=<supplied-by-PSi>`
 
 For example:  
-<img src="./images/creds.png" alt="image" width="640"/>
+![image](images/creds.png)
 
 3. In build.gradle add the maven build info to the repositories for project and subprojects:
-```
+```bash
 maven {
     url "https://maven.pkg.github.com/product-science/PSAndroid"
     credentials {
@@ -52,7 +52,7 @@ For example:
 
 Note that we are using a demo app for this example called “Signal” to visualize the process
 
-```
+```bash
 classpath "com.productscience.transformer:transformer-plugin:0.8.25_S"
 classpath "com.productscience.transformer:transformer-instrumentation:0.8.25_S"
 ```
@@ -73,7 +73,7 @@ For example:
 
 7. Create a file called `productscience.properties` and add the PSi config/token to it
 
-```
+```bash
 productscience.github.config=product-science:airbnb-configs:ps-airbnb.yaml:master
 productscience.github.token=<supplied-by-PSI>
 ```
