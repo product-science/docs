@@ -5,7 +5,7 @@ nav:
   - App Build Instructions:
     - Gradle: gradle.md
 site_description: >-
-  Learn to configure the Product Science
+  Learn to configure and use Product Science
 repo_url: https://github.com/product-science/docs
 edit_uri: ""
 copyright: Copyright Product Science Inc. All rights reserved.
