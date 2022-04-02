@@ -10,4 +10,4 @@ A setup script to setting up your environment is here:
 
 To build and deploy docs:
 * in docs repo: `mkdocs build`
-* in product-science.github.io repo: `sh ../buildtools/io-deploy.sh`
+* in product-science.github.io repo: `sh ../docs/buildtools/io-deploy.sh`
