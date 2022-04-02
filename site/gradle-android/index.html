@@ -576,14 +576,18 @@
 <h2 id="optimization-loop">Optimization Loop</h2>
 <p>The Loop is repeated by your developers 20+ times initially and 5+ times with every major update.</p>
 <ol>
-<li>[Your devs]  Build the app with PSi Gradle plugin</li>
+<li><strong>[Your devs]</strong> Build the app with PSi Gradle plugin<ul>
 <li>Ideally Product Science is provided with a trigger to create automation- otherwise a named developer can be supplied to rebuild</li>
-<li>[Your devs]  Provide a cloud link to your .apk</li>
-<li>[Product Science] Runs the app and collects app performance data</li>
+</ul>
+</li>
+<li><strong>[Your devs]</strong>  Provide a cloud link to your .apk</li>
+<li><strong>[Product Science]</strong> Runs the app and collects app performance data<ul>
 <li>Optimization may finish and we proceed to Insight Generation</li>
-<li>[Product Science] Feeds the app performance data to Product Science optimization algorithms</li>
-<li>[Product Science] Algorithms update model in the Product Science Github repo</li>
-<li>[Your devs] Next build will use the new model from the Product Science Github repo automatically</li>
+</ul>
+</li>
+<li><strong>[Product Science]</strong> Feeds the app performance data to Product Science optimization algorithms</li>
+<li><strong>[Product Science]</strong> Algorithms update model in the Product Science Github repo</li>
+<li><strong>[Your devs]</strong> Next build will use the new model from the Product Science Github repo automatically</li>
 </ol>
 <h2 id="gradle-instructions">Gradle Instructions</h2>
 <h3 id="1-key-generation-methodology-psi">1. Key Generation Methodology- PSi:</h3>
