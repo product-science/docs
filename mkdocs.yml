@@ -3,7 +3,7 @@ site_url: https://github.com/product-science/docs
 nav:
   - Home: index.md
   - App Build Instructions:
-    - Gradle: gradle.md
+    - Gradle / Android: gradle-android.md
 site_description: >-
   Learn to configure and use Product Science
 repo_url: https://github.com/product-science/docs
