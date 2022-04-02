@@ -30,7 +30,7 @@ The Loop is repeated by your developers 20+ times initially and 5+ times with ev
 `github_key=<supplied-by-PSi>`
 
 For example:  
-![image](images/creds.png)
+![creds](images/creds.png)  
 
 3. In build.gradle add the maven build info to the repositories for project and subprojects:
 ```bash
@@ -43,10 +43,9 @@ maven {
 }
 ```
 For example:  
-<img src="./images/maven1.png" alt="image" width="640"/>  
-and  
-For example:  
-<img src="./images/maven2.png" alt="image" width="640"/>
+![maven](images/maven1.png)  
+and   
+![maven](images/maven2.png)  
 
 4. Add the PSi Classpath to Dependencies
 
@@ -58,18 +57,18 @@ classpath "com.productscience.transformer:transformer-instrumentation:0.8.25_S"
 ```
 
 For example:  
-<img src="./images/classpath.png" alt="image" width="640"/
+![classpath](images/classpath.png)  
 
 5. Add `<profileable android:shell="true" />` into `AndroidManifest.xml` to enable profiling
 
 For example:  
-<img src="./images/manifest.png" alt="image" width="640"/>
+![manifest](images/manifest.png)  
 
 6. Apply the PSi transformer.plugin 
 apply plugin: `"com.productscience.transformer.plugin" to app/build.gradle`
 
 For example:  
-<img src="./images/transformer.png" alt="image" width="640"/>
+![transformer](images/transformer.png)  
 
 7. Create a file called `productscience.properties` and add the PSi config/token to it
 
@@ -82,16 +81,16 @@ productscience.github.token=<supplied-by-PSI>
 Now you can build your app with Gradle
 
 For example:  
-<img src="./images/build.png" alt="image" width="640"/>
+![build](images/build.png)  
 
 ### Separate build configuration
 
 For the future work convenience it’s best to create a separate build configuration with PSi.
 A special flag enableProductScience can be used for these purposes:
-<img src="./images/separate1.png" alt="image" width="640"/>  
-<img src="./images/separate2.png" alt="image" width="640"/>  
-<img src="./images/separate3.png" alt="image" width="640"/>  
+![separate](images/separate1.png)   
+![separate](images/separate2.png)  
+![separate](images/separate3.png)  
 
-Then you can build your app with PSi using the flag:
+Then you can build your app with PSi using the flag:  
 
-<img src="./images/build2.png" alt="image" width="640"/>
+![build](images/build2.png)
