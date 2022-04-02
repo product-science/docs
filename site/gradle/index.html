@@ -513,7 +513,7 @@
 </li>
 </ol>
 <p>For example:<br />
-<img alt="image" src="../images/creds.png" /></p>
+<img alt="creds" src="../images/creds.png" />  </p>
 <ol>
 <li>
 <p>In build.gradle add the maven build info to the repositories for project and subprojects:
@@ -526,10 +526,9 @@
 <span class="o">}</span>
 </code></pre></div>
 For example:<br />
-<img src="./images/maven1.png" alt="image" width="640"/><br />
-and<br />
-For example:<br />
-<img src="./images/maven2.png" alt="image" width="640"/></p>
+<img alt="maven" src="../images/maven1.png" /><br />
+and <br />
+<img alt="maven" src="../images/maven2.png" />  </p>
 </li>
 <li>
 <p>Add the PSi Classpath to Dependencies</p>
@@ -540,18 +539,18 @@ For example:<br />
 classpath <span class="s2">&quot;com.productscience.transformer:transformer-instrumentation:0.8.25_S&quot;</span>
 </code></pre></div>
 <p>For example:<br />
-&lt;img src="./images/classpath.png" alt="image" width="640"/</p>
+<img alt="classpath" src="../images/classpath.png" />  </p>
 <ol>
 <li>Add <code>&lt;profileable android:shell="true" /&gt;</code> into <code>AndroidManifest.xml</code> to enable profiling</li>
 </ol>
 <p>For example:<br />
-<img src="./images/manifest.png" alt="image" width="640"/></p>
+<img alt="manifest" src="../images/manifest.png" />  </p>
 <ol>
 <li>Apply the PSi transformer.plugin 
 apply plugin: <code>"com.productscience.transformer.plugin" to app/build.gradle</code></li>
 </ol>
 <p>For example:<br />
-<img src="./images/transformer.png" alt="image" width="640"/></p>
+<img alt="transformer" src="../images/transformer.png" />  </p>
 <ol>
 <li>Create a file called <code>productscience.properties</code> and add the PSi config/token to it</li>
 </ol>
@@ -561,15 +560,15 @@ productscience.github.token<span class="o">=</span>&lt;supplied-by-PSI&gt;
 <h3 id="thats-it">That’s it!</h3>
 <p>Now you can build your app with Gradle</p>
 <p>For example:<br />
-<img src="./images/build.png" alt="image" width="640"/></p>
+<img alt="build" src="../images/build.png" />  </p>
 <h3 id="separate-build-configuration">Separate build configuration</h3>
 <p>For the future work convenience it’s best to create a separate build configuration with PSi.
 A special flag enableProductScience can be used for these purposes:
-<img src="./images/separate1.png" alt="image" width="640"/><br />
-<img src="./images/separate2.png" alt="image" width="640"/><br />
-<img src="./images/separate3.png" alt="image" width="640"/>  </p>
-<p>Then you can build your app with PSi using the flag:</p>
-<p><img src="./images/build2.png" alt="image" width="640"/></p>
+<img alt="separate" src="../images/separate1.png" /> <br />
+<img alt="separate" src="../images/separate2.png" /><br />
+<img alt="separate" src="../images/separate3.png" />  </p>
+<p>Then you can build your app with PSi using the flag:  </p>
+<p><img alt="build" src="../images/build2.png" /></p>
 
               
             </article>
