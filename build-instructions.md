@@ -1,4 +1,4 @@
-Docs Publishing Instructions
+## PSi Docs Publishing Instructions
 
 You must clone both the docs and pages repos in same location:  
 
@@ -9,4 +9,4 @@ Mkdocs must be installed: [Mkdocs install instructions](https://www.mkdocs.org/g
 
 To build and deploy docs:
 * in docs repo: `mkdocs build`
-* in product-science.github.io repo: `mkdocs gh-deploy --config-file ../docs/mkdocs.yml --remote-branch master`
+* in product-science.github.io repo: `sh ../docs/io-deploy.sh`
