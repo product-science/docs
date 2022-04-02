@@ -1,0 +1,5 @@
+site_name: Product Science
+nav:
+  - Home: index.md
+  - Gradle: gradle.md
+theme: material
