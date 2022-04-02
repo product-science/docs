@@ -1,5 +1,3 @@
-Gradle Instructions
-
-## Coming Soon
+## Gradle Instructions
 
 * `Gradle Details` - Coming Soon
