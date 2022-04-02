@@ -86,7 +86,7 @@ For example:
 Create a file called `productscience.properties` and add the PSi config/token to it
 
 ```bash
-productscience.github.config=product-science:airbnb-configs:ps-airbnb.yaml:master
+productscience.github.config=product-science:CLIENTNAME-configs:ps-CLIENTNAME.yaml:master
 productscience.github.token=<supplied-by-PSI>
 ```
 
