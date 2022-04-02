@@ -1,4 +1,4 @@
-site_name: Product Science
+site_name: Product Science Documentation
 site_url: https://github.com/product-science/docs
 nav:
   - Home: index.md

@@ -1,12 +1,8 @@
-Publishing Instructions
+![GitHub release (latest by date)](https://img.shields.io/github/v/tag/product-science/docs)
+![GitHub commits since latest release (by SemVer)](https://img.shields.io/github/commits-since/product-science/docs/latest)
+![GitHub repo size](https://img.shields.io/github/repo-size/product-science/docs)
+![GitHub issues](https://img.shields.io/github/issues/product-science/docs)
 
-You must clone both the docs and pages repos in same location:  
+# Welcome to the Product Science Documentation
 
-`git clone https://github.com/product-science/docs`  
-`git clone https://product-science.github.io/`  
-
-Mkdocs must be installed: [Mkdocs install instructions](https://www.mkdocs.org/getting-started/)  
-
-To build and deploy docs:
-* in docs repo: `mkdocs build`
-* in product-science.github.io repo: `mkdocs gh-deploy --config-file ../docs/mkdocs.yml --remote-branch master`
+To get started, please proceed to [Product Science Documentation Homepage](https://product-science.github.io/).
