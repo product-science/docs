@@ -1,3 +1,5 @@
+![PSi](images/psi.png)  
+
 # Product Science Documentation
 
 [Product Science](https://www.productscience.ai/) increases product metrics for mobile applications and helps apps work faster by providing insights into key performance issues that impact user experience.
