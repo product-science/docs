@@ -1,0 +1,60 @@
+site_name: Product Science Documentation
+site_url: https://github.com/product-science/docs
+nav:
+  - Home: index.md
+  - App Build Instructions:
+    - Gradle / Android: gradle-android.md
+site_description: >-
+  Learn to configure and use Product Science
+repo_url: https://github.com/product-science/docs
+edit_uri: ""
+copyright: Copyright Product Science Inc. All rights reserved.
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  include_search_page: false
+  search_index_only: true
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+   # - toc.integrate
+markdown_extensions:
+- footnotes
+- admonition
+- attr_list
+- pymdownx.tabbed
+- pymdownx.superfences
+- pymdownx.highlight
+- pymdownx.inlinehilite
+- pymdownx.mark
+- pymdownx.critic
+- pymdownx.keys
+
+extra_css:
+- stylesheets/extra.css
+
+plugins:
+  - minify:
+      minify_html: false
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/product-science-inc/
