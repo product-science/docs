@@ -5,8 +5,9 @@ You must clone both the docs and pages repos in same location:
 `git clone https://github.com/product-science/docs`  
 `git clone https://product-science.github.io/`  
 
-Mkdocs must be installed: [Mkdocs install instructions](https://www.mkdocs.org/getting-started/)  
+A setup script to setting up your environment is here:  
+`sh ./buildtools/mkdocs-setup.sh`
 
 To build and deploy docs:
 * in docs repo: `mkdocs build`
-* in product-science.github.io repo: `sh ../docs/io-deploy.sh`
+* in product-science.github.io repo: `sh ../buildtools/io-deploy.sh`
