@@ -57,11 +57,12 @@ and
 
 ### 4. Add the PSi Classpath to Dependencies
 
-Note that we are using a demo app for this example called “Signal” to visualize the process
+Note that we are using a demo app for this example called “Signal” to visualize the process.
+Contact your Sales Engineer to get the `Version` of the Plugin- replace the `VERSIONSUPPLIEDBYPSI` with the `Version` we supply.  
 
 ```bash
-classpath "com.productscience.transformer:transformer-plugin:0.8.25_S"
-classpath "com.productscience.transformer:transformer-instrumentation:0.8.25_S"
+classpath "com.productscience.transformer:transformer-plugin:VERSIONSUPPLIEDBYPSI"
+classpath "com.productscience.transformer:transformer-instrumentation:VERSIONSUPPLIEDBYPSI"
 ```
 
 For example:  
@@ -90,7 +91,21 @@ productscience.github.config=product-science:CLIENTNAME-configs:ps-CLIENTNAME.ya
 productscience.github.token=<supplied-by-PSI>
 ```
 
-### 8. Build Your App
+### Proguard
+
+If the application uses obfuscation/shrinking add a new ProGuard rule to your project.
+To achieve it add the next line to the R8/ProGuard configuration file- typically `app->proguard->proguard-appcompatv7.pro`  
+
+```bash
+-keep class com.productscience.transformer.module.** { *; }
+```
+
+The default name of this file is proguard-rules.pro. But your project may use the other name.
+
+More information about R8/ProGuard configuration can be found here:
+https://developer.android.com/studio/build/shrink-code
+
+### Build Your App
 Now you can build your app with Gradle
 
 For example:  
