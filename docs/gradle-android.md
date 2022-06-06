@@ -36,7 +36,7 @@ github_key=<supplied-by-PSi>
 For example:  
 ![creds](images/creds.png)  
 
-### 3. Add Maven Built Info
+### 3. `Build.Gradle`: Add Maven Build Info
 
 In `build.gradle` add the maven build info to the repositories for project and subprojects:  
 
@@ -55,7 +55,7 @@ For example:
 and   
 ![maven](images/maven2.png)  
 
-### 4. Add the PSi Classpath to Dependencies
+### 4. `Build.Gradle`: Add the PSi Classpath to Dependencies
 
 Note that we are using a demo app for this example called “Signal” to visualize the process.
 Contact your Sales Engineer to get the `Version` of the Plugin- replace the `VERSIONSUPPLIEDBYPSI` with the `Version` we supply.  
@@ -68,14 +68,14 @@ classpath "com.productscience.transformer:transformer-instrumentation:VERSIONSUP
 For example:  
 ![classpath](images/classpath.png)  
 
-### 5. Apply the PSi transformer.plugin  
+### 5. `Build.Gradle`: Apply the PSi transformer.plugin  
 
 Apply plugin: `"com.productscience.transformer.plugin" to app/build.gradle`
 
 For example:  
 ![transformer](images/transformer.png)  
 
-### 6. Enable PSi Profiling  
+### 6. `AndroidManifest.xml`: Enable PSi Profiling  
 
 Add `<profileable android:shell="true" />` into `AndroidManifest.xml` to enable profiling
 
