@@ -68,19 +68,19 @@ classpath "com.productscience.transformer:transformer-instrumentation:VERSIONSUP
 For example:  
 ![classpath](images/classpath.png)  
 
-### 5. Enable PSi Profiling  
-
-Add `<profileable android:shell="true" />` into `AndroidManifest.xml` to enable profiling
-
-For example:  
-![manifest](images/manifest.png)  
-
-### 6. Apply the PSi transformer.plugin  
+### 5. Apply the PSi transformer.plugin  
 
 Apply plugin: `"com.productscience.transformer.plugin" to app/build.gradle`
 
 For example:  
 ![transformer](images/transformer.png)  
+
+### 6. Enable PSi Profiling  
+
+Add `<profileable android:shell="true" />` into `AndroidManifest.xml` to enable profiling
+
+For example:  
+![manifest](images/manifest.png)  
 
 ### 7. Setup PSi Properties  
 
