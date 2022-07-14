@@ -4,6 +4,7 @@ nav:
   - Home: index.md
   - App Build Instructions:
     - Gradle / Android: gradle-android.md
+    - iOS / Xcode: ios-xcode.md
 site_description: >-
   Learn to configure and use Product Science
 repo_url: https://github.com/product-science/docs
