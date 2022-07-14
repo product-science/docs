@@ -3,7 +3,7 @@
 ## Preparation
 1. Set up Xcode build with the Product Science Instrumentation Injector from the Product Science Github repo (see instructions below)
 2. Determine a named developer resource for Product Science to partner with for generating new builds
-3. Ideally create a trigger for Product Science to generate new builds to increase speed of the Optimization process
+3. Ideally create a trigger for Product Science to generate new builds to increase speed of the Optimization Loop
 
 ## Optimization Loop
 The Loop is repeated by your developers 20+ times initially and 5+ times with every major update.
@@ -86,7 +86,7 @@ PSCliCodeInjector MyApp MyApp-ps \
 
 This step transforms the code of the MyApp and stores the transformed version in `MyApp-ps` folder.  
 
-The **BUILD-COMMAND-FROM_STEP-2** is the choice between the xcworkspace or xcodeproj methods and their associated flags. These are examples of xcodebuild templates- yours may differ. See the Firefox app example below for examples.
+The **BUILD-COMMAND-FROM_STEP-2** is the choice between the xcworkspace or xcodeproj methods and their associated flags. These are examples of xcodebuild templates- yours may differ. See the Firefox app example below.
 
 ⚠️ Warning: *PSCliCodeInjector parses the command’s output to identify issues with the injected code. Be sure not to pipe the build’s results through tools like xcbeautify, xcpretty, etc. or this logic might not work correctly.*
 

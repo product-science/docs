@@ -611,7 +611,7 @@
 <ol>
 <li>Set up Xcode build with the Product Science Instrumentation Injector from the Product Science Github repo (see instructions below)</li>
 <li>Determine a named developer resource for Product Science to partner with for generating new builds</li>
-<li>Ideally create a trigger for Product Science to generate new builds to increase speed of the Optimization process</li>
+<li>Ideally create a trigger for Product Science to generate new builds to increase speed of the Optimization Loop</li>
 </ol>
 <h2 id="optimization-loop">Optimization Loop</h2>
 <p>The Loop is repeated by your developers 20+ times initially and 5+ times with every major update.</p>
@@ -676,7 +676,7 @@ A reference example using the Firefox Fennec iOS app is shown below.</p>
 </code></pre></div></li>
 </ul>
 <p>This step transforms the code of the MyApp and stores the transformed version in <code>MyApp-ps</code> folder.  </p>
-<p>The <strong>BUILD-COMMAND-FROM_STEP-2</strong> is the choice between the xcworkspace or xcodeproj methods and their associated flags. These are examples of xcodebuild templates- yours may differ. See the Firefox app example below for examples.</p>
+<p>The <strong>BUILD-COMMAND-FROM_STEP-2</strong> is the choice between the xcworkspace or xcodeproj methods and their associated flags. These are examples of xcodebuild templates- yours may differ. See the Firefox app example below.</p>
 <p>⚠️ Warning: <em>PSCliCodeInjector parses the command’s output to identify issues with the injected code. Be sure not to pipe the build’s results through tools like xcbeautify, xcpretty, etc. or this logic might not work correctly.</em></p>
 <p>When complete, a new directory called <code>myapp-ps</code> will have been created. This is the instrumented version of <code>myapp</code>. Use this one (<code>myapp-ps</code>) for your build.</p>
 <ul>
