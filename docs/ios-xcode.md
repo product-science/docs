@@ -8,7 +8,7 @@
 ## Optimization Loop
 The Loop is repeated by your developers 20+ times initially and 5+ times with every major update.
 
-1. [Your devs]  Build the app with PSi Xcode instrumentation
+1. [Your devs]  Build the app with PSi Xcode Injector
 2. Ideally Product Science is provided with a trigger to create automation- otherwise a named developer can be supplied to rebuild
 3. [Your devs]  Provide a cloud link to your .ipa
 4. [Product Science] Runs the app and collects app performance data
@@ -29,8 +29,8 @@ The Loop is repeated by your developers 20+ times initially and 5+ times with ev
 
  Set up `productscience.yaml` in the Xcode app project directory:  
 ```bash
-productscience.github.config:=<supplied-by-PSi>
-productscience.github.token:=<supplied-by-PSi>
+productscience.github.config: <supplied-by-PSi>
+productscience.github.token: <supplied-by-PSi>
 productscience.token: <supplied-by-PSi>
 ```
 

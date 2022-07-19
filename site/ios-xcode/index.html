@@ -616,7 +616,7 @@
 <h2 id="optimization-loop">Optimization Loop</h2>
 <p>The Loop is repeated by your developers 20+ times initially and 5+ times with every major update.</p>
 <ol>
-<li>[Your devs]  Build the app with PSi Xcode instrumentation</li>
+<li>[Your devs]  Build the app with PSi Xcode Injector</li>
 <li>Ideally Product Science is provided with a trigger to create automation- otherwise a named developer can be supplied to rebuild</li>
 <li>[Your devs]  Provide a cloud link to your .ipa</li>
 <li>[Product Science] Runs the app and collects app performance data</li>
@@ -635,12 +635,14 @@
 </ul>
 <h3 id="2-configure-productscienceyaml">2. Configure <code>productscience.yaml</code></h3>
 <p>Set up <code>productscience.yaml</code> in the Xcode app project directory:<br />
-<div class="highlight"><pre><span></span><code>productscience.github.config:<span class="o">=</span>&lt;supplied-by-PSi&gt;
-productscience.github.token:<span class="o">=</span>&lt;supplied-by-PSi&gt;
+<div class="highlight"><pre><span></span><code>productscience.github.config: &lt;supplied-by-PSi&gt;
+productscience.github.token: &lt;supplied-by-PSi&gt;
+productscience.token: &lt;supplied-by-PSi&gt;
 </code></pre></div></p>
 <p>example <code>productscience.yaml</code>:  </p>
 <div class="highlight"><pre><span></span><code>productscience.github.config: product-science-configs:ios-template-configs:config.yaml:main
 productscience.github.token: ghp_XXXXXXXXXXXXXXX
+productscience.token: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 </code></pre></div>
 <h3 id="3-configure-and-test-xcodebuild">3. Configure and Test <code>xcodebuild</code></h3>
 <p>Prepare an <code>xcodebuild</code> command to build the app in terminal.  </p>
@@ -661,10 +663,10 @@ A reference example using the Firefox Fennec iOS app is shown below.</p>
 <h3 id="4-install-pstools-instrumentation-injection-kit">4. Install <code>PSTools</code> Instrumentation Injection Kit</h3>
 <p>You will need to use the github credentials supplied by PSi to above to follow these steps:</p>
 <ol>
-<li>Download PSTools.zip from <a href="https://github.com/product-science/PSios/releases/tag/1.1.0">this link</a> and unzip it  </li>
+<li>Download PSTools-PLATFORM.zip from <a href="https://github.com/product-science/PSios/releases/tag/v1.3.0">this link</a> and unzip it  </li>
 <li>Install PSTools/PSCliCodeInjector.pkg on your Mac with double-click  </li>
-<li>Copy PSTools/PSKit.xcframework to ps-workdir i.e.<br />
-<code>cp -rf PSTools/PSKit.xcframework .</code></li>
+<li>Copy PSTools/PSKit to ps-workdir i.e.<br />
+<code>cp -rf PSTools/PSKit .</code></li>
 </ol>
 <p>See the Firefox example below for sample final directory structure.</p>
 <h3 id="5-build">5. Build</h3>
@@ -700,14 +702,14 @@ A reference example using the Firefox Fennec iOS app is shown below.</p>
 <h3 id="3-create-creds-and-install-pstools">3. Create Creds and install PStools</h3>
 <p>Create the <code>productscience.yaml</code> file in the <code>firefox-ios</code> directory as shown in Step 2 above.</p>
 <p>Download, unzip, and install <code>PStools</code> as shown in Step 4 above.</p>
-<p>Make sure that the <code>PSKit.xcframework</code> is in the same top level directory level as <code>firefox-ios</code> i.e.</p>
-<div class="highlight"><pre><span></span><code>drwxr-xr-x@  <span class="m">5</span> user  staff       <span class="m">160</span> Jul <span class="m">12</span> <span class="m">16</span>:24 PSKit.xcframework
+<p>Make sure that the <code>PSKit</code> is in the same top level directory level as <code>firefox-ios</code> i.e.</p>
+<div class="highlight"><pre><span></span><code>drwxr-xr-x@  <span class="m">5</span> user  staff       <span class="m">160</span> Jul <span class="m">12</span> <span class="m">16</span>:24 PSKit
 drwxr-xr-x@  <span class="m">6</span> user  staff       <span class="m">192</span> Jul  <span class="m">5</span> <span class="m">10</span>:22 PSTools
 drwxr-xr-x  <span class="m">76</span> user  staff      <span class="m">2432</span> Jul <span class="m">12</span> <span class="m">16</span>:26 firefox-ios
 </code></pre></div>
 <h3 id="4-build-with-psclicodeinjector">4. Build with <code>PSCliCodeInjector</code></h3>
 <p>This is done in the same directory level as the <code>firefox-ios</code> directory i.e. the same one as shown above- NOT IN the <code>firefox-ios</code> directory:</p>
-<div class="highlight"><pre><span></span><code>drwxr-xr-x@  <span class="m">5</span> user  staff       <span class="m">160</span> Jul <span class="m">12</span> <span class="m">16</span>:24 PSKit.xcframework
+<div class="highlight"><pre><span></span><code>drwxr-xr-x@  <span class="m">5</span> user  staff       <span class="m">160</span> Jul <span class="m">12</span> <span class="m">16</span>:24 PSKit
 drwxr-xr-x@  <span class="m">6</span> user  staff       <span class="m">192</span> Jul  <span class="m">5</span> <span class="m">10</span>:22 PSTools
 drwxr-xr-x  <span class="m">76</span> user  staff      <span class="m">2432</span> Jul <span class="m">12</span> <span class="m">16</span>:26 firefox-ios
 </code></pre></div>
@@ -721,7 +723,7 @@ drwxr-xr-x  <span class="m">76</span> user  staff      <span class="m">2432</spa
 <span class="s2">          -sdk iphoneos&quot;</span>
 </code></pre></div>
 <p>When complete, a new directory called <code>firefox-ios-ps</code> will have been created. This is the instrumented version of <code>firefox-ios</code></p>
-<div class="highlight"><pre><span></span><code>drwxr-xr-x@  <span class="m">5</span> user  staff       <span class="m">160</span> Jul <span class="m">12</span> <span class="m">16</span>:24 PSKit.xcframework
+<div class="highlight"><pre><span></span><code>drwxr-xr-x@  <span class="m">5</span> user  staff       <span class="m">160</span> Jul <span class="m">12</span> <span class="m">16</span>:24 PSKit
 drwxr-xr-x@  <span class="m">6</span> user  staff       <span class="m">192</span> Jul  <span class="m">5</span> <span class="m">10</span>:22 PSTools
 drwxr-xr-x  <span class="m">76</span> user  staff      <span class="m">2432</span> Jul <span class="m">12</span> <span class="m">16</span>:26 firefox-ios
 drwxr-xr-x  <span class="m">77</span> user  staff      <span class="m">2464</span> Jul <span class="m">12</span> <span class="m">16</span>:46 firefox-ios-ps
