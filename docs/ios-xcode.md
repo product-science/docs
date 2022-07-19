@@ -31,6 +31,7 @@ The Loop is repeated by your developers 20+ times initially and 5+ times with ev
 ```bash
 productscience.github.config:=<supplied-by-PSi>
 productscience.github.token:=<supplied-by-PSi>
+productscience.token: <supplied-by-PSi>
 ```
 
 example `productscience.yaml`:  
@@ -38,6 +39,7 @@ example `productscience.yaml`:
 ```bash
 productscience.github.config: product-science-configs:ios-template-configs:config.yaml:main
 productscience.github.token: ghp_XXXXXXXXXXXXXXX
+productscience.token: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 ### 3. Configure and Test `xcodebuild`
@@ -68,10 +70,10 @@ A reference example using the Firefox Fennec iOS app is shown below.
 
 You will need to use the github credentials supplied by PSi to above to follow these steps:
 
-1. Download PSTools.zip from [this link](https://github.com/product-science/PSios/releases/tag/1.1.0) and unzip it  
+1. Download PSTools-PLATFORM.zip from [this link](https://github.com/product-science/PSios/releases/tag/v1.3.0) and unzip it  
 2. Install PSTools/PSCliCodeInjector.pkg on your Mac with double-click  
-3. Copy PSTools/PSKit.xcframework to ps-workdir i.e.  
-`cp -rf PSTools/PSKit.xcframework .`
+3. Copy PSTools/PSKit to ps-workdir i.e.  
+`cp -rf PSTools/PSKit .`
 
 See the Firefox example below for sample final directory structure.
 
@@ -124,10 +126,10 @@ Create the `productscience.yaml` file in the `firefox-ios` directory as shown in
 
 Download, unzip, and install `PStools` as shown in Step 4 above.
 
-Make sure that the `PSKit.xcframework` is in the same top level directory level as `firefox-ios` i.e.
+Make sure that the `PSKit` is in the same top level directory level as `firefox-ios` i.e.
 
 ```bash
-drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit.xcframework
+drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit
 drwxr-xr-x@  6 user  staff       192 Jul  5 10:22 PSTools
 drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
 ```
@@ -137,7 +139,7 @@ drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
 This is done in the same directory level as the `firefox-ios` directory i.e. the same one as shown above- NOT IN the `firefox-ios` directory:
 
 ```bash
-drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit.xcframework
+drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit
 drwxr-xr-x@  6 user  staff       192 Jul  5 10:22 PSTools
 drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
 ```
@@ -156,7 +158,7 @@ PSCliCodeInjector firefox-ios firefox-ios-ps \
 When complete, a new directory called `firefox-ios-ps` will have been created. This is the instrumented version of `firefox-ios`
 
 ```bash
-drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit.xcframework
+drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit
 drwxr-xr-x@  6 user  staff       192 Jul  5 10:22 PSTools
 drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
 drwxr-xr-x  77 user  staff      2464 Jul 12 16:46 firefox-ios-ps
