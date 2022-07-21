@@ -68,6 +68,10 @@ classpath "com.productscience.transformer:transformer-instrumentation:VERSIONSUP
 For example:  
 ![classpath](images/classpath.png)  
 
+**Please label your build with the PSi Plugin Version from above i.e.**  
+`MyAppPSi0.9.1.apk` 
+**so our AI can learn how its dynamic instrumentation is performing on the build.**
+
 ### 5. `Build.Gradle`: Apply the PSi transformer.plugin  
 
 Apply plugin: `"com.productscience.transformer.plugin" to app/build.gradle`
@@ -110,6 +114,10 @@ Now you can build your app with Gradle
 
 For example:  
 ![build](images/build.png)  
+
+**Please label your build with the PSi Plugin Version from above i.e.**  
+`MyAppPSi0.9.1.apk` 
+**so our AI can learn how its dynamic instrumentation is performing on the build.**
 
 ### Separate build configuration
 

@@ -77,6 +77,10 @@ You will need to use the github credentials supplied by PSi to above to follow t
 
 See the Firefox example below for sample final directory structure.
 
+**Please label your build with the PSi Plugin Version from above i.e.**  
+`MyAppPSi0.9.1.ipa` 
+**so our AI can learn how its dynamic instrumentation is performing on the build.**
+
 ### 5. Build 
 
 - Run PSTool code transformation and configuration fine-tuning:
@@ -97,6 +101,10 @@ When complete, a new directory called `myapp-ps` will have been created. This is
 - Change to the `MyApp-ps` directory
 - Build and export the app in your default pipeline.
 - Send us MyApp/psfilter.txt if it exists
+
+**Please label your build with the PSi Plugin Version from above i.e.**  
+`MyAppPSi0.9.1.ipa` 
+**so our AI can learn how its dynamic instrumentation is performing on the build.**
 
 ## Example: Firefox for iOS
 
