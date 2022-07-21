@@ -650,6 +650,9 @@ classpath <span class="s2">&quot;com.productscience.transformer:transformer-inst
 </code></pre></div>
 <p>For example:<br />
 <img alt="classpath" src="../images/classpath.png" />  </p>
+<p><strong>Please label your build with the PSi Plugin Version from above i.e.</strong><br />
+<code>MyAppPSi0.9.1.apk</code> 
+<strong>so our AI can learn how its dynamic instrumentation is performing on the build.</strong></p>
 <h3 id="5-buildgradle-apply-the-psi-transformerplugin">5. <code>Build.Gradle</code>: Apply the PSi transformer.plugin</h3>
 <p>Apply plugin: <code>"com.productscience.transformer.plugin" to app/build.gradle</code></p>
 <p>For example:<br />
@@ -675,7 +678,9 @@ https://developer.android.com/studio/build/shrink-code</p>
 <p>Now you can build your app with Gradle</p>
 <p>For example:<br />
 <img alt="build" src="../images/build.png" />  </p>
-<p><strong>Please label your build with the PSTools Version from above i.e. <em>MyAppPSi0.9.1.ipk</em> </strong> so our AI can learn how its dynamic instrumentation is performing on the build**</p>
+<p><strong>Please label your build with the PSi Plugin Version from above i.e.</strong><br />
+<code>MyAppPSi0.9.1.apk</code> 
+<strong>so our AI can learn how its dynamic instrumentation is performing on the build.</strong></p>
 <h3 id="separate-build-configuration">Separate build configuration</h3>
 <p>For the future work convenience it’s best to create a separate build configuration with PSi.
 A special flag enableProductScience can be used for these purposes:
