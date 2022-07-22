@@ -10,14 +10,14 @@
       
       
       
-        <link rel="canonical" href="https://github.com/product-science/docs/gradle-android/">
+        <link rel="canonical" href="https://github.com/product-science/docs/ios-xcode/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
     
     
       
-        <title>Gradle / Android - Product Science Documentation</title>
+        <title>iOS / Xcode - Product Science Documentation</title>
       
     
     
@@ -52,9 +52,9 @@
       
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Product Science Documentation - Gradle / Android">
+    <meta property="og:title" content="Product Science Documentation - iOS / Xcode">
     <meta property="og:description" content="Learn to configure and use Product Science">
-    <meta property="og:url" content="https://github.com/product-science/docs/gradle-android/">
+    <meta property="og:url" content="https://github.com/product-science/docs/ios-xcode/">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1080">
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gradle-instructions-android" class="md-skip">
+        <a href="#ios-instructions" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gradle / Android
+              iOS / Xcode
             
           </span>
         </div>
@@ -196,7 +196,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../gradle-android/" class="md-tabs__link md-tabs__link--active">
         App Build Instructions
       </a>
     </li>
@@ -296,6 +296,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../gradle-android/" class="md-nav__link">
+        Gradle / Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -308,12 +322,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Gradle / Android
+          iOS / Xcode
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Gradle / Android
+        iOS / Xcode
       </a>
       
         
@@ -346,11 +360,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gradle-instructions" class="md-nav__link">
-    Gradle Instructions
+  <a href="#xcode-instructions" class="md-nav__link">
+    Xcode Instructions
   </a>
   
-    <nav class="md-nav" aria-label="Gradle Instructions">
+    <nav class="md-nav" aria-label="Xcode Instructions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -361,64 +375,70 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-gradleproperties" class="md-nav__link">
-    2. Configure gradle.properties
+  <a href="#2-configure-productscienceyaml" class="md-nav__link">
+    2. Configure productscience.yaml
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-buildgradle-add-maven-build-info" class="md-nav__link">
-    3. Build.Gradle: Add Maven Build Info
+  <a href="#3-configure-and-test-xcodebuild" class="md-nav__link">
+    3. Configure and Test xcodebuild
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-buildgradle-add-the-psi-classpath-to-dependencies" class="md-nav__link">
-    4. Build.Gradle: Add the PSi Classpath to Dependencies
+  <a href="#4-install-pstools-instrumentation-injection-kit" class="md-nav__link">
+    4. Install PSTools Instrumentation Injection Kit
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-buildgradle-apply-the-psi-transformerplugin" class="md-nav__link">
-    5. Build.Gradle: Apply the PSi transformer.plugin
+  <a href="#5-build" class="md-nav__link">
+    5. Build
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-firefox-for-ios" class="md-nav__link">
+    Example: Firefox for iOS
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Firefox for iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-clone-firefox-ios-repo" class="md-nav__link">
+    1. Clone Firefox iOS repo
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-androidmanifestxml-enable-psi-profiling" class="md-nav__link">
-    6. AndroidManifest.xml: Enable PSi Profiling
+  <a href="#2-configure-and-text-xcodebuild" class="md-nav__link">
+    2. Configure and text xcodebuild
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-setup-psi-properties" class="md-nav__link">
-    7. Setup PSi Properties
+  <a href="#3-create-creds-and-install-pstools" class="md-nav__link">
+    3. Create Creds and install PStools
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proguard" class="md-nav__link">
-    Proguard
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-your-app" class="md-nav__link">
-    Build Your App
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#separate-build-configuration" class="md-nav__link">
-    Separate build configuration
+  <a href="#4-build-with-psclicodeinjector" class="md-nav__link">
+    4. Build with PSCliCodeInjector
   </a>
   
 </li>
@@ -432,20 +452,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ios-xcode/" class="md-nav__link">
-        iOS / Xcode
-      </a>
     </li>
   
 
@@ -498,11 +504,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gradle-instructions" class="md-nav__link">
-    Gradle Instructions
+  <a href="#xcode-instructions" class="md-nav__link">
+    Xcode Instructions
   </a>
   
-    <nav class="md-nav" aria-label="Gradle Instructions">
+    <nav class="md-nav" aria-label="Xcode Instructions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -513,64 +519,70 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-configure-gradleproperties" class="md-nav__link">
-    2. Configure gradle.properties
+  <a href="#2-configure-productscienceyaml" class="md-nav__link">
+    2. Configure productscience.yaml
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-buildgradle-add-maven-build-info" class="md-nav__link">
-    3. Build.Gradle: Add Maven Build Info
+  <a href="#3-configure-and-test-xcodebuild" class="md-nav__link">
+    3. Configure and Test xcodebuild
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-buildgradle-add-the-psi-classpath-to-dependencies" class="md-nav__link">
-    4. Build.Gradle: Add the PSi Classpath to Dependencies
+  <a href="#4-install-pstools-instrumentation-injection-kit" class="md-nav__link">
+    4. Install PSTools Instrumentation Injection Kit
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-buildgradle-apply-the-psi-transformerplugin" class="md-nav__link">
-    5. Build.Gradle: Apply the PSi transformer.plugin
+  <a href="#5-build" class="md-nav__link">
+    5. Build
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-firefox-for-ios" class="md-nav__link">
+    Example: Firefox for iOS
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Firefox for iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-clone-firefox-ios-repo" class="md-nav__link">
+    1. Clone Firefox iOS repo
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-androidmanifestxml-enable-psi-profiling" class="md-nav__link">
-    6. AndroidManifest.xml: Enable PSi Profiling
+  <a href="#2-configure-and-text-xcodebuild" class="md-nav__link">
+    2. Configure and text xcodebuild
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-setup-psi-properties" class="md-nav__link">
-    7. Setup PSi Properties
+  <a href="#3-create-creds-and-install-pstools" class="md-nav__link">
+    3. Create Creds and install PStools
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proguard" class="md-nav__link">
-    Proguard
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-your-app" class="md-nav__link">
-    Build Your App
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#separate-build-configuration" class="md-nav__link">
-    Separate build configuration
+  <a href="#4-build-with-psclicodeinjector" class="md-nav__link">
+    4. Build with PSCliCodeInjector
   </a>
   
 </li>
@@ -594,26 +606,26 @@
                 
 
 
-<h1 id="gradle-instructions-android">Gradle Instructions - Android</h1>
+<h1 id="ios-instructions">IOS Instructions:</h1>
 <h2 id="preparation">Preparation</h2>
 <ol>
-<li>Set up Gradle build with the Product Science plugin from the Product Science Github repo (see instructions below.)</li>
+<li>Set up Xcode build with the Product Science Instrumentation Injector from the Product Science Github repo (see instructions below)</li>
 <li>Determine a named developer resource for Product Science to partner with for generating new builds</li>
-<li>Ideally create a trigger for Product Science to generate new builds to increase speed of the Optimization process</li>
+<li>Ideally create a trigger for Product Science to generate new builds to increase speed of the Optimization Loop</li>
 </ol>
 <h2 id="optimization-loop">Optimization Loop</h2>
 <p>The Loop is repeated by your developers 20+ times initially and 5+ times with every major update.</p>
 <ol>
-<li>[Your devs]  Build the app with PSi Gradle plugin</li>
+<li>[Your devs]  Build the app with PSi Xcode Injector</li>
 <li>Ideally Product Science is provided with a trigger to create automation- otherwise a named developer can be supplied to rebuild</li>
-<li>[Your devs]  Provide a cloud link to your .apk</li>
+<li>[Your devs]  Provide a cloud link to your .ipa</li>
 <li>[Product Science] Runs the app and collects app performance data</li>
 <li>Optimization may finish and we proceed to Insight Generation</li>
 <li>[Product Science] Feeds the app performance data to Product Science optimization algorithms</li>
 <li>[Product Science] Algorithms update model in the Product Science Github repo</li>
 <li>[Your devs] Next build will use the new model from the Product Science Github repo automatically</li>
 </ol>
-<h2 id="gradle-instructions">Gradle Instructions</h2>
+<h2 id="xcode-instructions">Xcode Instructions</h2>
 <h3 id="1-key-generation-methodology-psi">1. Key Generation Methodology- PSi:</h3>
 <ul>
 <li>Generates a token (key) via GitHub</li>
@@ -621,74 +633,108 @@
 <li>Shares token with Bitwarden Send </li>
 <li>Keys have an expiration date</li>
 </ul>
-<h3 id="2-configure-gradleproperties">2. Configure <code>gradle.properties</code></h3>
-<p>Set up <code>gradle.properties</code> in Gradle home directory:<br />
-<div class="highlight"><pre><span></span><code><span class="nv">github_user</span><span class="o">=</span>&lt;supplied-by-PSi&gt;
-<span class="nv">github_key</span><span class="o">=</span>&lt;supplied-by-PSi&gt;
+<h3 id="2-configure-productscienceyaml">2. Configure <code>productscience.yaml</code></h3>
+<p>Set up <code>productscience.yaml</code> in the Xcode app project directory:<br />
+<div class="highlight"><pre><span></span><code>productscience.github.config: &lt;supplied-by-PSi&gt;
+productscience.github.token: &lt;supplied-by-PSi&gt;
+productscience.token: &lt;supplied-by-PSi&gt;
 </code></pre></div></p>
-<p>For example:<br />
-<img alt="creds" src="../images/creds.png" />  </p>
-<h3 id="3-buildgradle-add-maven-build-info">3. <code>Build.Gradle</code>: Add Maven Build Info</h3>
-<p>In <code>build.gradle</code> add the maven build info to the repositories for project and subprojects:  </p>
-<div class="highlight"><pre><span></span><code>maven <span class="o">{</span>
-    url <span class="s2">&quot;https://maven.pkg.github.com/product-science/PSAndroid&quot;</span>
-    credentials <span class="o">{</span>
-        <span class="nv">username</span> <span class="o">=</span> github_user
-        <span class="nv">password</span> <span class="o">=</span> github_key
-    <span class="o">}</span>
-<span class="o">}</span>
+<p>example <code>productscience.yaml</code>:  </p>
+<div class="highlight"><pre><span></span><code>productscience.github.config: product-science-configs:ios-template-configs:config.yaml:main
+productscience.github.token: ghp_XXXXXXXXXXXXXXX
+productscience.token: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 </code></pre></div>
-<p>For example:<br />
-<img alt="maven" src="../images/maven1.png" /><br />
-and <br />
-<img alt="maven" src="../images/maven2.png" />  </p>
-<h3 id="4-buildgradle-add-the-psi-classpath-to-dependencies">4. <code>Build.Gradle</code>: Add the PSi Classpath to Dependencies</h3>
-<p>Note that we are using a demo app for this example called “Signal” to visualize the process.
-Contact your Sales Engineer to get the <code>Version</code> of the Plugin- replace the <code>VERSIONSUPPLIEDBYPSI</code> with the <code>Version</code> we supply.  </p>
-<div class="highlight"><pre><span></span><code>classpath <span class="s2">&quot;com.productscience.transformer:transformer-plugin:&lt;VERSIONSUPPLIEDBYPSI&gt;&quot;</span>
-classpath <span class="s2">&quot;com.productscience.transformer:transformer-instrumentation:&lt;VERSIONSUPPLIEDBYPSI&gt;&quot;</span>
+<h3 id="3-configure-and-test-xcodebuild">3. Configure and Test <code>xcodebuild</code></h3>
+<p>Prepare an <code>xcodebuild</code> command to build the app in terminal.  </p>
+<p>For projects that are organized with <code>xcworkspace</code>: </p>
+<div class="highlight"><pre><span></span><code>xcodebuild <span class="se">\</span>
+    -workspace MyApp.xcworkspace <span class="se">\</span>
+    -scheme MyAppScheme <span class="se">\</span>
+    -sdk iphoneos
 </code></pre></div>
-<p>For example:<br />
-<img alt="classpath" src="../images/classpath.png" />  </p>
+<p>For <code>xcodeproj</code> based projects:  </p>
+<p><div class="highlight"><pre><span></span><code>xcodebuild <span class="se">\</span>
+    -project MyApp.xcodeproj <span class="se">\</span>
+    -scheme MyAppScheme <span class="se">\</span>
+    -sdk iphoneos
+</code></pre></div>
+Ensure that your app can build successfully before using the <code>PSCliCodeInjector</code>.
+A reference example using the Firefox Fennec iOS app is shown below.</p>
+<h3 id="4-install-pstools-instrumentation-injection-kit">4. Install <code>PSTools</code> Instrumentation Injection Kit</h3>
+<p>You will need to use the github credentials supplied by PSi to above to follow these steps:</p>
+<ol>
+<li>Download PSTools-PLATFORM.zip from <a href="https://github.com/product-science/PSios/releases/tag/v1.3.0">this link</a> and unzip it  </li>
+<li>Install PSTools/PSCliCodeInjector.pkg on your Mac with double-click  </li>
+<li>Copy PSTools/PSKit to ps-workdir i.e.<br />
+<code>cp -rf PSTools/PSKit .</code></li>
+</ol>
+<p>See the Firefox example below for sample final directory structure.</p>
 <p><strong>Please label your build with the PSi Plugin Version from above i.e.</strong><br />
-<code>MyAppPSi0.9.1.apk</code> 
+<code>MyAppPSi0.9.1.ipa</code> 
 <strong>so our AI can learn how its dynamic instrumentation is performing on the build.</strong></p>
-<h3 id="5-buildgradle-apply-the-psi-transformerplugin">5. <code>Build.Gradle</code>: Apply the PSi transformer.plugin</h3>
-<p>Apply plugin: <code>"com.productscience.transformer.plugin" to app/build.gradle</code></p>
-<p>For example:<br />
-<img alt="transformer" src="../images/transformer.png" />  </p>
-<h3 id="6-androidmanifestxml-enable-psi-profiling">6. <code>AndroidManifest.xml</code>: Enable PSi Profiling</h3>
-<p>Add <code>&lt;profileable android:shell="true" /&gt;</code> into <code>AndroidManifest.xml</code> to enable profiling</p>
-<p>For example:<br />
-<img alt="manifest" src="../images/manifest.png" />  </p>
-<h3 id="7-setup-psi-properties">7. Setup PSi Properties</h3>
-<p>Create a file called <code>productscience.properties</code> and add the PSi config/token to it</p>
-<div class="highlight"><pre><span></span><code>productscience.github.config<span class="o">=</span>&lt;VERSIONSUPPLIEDBYPSI&gt;<span class="s2">&quot;</span>
-<span class="s2">productscience.github.token=&lt;supplied-by-PSI&gt;</span>
-</code></pre></div>
-<h3 id="proguard">Proguard</h3>
-<p>If the application uses obfuscation/shrinking add a new ProGuard rule to your project.
-To achieve it add the next line to the R8/ProGuard configuration file- typically <code>app-&gt;proguard-&gt;proguard-appcompatv7.pro</code>  </p>
-<div class="highlight"><pre><span></span><code>-keep class com.productscience.transformer.module.** <span class="o">{</span> *<span class="p">;</span> <span class="o">}</span>
-</code></pre></div>
-<p>The default name of this file is proguard-rules.pro. But your project may use the other name.</p>
-<p>More information about R8/ProGuard configuration can be found here:
-https://developer.android.com/studio/build/shrink-code</p>
-<h3 id="build-your-app">Build Your App</h3>
-<p>Now you can build your app with Gradle</p>
-<p>For example:<br />
-<img alt="build" src="../images/build.png" />  </p>
+<h3 id="5-build">5. Build</h3>
+<ul>
+<li>Run PSTool code transformation and configuration fine-tuning:
+<div class="highlight"><pre><span></span><code>PSCliCodeInjector MyApp MyApp-ps <span class="se">\</span>
+    --sub-folders<span class="o">=</span>. <span class="se">\</span>
+    --console-build-command<span class="o">=</span><span class="s2">&quot;&lt;BUILD-COMMAND-FROM_STEP-3&gt;&quot;</span>
+</code></pre></div></li>
+</ul>
+<p>This step transforms the code of the MyApp and stores the transformed version in <code>MyApp-ps</code> folder.  </p>
+<p>The <strong>BUILD-COMMAND-FROM_STEP-2</strong> is the choice between the xcworkspace or xcodeproj methods and their associated flags. These are examples of xcodebuild templates- yours may differ. See the Firefox app example below.</p>
+<p>⚠️ Warning: <em>PSCliCodeInjector parses the command’s output to identify issues with the injected code. Be sure not to pipe the build’s results through tools like xcbeautify, xcpretty, etc. or this logic might not work correctly.</em></p>
+<p>When complete, a new directory called <code>myapp-ps</code> will have been created. This is the instrumented version of <code>myapp</code>. Use this one (<code>myapp-ps</code>) for your build.</p>
+<ul>
+<li>Change to the <code>MyApp-ps</code> directory</li>
+<li>Build and export the app in your default pipeline.</li>
+<li>Send us MyApp/psfilter.txt if it exists</li>
+</ul>
 <p><strong>Please label your build with the PSi Plugin Version from above i.e.</strong><br />
-<code>MyAppPSi0.9.1.apk</code> 
+<code>MyAppPSi0.9.1.ipa</code> 
 <strong>so our AI can learn how its dynamic instrumentation is performing on the build.</strong></p>
-<h3 id="separate-build-configuration">Separate build configuration</h3>
-<p>For the future work convenience it’s best to create a separate build configuration with PSi.
-A special flag enableProductScience can be used for these purposes:
-<img alt="separate" src="../images/separate1.png" /> <br />
-<img alt="separate" src="../images/separate2.png" /><br />
-<img alt="separate" src="../images/separate3.png" />  </p>
-<p>Then you can build your app with PSi using the flag:  </p>
-<p><img alt="build" src="../images/build2.png" /></p>
+<h2 id="example-firefox-for-ios">Example: Firefox for iOS</h2>
+<h3 id="1-clone-firefox-ios-repo">1. Clone Firefox iOS repo</h3>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/mozilla-mobile/firefox-ios
+</code></pre></div>
+<h3 id="2-configure-and-text-xcodebuild">2. Configure and text <code>xcodebuild</code></h3>
+<p>In the <code>firefox-ios</code> directory</p>
+<div class="highlight"><pre><span></span><code>xcodebuild <span class="se">\</span>
+    -project Client.xcodeproj <span class="se">\</span>
+    -scheme Fennec <span class="se">\</span>
+    -destination <span class="s1">&#39;name=iPhone 13 mini&#39;</span> <span class="se">\</span>
+    -sdk iphoneos
+</code></pre></div>
+<p>Note this example uses <code>iPhone 13 mini</code> as the example destination- this can be changed.</p>
+<h3 id="3-create-creds-and-install-pstools">3. Create Creds and install PStools</h3>
+<p>Create the <code>productscience.yaml</code> file in the <code>firefox-ios</code> directory as shown in Step 2 above.</p>
+<p>Download, unzip, and install <code>PStools</code> as shown in Step 4 above.</p>
+<p>Make sure that the <code>PSKit</code> is in the same top level directory level as <code>firefox-ios</code> i.e.</p>
+<div class="highlight"><pre><span></span><code>drwxr-xr-x@  <span class="m">5</span> user  staff       <span class="m">160</span> Jul <span class="m">12</span> <span class="m">16</span>:24 PSKit
+drwxr-xr-x@  <span class="m">6</span> user  staff       <span class="m">192</span> Jul  <span class="m">5</span> <span class="m">10</span>:22 PSTools
+drwxr-xr-x  <span class="m">76</span> user  staff      <span class="m">2432</span> Jul <span class="m">12</span> <span class="m">16</span>:26 firefox-ios
+</code></pre></div>
+<h3 id="4-build-with-psclicodeinjector">4. Build with <code>PSCliCodeInjector</code></h3>
+<p>This is done in the same directory level as the <code>firefox-ios</code> directory i.e. the same one as shown above- NOT IN the <code>firefox-ios</code> directory:</p>
+<div class="highlight"><pre><span></span><code>drwxr-xr-x@  <span class="m">5</span> user  staff       <span class="m">160</span> Jul <span class="m">12</span> <span class="m">16</span>:24 PSKit
+drwxr-xr-x@  <span class="m">6</span> user  staff       <span class="m">192</span> Jul  <span class="m">5</span> <span class="m">10</span>:22 PSTools
+drwxr-xr-x  <span class="m">76</span> user  staff      <span class="m">2432</span> Jul <span class="m">12</span> <span class="m">16</span>:26 firefox-ios
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>PSCliCodeInjector firefox-ios firefox-ios-ps <span class="se">\</span>
+    --sub-folders<span class="o">=</span>. <span class="se">\</span>
+    --console-build-command<span class="o">=</span><span class="se">\</span>
+      <span class="s2">&quot;xcodebuild \</span>
+<span class="s2">          -project Client.xcodeproj \</span>
+<span class="s2">          -scheme Fennec \</span>
+<span class="s2">          -destination &#39;name=iPhone 13 mini&#39; \</span>
+<span class="s2">          -sdk iphoneos&quot;</span>
+</code></pre></div>
+<p>When complete, a new directory called <code>firefox-ios-ps</code> will have been created. This is the instrumented version of <code>firefox-ios</code></p>
+<div class="highlight"><pre><span></span><code>drwxr-xr-x@  <span class="m">5</span> user  staff       <span class="m">160</span> Jul <span class="m">12</span> <span class="m">16</span>:24 PSKit
+drwxr-xr-x@  <span class="m">6</span> user  staff       <span class="m">192</span> Jul  <span class="m">5</span> <span class="m">10</span>:22 PSTools
+drwxr-xr-x  <span class="m">76</span> user  staff      <span class="m">2432</span> Jul <span class="m">12</span> <span class="m">16</span>:26 firefox-ios
+drwxr-xr-x  <span class="m">77</span> user  staff      <span class="m">2464</span> Jul <span class="m">12</span> <span class="m">16</span>:46 firefox-ios-ps
+</code></pre></div>
+<p>This new <code>ps</code> directory is the one to use for the instrumented build. Use this one (<code>firefox-ios-ps</code>) for your pipeline or Xcode.</p>
 
               
             </article>
@@ -707,7 +753,7 @@ A special flag enableProductScience can be used for these purposes:
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+        <a href="../gradle-android/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Gradle / Android" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -716,26 +762,11 @@ A special flag enableProductScience can be used for these purposes:
               <span class="md-footer__direction">
                 Previous
               </span>
-              Home
+              Gradle / Android
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../ios-xcode/" class="md-footer__link md-footer__link--next" aria-label="Next: iOS / Xcode" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              iOS / Xcode
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
