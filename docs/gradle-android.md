@@ -61,8 +61,8 @@ Note that we are using a demo app for this example called “Signal” to visual
 Contact your Sales Engineer to get the `Version` of the Plugin- replace the `VERSIONSUPPLIEDBYPSI` with the `Version` we supply.  
 
 ```bash
-classpath "com.productscience.transformer:transformer-plugin:VERSIONSUPPLIEDBYPSI"
-classpath "com.productscience.transformer:transformer-instrumentation:VERSIONSUPPLIEDBYPSI"
+classpath "com.productscience.transformer:transformer-plugin:<VERSIONSUPPLIEDBYPSI>"
+classpath "com.productscience.transformer:transformer-instrumentation:<VERSIONSUPPLIEDBYPSI>"
 ```
 
 For example:  
@@ -91,7 +91,7 @@ For example:
 Create a file called `productscience.properties` and add the PSi config/token to it
 
 ```bash
-productscience.github.config=product-science:CLIENTNAME-configs:ps-CLIENTNAME.yaml:master
+productscience.github.config=<VERSIONSUPPLIEDBYPSI>"
 productscience.github.token=<supplied-by-PSI>
 ```
 
