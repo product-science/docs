@@ -73,7 +73,7 @@ You will need to use the github credentials supplied by PSi to above to follow t
 1. Download PSTools-PLATFORM.zip from [this link](https://github.com/product-science/PSios/releases/tag/v1.3.0) and unzip it  
 2. Install PSTools/PSCliCodeInjector.pkg on your Mac with double-click  
 3. Copy PSTools/PSKit to ps-workdir i.e.  
-`cp -rf PSTools/PSKit .`
+`cp -r PSTools/PSKit .`
 
 See the Firefox example below for sample final directory structure.
 
@@ -114,7 +114,7 @@ When complete, a new directory called `myapp-ps` will have been created. This is
 git clone https://github.com/mozilla-mobile/firefox-ios
 ```
 
-### 2. Configure and text `xcodebuild`
+### 2. Configure and test `xcodebuild`
 
 In the `firefox-ios` directory
 
@@ -134,7 +134,11 @@ Create the `productscience.yaml` file in the `firefox-ios` directory as shown in
 
 Download, unzip, and install `PStools` as shown in Step 4 above.
 
-Make sure that the `PSKit` is in the same top level directory level as `firefox-ios` i.e.
+Make sure that the `PSKit` is in the same top level directory level as `firefox-ios`:  
+```bash
+cp -r PSTools/PSKit .
+```
+ i.e.
 
 ```bash
 drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit
@@ -172,4 +176,4 @@ drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
 drwxr-xr-x  77 user  staff      2464 Jul 12 16:46 firefox-ios-ps
 ```
 
-This new `ps` directory is the one to use for the instrumented build. Use this one (`firefox-ios-ps`) for your pipeline or Xcode.
+This new `ps` directory is the one to use for the instrumented build. Use (`firefox-ios-ps`) for your pipeline or Xcode.
