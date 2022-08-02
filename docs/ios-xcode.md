@@ -1,4 +1,4 @@
-# IOS Instructions:
+# iOS Build Instructions - Xcode
 
 ## Preparation
 1. Set up Xcode build with the Product Science Instrumentation Injector from the Product Science Github repo (see instructions below)

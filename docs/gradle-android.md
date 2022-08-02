@@ -1,4 +1,4 @@
-# Gradle Instructions - Android
+# Gradle Build Instructions - Android
 
 ## Preparation
 1. Set up Gradle build with the Product Science plugin from the Product Science Github repo (see instructions below.)
