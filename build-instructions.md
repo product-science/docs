@@ -10,4 +10,7 @@ Clone both the docs and pages repos in same location:
 
 To build and deploy docs:
 * in docs repo: `mkdocs build`
-* in product-science.github.io repo: `sh ../docs/buildtools/io-deploy.sh`
+* in `product-science.github.io` repo:  
+* ```bash
+sh ../docs/buildtools/io-deploy.sh
+```
