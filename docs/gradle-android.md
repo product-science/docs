@@ -27,7 +27,7 @@ The Loop is repeated by your developers 20+ times initially and 5+ times with ev
 
 ### 2. Configure `gradle.properties`  
 
- Set up `gradle.properties` in Gradle home directory:  
+ Set up `gradle.properties` in your home directory i.e. `~/.gradle/gradle.properties`  
 ```bash
 github_user=<supplied-by-PSi>
 github_key=<supplied-by-PSi>
@@ -36,7 +36,7 @@ github_key=<supplied-by-PSi>
 For example:  
 ![creds](images/creds.png)  
 
-### 3. `Build.Gradle`: Add Maven Build Info
+### 3. Project top level `build.bradle`: add maven build Info
 
 In `build.gradle` add the maven build info to the repositories for project and subprojects:  
 
@@ -50,12 +50,28 @@ maven {
 }
 ```  
 
+If `allprojects` is not present in top level `build.gradle` then add it:  
+
+```bash
+allprojects {
+        repositories {
+            maven {
+                url "https://maven.pkg.github.com/product-science/PSAndroid"
+                credentials {
+                    username = github_user
+                    password = github_key
+                }
+            }
+        }
+}
+```
+
 For example:  
 ![maven](images/maven1.png)  
 and   
 ![maven](images/maven2.png)  
 
-### 4. `Build.Gradle`: Add the PSi Classpath to Dependencies
+### 4. Project top level `build.bradle`: Add PSi `classpath` to `dependencies`
 
 Note that we are using a demo app for this example called “Signal” to visualize the process.
 Contact your Sales Engineer to get the `Version` of the Plugin- replace the `VERSIONSUPPLIEDBYPSI` with the `Version` we supply.  
@@ -72,34 +88,47 @@ For example:
 `MyAppPSi0.9.1.apk` 
 **so our AI can learn how its dynamic instrumentation is performing on the build.**
 
-### 5. `Build.Gradle`: Apply the PSi transformer.plugin  
+### 5. `app/build.bradle`: Apply the PSi `transformer.plugin`  
 
-Apply plugin: `"com.productscience.transformer.plugin" to app/build.gradle`
+Apply plugin to `app/build.gradle`  
+
+```bash
+"com.productscience.transformer.plugin" 
+```
 
 For example:  
 ![transformer](images/transformer.png)  
 
-### 6. `AndroidManifest.xml`: Enable PSi Profiling  
+### 6. `AndroidManifest.xml`: Enable PSi profiling  
 
-Add `<profileable android:shell="true" />` into `AndroidManifest.xml` to enable profiling
+Add  
+```bash
+<profileable android:shell="true" />
+```  
+into `AndroidManifest.xml` to enable profiling
 
 For example:  
 ![manifest](images/manifest.png)  
 
-### 7. Setup PSi Properties  
+### 7. Setup PSi properties  
 
-Create a file called `productscience.properties` and add the PSi config/token to it
+Create a file called  
+`productscience.properties`  in the projects top level directory and add the PSi config/token to it:
 
 ```bash
-productscience.github.config=<VERSIONSUPPLIEDBYPSI>"
+productscience.github.config=<VERSIONSUPPLIEDBYPSI>
 productscience.github.token=<supplied-by-PSI>
 ```
 
 ### Proguard
 
 If the application uses obfuscation/shrinking add a new ProGuard rule to your project.
-To achieve it add the next line to the R8/ProGuard configuration file- typically `app->proguard->proguard-appcompatv7.pro`  
-
+To achieve it add the next line to the R8/ProGuard configuration file- typically 
+  
+```bash
+app->proguard->proguard-appcompatv7.pro
+```
+  
 ```bash
 -keep class com.productscience.transformer.module.** { *; }
 ```
@@ -109,7 +138,7 @@ The default name of this file is proguard-rules.pro. But your project may use th
 More information about R8/ProGuard configuration can be found here:
 https://developer.android.com/studio/build/shrink-code
 
-### Build Your App
+### Build your app
 Now you can build your app with Gradle
 
 For example:  

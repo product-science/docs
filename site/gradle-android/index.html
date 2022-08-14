@@ -368,15 +368,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-buildgradle-add-maven-build-info" class="md-nav__link">
-    3. Build.Gradle: Add Maven Build Info
+  <a href="#3-project-top-level-buildbradle-add-maven-build-info" class="md-nav__link">
+    3. Project top level build.bradle: Add Maven Build Info
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-buildgradle-add-the-psi-classpath-to-dependencies" class="md-nav__link">
-    4. Build.Gradle: Add the PSi Classpath to Dependencies
+  <a href="#4-project-top-level-buildbradle-add-the-psi-classpath-to-dependencies" class="md-nav__link">
+    4. Project top level build.bradle: Add the PSi Classpath to Dependencies
   </a>
   
 </li>
@@ -520,15 +520,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-buildgradle-add-maven-build-info" class="md-nav__link">
-    3. Build.Gradle: Add Maven Build Info
+  <a href="#3-project-top-level-buildbradle-add-maven-build-info" class="md-nav__link">
+    3. Project top level build.bradle: Add Maven Build Info
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-buildgradle-add-the-psi-classpath-to-dependencies" class="md-nav__link">
-    4. Build.Gradle: Add the PSi Classpath to Dependencies
+  <a href="#4-project-top-level-buildbradle-add-the-psi-classpath-to-dependencies" class="md-nav__link">
+    4. Project top level build.bradle: Add the PSi Classpath to Dependencies
   </a>
   
 </li>
@@ -622,13 +622,13 @@
 <li>Keys have an expiration date</li>
 </ul>
 <h3 id="2-configure-gradleproperties">2. Configure <code>gradle.properties</code></h3>
-<p>Set up <code>gradle.properties</code> in Gradle home directory:<br />
+<p>Set up <code>gradle.properties</code> in your home directory i.e. <code>~/.gradle/gradle.properties</code><br />
 <div class="highlight"><pre><span></span><code><span class="nv">github_user</span><span class="o">=</span>&lt;supplied-by-PSi&gt;
 <span class="nv">github_key</span><span class="o">=</span>&lt;supplied-by-PSi&gt;
 </code></pre></div></p>
 <p>For example:<br />
 <img alt="creds" src="../images/creds.png" />  </p>
-<h3 id="3-buildgradle-add-maven-build-info">3. <code>Build.Gradle</code>: Add Maven Build Info</h3>
+<h3 id="3-project-top-level-buildbradle-add-maven-build-info">3. Project top level <code>build.bradle</code>: Add Maven Build Info</h3>
 <p>In <code>build.gradle</code> add the maven build info to the repositories for project and subprojects:  </p>
 <div class="highlight"><pre><span></span><code>maven <span class="o">{</span>
     url <span class="s2">&quot;https://maven.pkg.github.com/product-science/PSAndroid&quot;</span>
@@ -638,11 +638,24 @@
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
+<p>If <code>allprojects</code> is not present in top level <code>build.gradle</code> then add it:  </p>
+<div class="highlight"><pre><span></span><code>allprojects <span class="o">{</span>
+        repositories <span class="o">{</span>
+            maven <span class="o">{</span>
+                url <span class="s2">&quot;https://maven.pkg.github.com/product-science/PSAndroid&quot;</span>
+                credentials <span class="o">{</span>
+                    <span class="nv">username</span> <span class="o">=</span> github_user
+                    <span class="nv">password</span> <span class="o">=</span> github_key
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
 <p>For example:<br />
 <img alt="maven" src="../images/maven1.png" /><br />
 and <br />
 <img alt="maven" src="../images/maven2.png" />  </p>
-<h3 id="4-buildgradle-add-the-psi-classpath-to-dependencies">4. <code>Build.Gradle</code>: Add the PSi Classpath to Dependencies</h3>
+<h3 id="4-project-top-level-buildbradle-add-the-psi-classpath-to-dependencies">4. Project top level <code>build.bradle</code>: Add the PSi Classpath to Dependencies</h3>
 <p>Note that we are using a demo app for this example called “Signal” to visualize the process.
 Contact your Sales Engineer to get the <code>Version</code> of the Plugin- replace the <code>VERSIONSUPPLIEDBYPSI</code> with the <code>Version</code> we supply.  </p>
 <div class="highlight"><pre><span></span><code>classpath <span class="s2">&quot;com.productscience.transformer:transformer-plugin:&lt;VERSIONSUPPLIEDBYPSI&gt;&quot;</span>
@@ -654,21 +667,29 @@ classpath <span class="s2">&quot;com.productscience.transformer:transformer-inst
 <code>MyAppPSi0.9.1.apk</code> 
 <strong>so our AI can learn how its dynamic instrumentation is performing on the build.</strong></p>
 <h3 id="5-buildgradle-apply-the-psi-transformerplugin">5. <code>Build.Gradle</code>: Apply the PSi transformer.plugin</h3>
-<p>Apply plugin: <code>"com.productscience.transformer.plugin" to app/build.gradle</code></p>
+<p>Apply plugin to <code>app/build.gradle</code>  </p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;com.productscience.transformer.plugin&quot;</span> 
+</code></pre></div>
 <p>For example:<br />
 <img alt="transformer" src="../images/transformer.png" />  </p>
 <h3 id="6-androidmanifestxml-enable-psi-profiling">6. <code>AndroidManifest.xml</code>: Enable PSi Profiling</h3>
-<p>Add <code>&lt;profileable android:shell="true" /&gt;</code> into <code>AndroidManifest.xml</code> to enable profiling</p>
+<p>Add<br />
+<div class="highlight"><pre><span></span><code>&lt;profileable android:shell<span class="o">=</span><span class="s2">&quot;true&quot;</span> /&gt;
+</code></pre></div>
+into <code>AndroidManifest.xml</code> to enable profiling</p>
 <p>For example:<br />
 <img alt="manifest" src="../images/manifest.png" />  </p>
 <h3 id="7-setup-psi-properties">7. Setup PSi Properties</h3>
-<p>Create a file called <code>productscience.properties</code> and add the PSi config/token to it</p>
-<div class="highlight"><pre><span></span><code>productscience.github.config<span class="o">=</span>&lt;VERSIONSUPPLIEDBYPSI&gt;<span class="s2">&quot;</span>
-<span class="s2">productscience.github.token=&lt;supplied-by-PSI&gt;</span>
+<p>Create a file called<br />
+<code>productscience.properties</code>  in the projects top level directory and add the PSi config/token to it:</p>
+<div class="highlight"><pre><span></span><code>productscience.github.config<span class="o">=</span>&lt;VERSIONSUPPLIEDBYPSI&gt;
+productscience.github.token<span class="o">=</span>&lt;supplied-by-PSI&gt;
 </code></pre></div>
 <h3 id="proguard">Proguard</h3>
 <p>If the application uses obfuscation/shrinking add a new ProGuard rule to your project.
-To achieve it add the next line to the R8/ProGuard configuration file- typically <code>app-&gt;proguard-&gt;proguard-appcompatv7.pro</code>  </p>
+To achieve it add the next line to the R8/ProGuard configuration file- typically </p>
+<div class="highlight"><pre><span></span><code>app-&gt;proguard-&gt;proguard-appcompatv7.pro
+</code></pre></div>
 <div class="highlight"><pre><span></span><code>-keep class com.productscience.transformer.module.** <span class="o">{</span> *<span class="p">;</span> <span class="o">}</span>
 </code></pre></div>
 <p>The default name of this file is proguard-rules.pro. But your project may use the other name.</p>
