@@ -86,11 +86,13 @@ See the Firefox example below for sample final directory structure.
 - Run PSTool code transformation and configuration fine-tuning:
 ```bash
 PSCliCodeInjector MyApp MyApp-ps \
+    --backup-dir MyApp-BACKUP \
     --sub-folders=. \
     --console-build-command="<BUILD-COMMAND-FROM_STEP-3>"
 ```
 
 This step transforms the code of the MyApp and stores the transformed version in `MyApp-ps` folder.  
+A backup of the original will be in `MyApp-BACKUP`.
 
 The **BUILD-COMMAND-FROM_STEP-2** is the choice between the xcworkspace or xcodeproj methods and their associated flags. These are examples of xcodebuild templates- yours may differ. See the Firefox app example below.
 
