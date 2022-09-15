@@ -161,6 +161,7 @@ drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
 ```bash
 PSCliCodeInjector firefox-ios firefox-ios-ps \
     --sub-folders=. \
+    --backup-dir firefox-ios-BACKUP \
     --console-build-command=\
       "xcodebuild \
           -project Client.xcodeproj \
