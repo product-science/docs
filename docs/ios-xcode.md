@@ -85,22 +85,22 @@ See the Firefox example below for sample final directory structure.
 
 - Run PSTool code transformation and configuration fine-tuning:
 ```bash
-PSCliCodeInjector MyApp MyApp-ps \
+PSCliCodeInjector MyApp \
     --backup-dir MyApp-BACKUP \
     --sub-folders=. \
     --console-build-command="<BUILD-COMMAND-FROM_STEP-3>"
 ```
 
-This step transforms the code of the MyApp and stores the transformed version in `MyApp-ps` folder.  
+This step transforms the code of the `MyApp`.
 A backup of the original will be in `MyApp-BACKUP`.
 
 The **BUILD-COMMAND-FROM_STEP-2** is the choice between the xcworkspace or xcodeproj methods and their associated flags. These are examples of xcodebuild templates- yours may differ. See the Firefox app example below.
 
 ⚠️ Warning: *PSCliCodeInjector parses the command’s output to identify issues with the injected code. Be sure not to pipe the build’s results through tools like xcbeautify, xcpretty, etc. or this logic might not work correctly.*
 
-When complete, a new directory called `myapp-ps` will have been created. This is the instrumented version of `myapp`. Use this one (`myapp-ps`) for your build.
+When complete, the `MyApp` directory will have been transformed. Use this directory for your build.
 
-- Change to the `MyApp-ps` directory
+- Open project from `MyApp` directory
 - Build and export the app in your default pipeline.
 - Send us MyApp/psfilter.txt if it exists
 
@@ -159,9 +159,8 @@ drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
 ```
 
 ```bash
-PSCliCodeInjector firefox-ios firefox-ios-ps \
+PSCliCodeInjector firefox-ios --backup-dir firefox-ios-BACKUP \
     --sub-folders=. \
-    --backup-dir firefox-ios-BACKUP \
     --console-build-command=\
       "xcodebuild \
           -project Client.xcodeproj \
@@ -170,13 +169,12 @@ PSCliCodeInjector firefox-ios firefox-ios-ps \
           -sdk iphoneos"
 ```
 
-When complete, a new directory called `firefox-ios-ps` will have been created. This is the instrumented version of `firefox-ios`
-
+When complete, the `firefox-ios` directory will have been transformed. `firefox-ios-BACKUP` is a directory with original project.
 ```bash
 drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit
 drwxr-xr-x@  6 user  staff       192 Jul  5 10:22 PSTools
 drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
-drwxr-xr-x  77 user  staff      2464 Jul 12 16:46 firefox-ios-ps
+drwxr-xr-x  77 user  staff      2464 Jul 12 16:46 firefox-ios-BACKUP
 ```
 
-This new `ps` directory is the one to use for the instrumented build. Use (`firefox-ios-ps`) for your pipeline or Xcode.
+Use `firefox-ios` for your pipeline or Xcode.
