@@ -36,7 +36,7 @@ github_key=<supplied-by-PSi>
 For example:  
 ![creds](images/creds.png)  
 
-### 3. Project top level `build.bradle`: add maven build Info
+### 3. Project top level `build.gradle`: add maven build Info
 
 In `build.gradle` add the maven build info to the repositories for project and subprojects:  
 
@@ -71,7 +71,7 @@ For example:
 and   
 ![maven](images/maven2.png)  
 
-### 4. Project top level `build.bradle`: Add PSi `classpath` to `dependencies`
+### 4. Project top level `build.gradle`: Add PSi `classpath` to `dependencies`
 
 Note that we are using a demo app for this example called “Signal” to visualize the process.
 Contact your Sales Engineer to get the `Version` of the Plugin- replace the `VERSIONSUPPLIEDBYPSI` with the `Version` we supply.  
@@ -88,7 +88,7 @@ For example:
 `MyAppPSi0.9.1.apk` 
 **so our AI can learn how its dynamic instrumentation is performing on the build.**
 
-### 5. `app/build.bradle`: Apply the PSi `transformer.plugin`  
+### 5. `app/build.gradle`: Apply the PSi `transformer.plugin`  
 
 Apply plugin to `app/build.gradle`  
 
