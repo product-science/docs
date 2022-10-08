@@ -1,24 +1,5 @@
 # iOS Build Instructions - Xcode
 
-## Preparation
-1. Set up Xcode build with the Product Science Instrumentation Injector from the Product Science Github repo (see instructions below)
-2. Determine a named developer resource for Product Science to partner with for generating new builds
-3. Ideally create a trigger for Product Science to generate new builds to increase speed of the Optimization Loop
-
-## Optimization Loop
-The Loop is repeated by your developers 20+ times initially and 5+ times with every major update.
-
-1. [Your devs]  Build the app with PSi Xcode Injector
-2. Ideally Product Science is provided with a trigger to create automation- otherwise a named developer can be supplied to rebuild
-3. [Your devs]  Provide a cloud link to your .ipa
-4. [Product Science] Runs the app and collects app performance data
-5. Optimization may finish and we proceed to Insight Generation
-6. [Product Science] Feeds the app performance data to Product Science optimization algorithms
-7. [Product Science] Algorithms update model in the Product Science Github repo
-8. [Your devs] Next build will use the new model from the Product Science Github repo automatically
-
-## Xcode Instructions
-
 ### 1. Key Generation Methodology- PSi:  
 * Generates a token (key) via GitHub
 * Saves key in Bitwarden credential storage
