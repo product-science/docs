@@ -78,7 +78,7 @@ Apply plugin to `app/build.gradle`
 ```
 
 For example:  
-![transformer](images/transformer.png)  
+![transformer](images/transformer.png)
 
 ### 6. `AndroidManifest.xml`: Enable PSi profiling  
 
@@ -129,14 +129,9 @@ For example:
 `MyAppPSi0.9.1.apk` 
 **so our AI can learn how its dynamic instrumentation is performing on the build.**
 
-### Separate build configuration
+### Enabling the plugin by build type
 
-For the future work convenience it’s best to create a separate build configuration with PSi.
-A special flag enableProductScience can be used for these purposes:
-![separate](images/separate1.png)   
-![separate](images/separate2.png)  
-![separate](images/separate3.png)  
+For plugin versions greater than 0.12.1, you can selectively apply the plugin to a given build type by adding a `productScience` block at the top level of your `app/build.gradle` file. Inside the proguard block, add a block corresponding to the build type (must have the same name) and set `enabled` to `true`.
+![buildType](images/buildType.png)
 
-Then you can build your app with PSi using the flag:  
-
-![build](images/build2.png)
+If the `productScience` block is missing or empty, the plugin will be applied to all build types. If one or more build types appear in the `productScience` block, the plugin will be applied only to those build types that have `enabled` set to true. 
