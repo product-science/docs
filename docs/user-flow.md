@@ -56,17 +56,29 @@ For example:
 and   
 ![maven](images/maven2.png)  
 
-### 4. Add the userflow library in app/build.gradle
-![userflow-library](images/add-library.png)
+### 4. Add the userflow library as a dependency in app/build.gradle
+    dependencies {
+        implementation "com.productscience.userflow:userflow:555"
+    }
+
 
 ### 5. Start manually annotating user flows in your app. Ensure that each user flow has a distinct integer identifier.
-![uf-annotation](images/uf-annotation.png)
 
 ### 6. There are three static methods used to define user flows. They are `UserFlow#start`, `UserFlow#custom`, and `UserFlow#end`. Each of these methods take an integer argument and a nullable String argument. The String will appear in the trace as a message.
 
 ### 7. To start a UserFlow, call `UserFlow#start` and pass it an id and a String message.
+
+    UserFlow.start(1, "App start begins")
+    
 ### 8. While a UserFlow is in progress, you can make calls to `UserFlow#custom` passing the UserFlow id and a String message. This can be useful to annotate events along the UserFlow (e.g., reaching a milestone or annotating different conditional paths among others).
+
+    UserFlow.custom(1, "UserFlow hit milestone")
+    
 ### 9. To end a UserFlow, call `UserFlow#end` passing the id of the UserFlow to end and a String message.
 
+    UserFlow.end(1, "App start complete")
+    
+### 10. Use the Product Science tool to examine the trace file:
+![trace][images/userflow-trace.png]
 
-There is a sample app demonstrating the use of the userflow library at URL.
+There is a sample app demonstrating the use of the userflow library at [https://github.com/product-science/demoapps-private/tree/main/Android/userflow-android-example](https://github.com/product-science/demoapps-private/tree/main/Android/userflow-android-example)
