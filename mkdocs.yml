@@ -2,9 +2,12 @@ site_name: Product Science Documentation
 site_url: https://github.com/product-science/docs
 nav:
   - Home: index.md
-  - App Build Instructions:
-    - Gradle / Android: gradle-android.md
-    - iOS / Xcode: ios-xcode.md
+  - Integration:
+    - Android:
+      - Build / Gradle: android/gradle.md
+      - User Flow Annotation: android/user-flow.md
+    - iOS:
+      - Build / Xcode: ios/xcode.md
 site_description: >-
   Learn to configure and use Product Science
 repo_url: https://github.com/product-science/docs

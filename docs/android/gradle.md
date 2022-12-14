@@ -15,7 +15,7 @@ github_key=<supplied-by-PSi>
 ```
 
 For example:  
-![creds](images/creds.png)  
+![creds](../images/creds.png)  
 
 ### 3. Project top level `build.gradle`: add maven build Info
 
@@ -48,9 +48,9 @@ allprojects {
 ```
 
 For example:  
-![maven](images/maven1.png)  
+![maven](../images/maven1.png)  
 and   
-![maven](images/maven2.png)  
+![maven](../images/maven2.png)  
 
 ### 4. Project top level `build.gradle`: Add PSi `classpath` to `dependencies`
 
@@ -63,7 +63,7 @@ classpath "com.productscience.transformer:transformer-instrumentation:<VERSIONSU
 ```
 
 For example:  
-![classpath](images/classpath.png)  
+![classpath](../images/classpath.png)  
 
 **Please label your build with the PSi Plugin Version from above i.e.**  
 `MyAppPSi0.9.1.apk` 
@@ -78,7 +78,7 @@ Apply plugin to `app/build.gradle`
 ```
 
 For example:  
-![transformer](images/transformer.png)
+![transformer](../images/transformer.png)
 
 ### 6. `AndroidManifest.xml`: Enable PSi profiling  
 
@@ -89,7 +89,7 @@ Add
 into `AndroidManifest.xml` to enable profiling
 
 For example:  
-![manifest](images/manifest.png)  
+![manifest](../images/manifest.png)  
 
 ### 7. Setup PSi properties  
 
@@ -123,7 +123,7 @@ https://developer.android.com/studio/build/shrink-code
 Now you can build your app with Gradle
 
 For example:  
-![build](images/build.png)  
+![build](../images/build.png)  
 
 **Please label your build with the PSi Plugin Version from above i.e.**  
 `MyAppPSi0.9.1.apk` 
@@ -132,6 +132,6 @@ For example:
 ### Enabling the plugin by build type
 
 For plugin versions greater than 0.12.1, you can selectively apply the plugin to a given build type by adding a `productScience` block at the top level of your `app/build.gradle` file. Inside the proguard block, add a block corresponding to the build type (must have the same name) and set `enabled` to `true`.
-![buildType](images/buildType.png)
+![buildType](../images/buildType.png)
 
 If the `productScience` block is missing or empty, the plugin will be applied to all build types. If one or more build types appear in the `productScience` block, the plugin will be applied only to those build types that have `enabled` set to true. 
