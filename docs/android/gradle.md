@@ -1,40 +1,41 @@
 # Gradle Build Instructions - Android
 
-### 1. Key Generation Methodology- PSi:  
-* Generates a token (key) via GitHub
-* Saves key in Bitwarden credential storage
-* Shares token with Bitwarden Send 
-* Keys have an expiration date
+## 1. Credentials
+Product Science shared access credentials (`productscience.properties` file) via Bitwarden sent. 
+Please place it in the root directory of your project.
 
-### 2. Configure `gradle.properties`  
+Product Science Android plugin is distributed as public GitHub maven package. 
+It's publicly available but requires authentication with github account.
 
- Set up `gradle.properties` in your home directory i.e. `~/.gradle/gradle.properties`  
-```bash
-github_user=<supplied-by-PSi>
-github_key=<supplied-by-PSi>
+Please [generate new token](https://github.com/settings/tokens/new) with **read:packages** access and setup `gradle.properties` in your home directory `~/.gradle/gradle.properties`.
+
+```properties title="~/.gradle/gradle.properties"
+github_user=<Github Account>
+github_key=<Github Token>
 ```
 
-For example:  
-![creds](../images/creds.png)  
-
-### 3. Project top level `build.gradle`: add maven build Info
+## 2. Add Product Science maven repository
 
 In `build.gradle` add the maven build info to the repositories for project and subprojects:  
 
-```bash
-maven {
-    url "https://maven.pkg.github.com/product-science/PSAndroid"
-    credentials {
-        username = github_user
-        password = github_key
+
+=== "Groovy"
+    ```groovy title="build.gradle"
+    buildscript {
+        repositories {
+            mavenCentral()
+            maven {
+                url "https://maven.pkg.github.com/product-science/PSAndroid"
+                credentials {
+                    username = github_user
+                    password = github_key
+                }
+            }
+        }
+        dependencies { ... }
     }
-}
-```  
-
-If `allprojects` is not present in top level `build.gradle` then add it:  
-
-```bash
-allprojects {
+    
+    allprojects {
         repositories {
             maven {
                 url "https://maven.pkg.github.com/product-science/PSAndroid"
@@ -44,94 +45,226 @@ allprojects {
                 }
             }
         }
-}
-```
+    }
+    ```  
 
-For example:  
-![maven](../images/maven1.png)  
-and   
-![maven](../images/maven2.png)  
+=== "Kotlin DSL"
+    ```kotlin title="build.gradle.kts"
+    buildscript {
+        repositories {
+            google()
+            mavenCentral()
+            maven {
+                url = uri("https://maven.pkg.github.com/product-science/PSAndroid")
+                credentials {
+                    username = System.getProperty("github_user")
+                    password = System.getProperty("github_key")
+                }
+            }
+        }
+        dependencies { ... }
+    }
 
-### 4. Project top level `build.gradle`: Add PSi `classpath` to `dependencies`
+    allprojects {
+        repositories {
+            maven {
+                url = uri("https://maven.pkg.github.com/product-science/PSAndroid")
+                credentials {
+                    username = System.getProperty("github_user")
+                    password = System.getProperty("github_key")
+                }
+            }
+        }
+    }
 
-Note that we are using a demo app for this example called “Signal” to visualize the process.
-Contact your Sales Engineer to get the `Version` of the Plugin- replace the `VERSIONSUPPLIEDBYPSI` with the `Version` we supply.  
+    ```
 
-```bash
-classpath "com.productscience.transformer:transformer-plugin:<VERSIONSUPPLIEDBYPSI>"
-classpath "com.productscience.transformer:transformer-instrumentation:<VERSIONSUPPLIEDBYPSI>"
-```
+If the project is configured to prefer settings repositories the
+=== "Groovy"
+    ```groovy title="build.gradle"
+    ...
+    dependencyResolutionManagement {
+        repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        repositories {
+            maven {
+                url "https://maven.pkg.github.com/product-science/PSAndroid"
+                credentials {
+                    username = github_user
+                    password = github_key
+                }
+            }
+        }
+    }
+    ```
 
-For example:  
-![classpath](../images/classpath.png)  
+=== "Kotlin DSL"
+    ```kotlin title="build.gradle.kts"
+    ...
+    dependencyResolutionManagement {
+        repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+        repositories {
+            maven {
+                url = uri("https://maven.pkg.github.com/product-science/PSAndroid")
+                credentials {
+                    username = System.getProperty("github_user")
+                    password = System.getProperty("github_key")
+                }
+            }
+        }
+    }
+    ```
+
+
+In another case, if `allprojects` is not present in top level `build.gradle` then add it in the top of the file.  
+
+
+## 3. Add Product Science plugin to `classpath`
+
+Contact your Sales Engineer to get the `Version` of the Plugin to replace the `VERSIONSUPPLIEDBYPSI` with the `Version` we supply.  
+
+=== "Groovy"
+    ```groovy title="build.gradle"
+    buildscript {
+        repositories { ... }
+        dependencies {
+            classpath "com.productscience.transformer:transformer-plugin:0.13.1"
+            classpath "com.productscience.transformer:transformer-instrumentation:0.13.1"
+        }
+    }
+    ...
+    ```
+
+=== "Kotlin DSL"
+    ```kotlin title="build.gradle.kts"
+    buildscript {
+        repositories { ... }
+        dependencies {
+            classpath("com.productscience.transformer:transformer-plugin:0.13.1")
+            classpath("com.productscience.transformer:transformer-instrumentation:0.13.1")
+        }
+    }
+    ...
+    ```
 
 **Please label your build with the PSi Plugin Version from above i.e.**  
 `MyAppPSi0.9.1.apk` 
 **so our AI can learn how its dynamic instrumentation is performing on the build.**
 
-### 5. `app/build.gradle`: Apply the PSi `transformer.plugin`  
+## 4. Apply the Product Science Plugin  
 
 Apply plugin to `app/build.gradle`  
 
-```bash
-"com.productscience.transformer.plugin" 
-```
+=== "Groovy"
+    ```groovy title="app/build.gradle"
+    plugins {
+        id "com.android.application"
+        id "kotlin-android"
+    }
+    apply plugin: "com.productscience.transformer.plugin"
+    ...
+    ```
 
-For example:  
-![transformer](../images/transformer.png)
+=== "Kotlin DSL"
+    ```kotlin title="app/build.gradle.kts"
+    plugins {
+        id("com.android.application")
+        id("kotlin-android")
+        id("com.productscience.transformer.plugin")
+    }
+    ...
+    ```
 
-### 6. `AndroidManifest.xml`: Enable PSi profiling  
 
-Add  
-```bash
-<profileable android:shell="true" />
-```  
-into `AndroidManifest.xml` to enable profiling
-
-For example:  
-![manifest](../images/manifest.png)  
-
-### 7. Setup PSi properties  
-
-Create a file called  
-`productscience.properties`  in the projects top level directory and add the PSi config/token to it:
-
-```bash
-productscience.github.config=<VERSIONSUPPLIEDBYPSI>
-productscience.github.token=<supplied-by-PSI>
-```
-
-### Proguard
+## 5. Add Proguard rules
 
 If the application uses obfuscation/shrinking add a new ProGuard rule to your project.
-To achieve it add the next line to the R8/ProGuard configuration file- typically 
+To achieve it add the next line to the R8/ProGuard configuration file: 
   
-```bash
-app->proguard->proguard-appcompatv7.pro
-```
-  
-```bash
+```proguard title="proguard-rules.pro."
 -keep class com.productscience.transformer.module.** { *; }
 ```
 
-The default name of this file is proguard-rules.pro. But your project may use the other name.
+Your project may use the other proguard file name.
 
 More information about R8/ProGuard configuration can be found here:
-https://developer.android.com/studio/build/shrink-code
+[https://developer.android.com/studio/build/shrink-code](https://developer.android.com/studio/build/shrink-code)
 
-### Build your app
-Now you can build your app with Gradle
+## 6. Build your app
+Now you can build your app with Gradle, i.e.:
+```bash
+./gradlew assemble
+```
 
-For example:  
-![build](../images/build.png)  
-
-**Please label your build with the PSi Plugin Version from above i.e.**  
-`MyAppPSi0.9.1.apk` 
+**Please label your build with the Plugin Version from above i.e.**  
+`MyApp_PSi-0.14.2.apk` 
 **so our AI can learn how its dynamic instrumentation is performing on the build.**
 
-### Enabling the plugin by build type
 
-For plugin versions greater than 0.12.1, you can selectively apply the plugin to a given build type by adding a `productScience` block at the top level of your `app/build.gradle` file. Inside the proguard block, add a block corresponding to the build type (must have the same name) and set `enabled` to `true`.
-![buildType](../images/buildType.png)
+----
 
-If the `productScience` block is missing or empty, the plugin will be applied to all build types. If one or more build types appear in the `productScience` block, the plugin will be applied only to those build types that have `enabled` set to true. 
+
+## Enabling the plugin by build type
+
+For plugin versions greater than **0.12.1**, 
+you can integrate Product Science pipeline into your gradle build 
+selectively apply the plugin to a given build type by adding a `productScience` block 
+at the top level of your `app/build.gradle` file. 
+
+Inside the proguard block, add a block corresponding to the build type (must have the same name) and set `enabled` to `true`.
+=== "Groovy"
+    ```groovy title="app/build.gradle"
+    plugins {
+        id "com.android.application"
+        id "kotlin-android"
+    }
+    apply plugin: "com.productscience.transformer.plugin" 
+    productScience {
+        psiRelease {
+            enabled true
+        }
+    }
+    
+    android {
+        ...
+        buildTypes {
+            psiRelease {
+                minifyEnabled true
+            }
+            release {
+                minifyEnabled true
+            }
+        }
+    }
+    ```
+=== "Kotlin DSL"
+    ```kotlin title="app/build.gradle.kts"
+    plugins {
+        id("com.android.application")
+        id("kotlin-android")
+        id("com.productscience.transformer.plugin")
+    }
+    
+    productScience {
+        create("psiRelease") {
+            isEnabled = true
+        }
+    }
+    
+    android {
+        ...
+        buildTypes {
+            create("psiRelease") {
+                isMinifyEnabled = true
+            }
+    
+            getByName("release") {
+                isMinifyEnabled = true
+            }
+        }
+    }
+    ```
+
+
+If the `productScience` block is missing or empty, the plugin will be applied to all build types.
+If one or more build types appear in the `productScience` block,
+the plugin will be applied only to those build types that have `enabled` set to true. 

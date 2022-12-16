@@ -38,6 +38,7 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - content.code.annotate
    # - toc.integrate
 markdown_extensions:
 - footnotes
@@ -50,6 +51,9 @@ markdown_extensions:
 - pymdownx.mark
 - pymdownx.critic
 - pymdownx.keys
+- pymdownx.superfences
+- pymdownx.tabbed:
+    alternate_style: true
 
 extra_css:
 - stylesheets/extra.css
@@ -57,6 +61,7 @@ extra_css:
 plugins:
   - minify:
       minify_html: false
+  - search
 
 extra:
   social:
