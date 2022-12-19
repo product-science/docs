@@ -23,7 +23,6 @@ In `build.gradle` add the maven build info to the repositories for project and s
     ```groovy title="build.gradle"
     buildscript {
         repositories {
-            mavenCentral()
             maven {
                 url "https://maven.pkg.github.com/product-science/PSAndroid"
                 credentials {
@@ -52,8 +51,6 @@ In `build.gradle` add the maven build info to the repositories for project and s
     ```kotlin title="build.gradle.kts"
     buildscript {
         repositories {
-            google()
-            mavenCentral()
             maven {
                 url = uri("https://maven.pkg.github.com/product-science/PSAndroid")
                 credentials {
