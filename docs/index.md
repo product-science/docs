@@ -1,4 +1,4 @@
-![PSi](images/psi.png)  
+![PSi](images/psi.svg)  
 
 # Product Science Documentation
 

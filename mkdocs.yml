@@ -1,4 +1,4 @@
-site_name: Product Science Documentation
+site_name: Product Science
 site_url: https://github.com/product-science/docs
 nav:
   - Home: index.md
@@ -16,6 +16,8 @@ copyright: Copyright Product Science Inc. All rights reserved.
 theme:
   name: material
   custom_dir: overrides
+  logo: images/Icon.png
+  favicon: images/Icon.png
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"
@@ -38,6 +40,7 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - content.code.annotate
    # - toc.integrate
 markdown_extensions:
 - footnotes
@@ -50,6 +53,9 @@ markdown_extensions:
 - pymdownx.mark
 - pymdownx.critic
 - pymdownx.keys
+- pymdownx.superfences
+- pymdownx.tabbed:
+    alternate_style: true
 
 extra_css:
 - stylesheets/extra.css
@@ -57,6 +63,7 @@ extra_css:
 plugins:
   - minify:
       minify_html: false
+  - search
 
 extra:
   social:
