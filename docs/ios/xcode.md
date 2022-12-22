@@ -158,4 +158,4 @@ drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
 drwxr-xr-x  77 user  staff      2464 Jul 12 16:46 firefox-ios-BACKUP
 ```
 
-Use `firefox-ios` for your pipeline or Xcode.
+Use `firefox-ios` for your pipeline or Xcode. 
