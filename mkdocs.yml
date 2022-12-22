@@ -1,5 +1,13 @@
-site_name: "  "
+site_name: ""
 site_url: https://github.com/product-science/docs
+repo_url: https://github.com/product-science/docs
+edit_uri: edit/main/docs
+copyright: Copyright Product Science Inc. All rights reserved.
+site_description: >-
+  Learn to configure and use Product Science
+
+
+# Content
 nav:
   - Home: index.md
   - Integration:
@@ -9,11 +17,8 @@ nav:
     - iOS:
       - Build / Xcode: ios/xcode.md
 
-site_description: >-
-  Learn to configure and use Product Science
-repo_url: https://github.com/product-science/docs
-edit_uri: blob/main/docs
-copyright: Copyright Product Science Inc. All rights reserved.
+
+# Visual
 theme:
   name: material
   custom_dir: overrides
@@ -37,8 +42,7 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-  include_search_page: true
-  search_index_only: true
+  include_search_page: false
   language: en
   features:
     - navigation.tabs
@@ -48,7 +52,10 @@ theme:
     - content.code.annotate
     - navigation.indexes
     - navigation.tracking
+    - search.suggest
 #    - toc.integrate
+
+
 markdown_extensions:
   - footnotes
   - admonition
