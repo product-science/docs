@@ -1,3 +1,4 @@
+
 # Gradle Build Instructions - Android
 
 ## 1. Credentials
@@ -76,9 +77,9 @@ In `build.gradle` add the maven build info to the repositories for project and s
 
     ```
 
-If the project is configured to prefer settings repositories the
+If the project is configured to prefer settings repositories maven source should be added to settings file:
 === "Groovy"
-    ```groovy title="build.gradle"
+    ```groovy title="settings.gradle"
     ...
     dependencyResolutionManagement {
         repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -95,7 +96,7 @@ If the project is configured to prefer settings repositories the
     ```
 
 === "Kotlin DSL"
-    ```kotlin title="build.gradle.kts"
+    ```kotlin title="settings.gradle.kts"
     ...
     dependencyResolutionManagement {
         repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
