@@ -23,8 +23,8 @@ theme:
     text: Manrope
   palette:
     # Light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    # media: "(prefers-color-scheme: light)"
+    - scheme: default
       primary: white
       accent: teal
       toggle:
@@ -37,7 +37,7 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-  include_search_page: false
+  include_search_page: true
   search_index_only: true
   language: en
   features:
