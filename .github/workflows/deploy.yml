@@ -2,35 +2,32 @@ name: Deploy Docs
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   build:
-    name: Build and deploy docs
+    name: Build and deploy PS Docs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set up Python 3 ⚙️ 🐍
+      - name: Set up Python
         uses: actions/setup-python@v2
 
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('docs/buildtools/requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('buildtools/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
             ${{ runner.os }}-
 
       - name: Install dependencies
-        working-directory: 'docs/buildtools'
+        working-directory: buildtools
         run: sh ./mkdocs-setup.sh
 
       - name: Build and deploy to GitHub Pages
-        working-directory: docs
         run: mkdocs build
 
       - name: Checkout Deploy Repo
@@ -41,6 +38,6 @@ jobs:
           path: product-science.github.io
           token: ${{ secrets.PS_GITHUB_TOKEN }}
 
-      - name: Deploy web site
-        working-directory: 'product-science.github.io'
-        run: sh ../docs/buildtools/io-deploy.sh
+      - name: Deploy
+        working-directory: product-science.github.io
+        run: mkdocs gh-deploy --config-file ../mkdocs.yml --remote-branch master
