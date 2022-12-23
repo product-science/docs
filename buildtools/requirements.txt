@@ -8,3 +8,5 @@ Pygments>=2.9.0
 bump2version>=1.0.1
 mkdocs-static-i18n>=0.19
 mike>=1.1.2
+mkdocs-macros-plugin
+requests
