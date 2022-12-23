@@ -28,6 +28,10 @@ jobs:
       - name: Install dependencies
         working-directory: buildtools
         run: sh ./mkdocs-setup.sh
+        env:
+          PS_GITHUB_TOKEN: ${{ secrets.PS_GITHUB_TOKEN }}
+
+          
 
       - name: Build and deploy to GitHub Pages
         run: mkdocs build
