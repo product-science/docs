@@ -28,8 +28,6 @@ jobs:
       - name: Install dependencies
         working-directory: buildtools
         run: sh ./mkdocs-setup.sh
-        env:
-          PS_GITHUB_TOKEN: ${{ secrets.PS_GITHUB_TOKEN }}
 
       - name: Build and deploy to GitHub Pages
         run: mkdocs build
@@ -47,3 +45,5 @@ jobs:
       - name: Deploy
         working-directory: product-science.github.io
         run: mkdocs gh-deploy --config-file ../mkdocs.yml --remote-branch master
+        env:
+          PS_GITHUB_TOKEN: ${{ secrets.PS_GITHUB_TOKEN }}
