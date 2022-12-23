@@ -31,10 +31,10 @@ jobs:
         env:
           PS_GITHUB_TOKEN: ${{ secrets.PS_GITHUB_TOKEN }}
 
-          
-
       - name: Build and deploy to GitHub Pages
         run: mkdocs build
+        env:
+          PS_GITHUB_TOKEN: ${{ secrets.PS_GITHUB_TOKEN }}
 
       - name: Checkout Deploy Repo
         uses: actions/checkout@v3
