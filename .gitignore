@@ -1,0 +1,4 @@
+site
+ps-plugin/build
+ps-plugin/dist
+ps-plugin/ps_plugin.egg-info

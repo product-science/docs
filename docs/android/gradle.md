@@ -118,15 +118,13 @@ In another case, if `allprojects` is not present in top level `build.gradle` the
 
 ## 3. Add Product Science plugin to `classpath`
 
-Contact your Sales Engineer to get the `Version` of the Plugin to replace the `VERSIONSUPPLIEDBYPSI` with the `Version` we supply.  
-
 === "Groovy"
     ```groovy title="build.gradle"
     buildscript {
         repositories { ... }
         dependencies {
-            classpath "com.productscience.transformer:transformer-plugin:0.13.1"
-            classpath "com.productscience.transformer:transformer-instrumentation:0.13.1"
+            classpath "com.productscience.transformer:transformer-plugin:{{ android_release() }}"
+            classpath "com.productscience.transformer:transformer-instrumentation:{{ android_release() }}"
         }
     }
     ...
@@ -137,8 +135,8 @@ Contact your Sales Engineer to get the `Version` of the Plugin to replace the `V
     buildscript {
         repositories { ... }
         dependencies {
-            classpath("com.productscience.transformer:transformer-plugin:0.13.1")
-            classpath("com.productscience.transformer:transformer-instrumentation:0.13.1")
+            classpath("com.productscience.transformer:transformer-plugin:{{ android_release() }}")
+            classpath("com.productscience.transformer:transformer-instrumentation:{{ android_release() }}")
         }
     }
     ...

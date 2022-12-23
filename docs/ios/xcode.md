@@ -51,7 +51,7 @@ A reference example using the Firefox Fennec iOS app is shown below.
 
 You will need to use the github credentials supplied by PSi to above to follow these steps:
 
-1. Download the lastest PSTools-PLATFORM.zip from [this link](https://github.com/product-science/PSios/releases) and unzip it  
+1. Download the latest PSTools-PLATFORM.zip from [this link](https://github.com/product-science/PSios/releases) and unzip it  
 2. Install PSTools/PSCliCodeInjector.pkg on your Mac with double-click  
 3. Copy PSTools/PSKit to ps-workdir i.e.  
 `cp -r PSTools/PSKit .`
