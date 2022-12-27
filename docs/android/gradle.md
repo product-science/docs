@@ -5,8 +5,8 @@
 Product Science shared access credentials (`productscience.properties` file) via Bitwarden sent. 
 Please place it in the root directory of your project.
 
-Product Science Android plugin is distributed as public GitHub maven package. 
-It's publicly available but requires authentication with github account.
+The Product Science Android plugin is distributed as a public GitHub maven package. 
+It's publicly available but requires authentication with any github account.
 
 Please [generate new token](https://github.com/settings/tokens/new) with **read:packages** access and setup `gradle.properties` in your home directory `~/.gradle/gradle.properties`.
 
