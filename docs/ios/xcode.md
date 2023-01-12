@@ -64,7 +64,14 @@ See the Firefox example below for sample final directory structure.
 
 ### 5. Build 
 
-- Run PSTool code transformation and configuration fine-tuning:
+- Ensure that the `PSKit` tool folder is at the same folder level as your project i.e.:  
+```
+drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit
+drwxr-xr-x@  6 user  staff       192 Jul  5 10:22 PSTools
+drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 MyApp
+```
+
+- Run PSTool code transformation and configuration fine-tuning. The `PSCliCodeInjector` command must be run at the folder level above where the `.xcodeproj` sits and run against that folder. For example, if the project is `./MyApp/MyApp.xcodeproj` then from the `.` level folder run:  
 ```bash
 PSCliCodeInjector MyApp \
     --backup-dir MyApp-BACKUP \
@@ -72,8 +79,8 @@ PSCliCodeInjector MyApp \
     --console-build-command="<BUILD-COMMAND-FROM_STEP-3>"
 ```
 
-This step transforms the code of the `MyApp`.
-A backup of the original will be in `MyApp-BACKUP`.
+This step transforms the code of within the `MyApp` project folder.  
+A backup of the original `./MyApp` will be created at the same folder level where injection is run i.e. `./MyApp-BACKUP`.
 
 The **BUILD-COMMAND-FROM_STEP-2** is the choice between the xcworkspace or xcodeproj methods and their associated flags. These are examples of xcodebuild templates- yours may differ. See the Firefox app example below.
 
