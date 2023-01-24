@@ -13,6 +13,7 @@ nav:
   - Integration:
     - Android:
       - Build / Gradle: android/gradle.md
+      - CICD / Gradle: android/cicd.md
       - User Flow Annotation: android/user-flow.md
     - iOS:
       - Build / Xcode: ios/xcode.md
