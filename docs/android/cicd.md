@@ -9,7 +9,7 @@ Product Science suggests two main approach for integration Gradle plugin in CICD
 * [Build Variant docs](https://product-science.github.io/android/gradle/#enabling-the-plugin-by-build-type)
 
 
-This approach is based on [Gradle build vairant](https://developer.android.com/studio/build/build-variants).
+This approach is based on [Gradle build variant](https://developer.android.com/studio/build/build-variants).
 A build variant `psiRelease` is created for instrumented version of the app. 
 PS Plugin is applied only for this build variant.
 
