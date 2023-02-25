@@ -6,6 +6,8 @@
 * Shares token with Bitwarden Send 
 * Keys have an expiration date
 
+*This step is not needed if you use standalone build.*
+
 ### 2. Configure `productscience.yaml`  
 
  Set up `productscience.yaml` in the Xcode app project directory:  
@@ -21,7 +23,10 @@ example `productscience.yaml`:
 productscience.github.config: product-science-configs:ios-template-configs:config.yaml:main
 productscience.github.token: ghp_XXXXXXXXXXXXXXX
 productscience.token: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 ```
+
+*This step is not needed if you use standalone build.*
 
 ### 3. Configure and Test `xcodebuild`
 
@@ -135,6 +140,8 @@ drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit
 drwxr-xr-x@  6 user  staff       192 Jul  5 10:22 PSTools
 drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
 ```
+
+*If you use standalone put `productscience.zip` archive in project directory.*
 
 ### 4. Build with `PSCliCodeInjector`
 
