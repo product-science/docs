@@ -5,15 +5,6 @@
 Product Science shared access credentials (`productscience.properties` file) via Bitwarden sent. 
 Please place it in the root directory of your project.
 
-The Product Science Android plugin is distributed as a public GitHub maven package. 
-It's publicly available but requires authentication with any github account.
-
-Please [generate new token](https://github.com/settings/tokens/new) with **read:packages** access and setup `gradle.properties` in your home directory `~/.gradle/gradle.properties`.
-
-```properties title="~/.gradle/gradle.properties"
-github_user=<Github Account>
-github_key=<Github Token>
-```
 
 ## 2. Add Product Science maven repository
 
@@ -25,11 +16,7 @@ In `build.gradle` add the maven build info to the repositories for project and s
     buildscript {
         repositories {
             maven {
-                url "https://maven.pkg.github.com/product-science/PSAndroid"
-                credentials {
-                    username = github_user
-                    password = github_key
-                }
+                url "https://artifactory.productscience.app/releases"
             }
         }
         dependencies { ... }
@@ -38,11 +25,7 @@ In `build.gradle` add the maven build info to the repositories for project and s
     allprojects {
         repositories {
             maven {
-                url "https://maven.pkg.github.com/product-science/PSAndroid"
-                credentials {
-                    username = github_user
-                    password = github_key
-                }
+                url "https://artifactory.productscience.app/releases"
             }
         }
     }
@@ -53,11 +36,7 @@ In `build.gradle` add the maven build info to the repositories for project and s
     buildscript {
         repositories {
             maven {
-                url = uri("https://maven.pkg.github.com/product-science/PSAndroid")
-                credentials {
-                    username = System.getProperty("github_user")
-                    password = System.getProperty("github_key")
-                }
+                url "https://artifactory.productscience.app/releases"
             }
         }
         dependencies { ... }
@@ -66,11 +45,7 @@ In `build.gradle` add the maven build info to the repositories for project and s
     allprojects {
         repositories {
             maven {
-                url = uri("https://maven.pkg.github.com/product-science/PSAndroid")
-                credentials {
-                    username = System.getProperty("github_user")
-                    password = System.getProperty("github_key")
-                }
+                url "https://artifactory.productscience.app/releases"
             }
         }
     }
@@ -85,11 +60,7 @@ If the project is configured to prefer settings repositories maven source should
         repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
         repositories {
             maven {
-                url "https://maven.pkg.github.com/product-science/PSAndroid"
-                credentials {
-                    username = github_user
-                    password = github_key
-                }
+                url "https://artifactory.productscience.app/releases"
             }
         }
     }
@@ -102,11 +73,7 @@ If the project is configured to prefer settings repositories maven source should
         repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
         repositories {
             maven {
-                url = uri("https://maven.pkg.github.com/product-science/PSAndroid")
-                credentials {
-                    username = System.getProperty("github_user")
-                    password = System.getProperty("github_key")
-                }
+                url "https://artifactory.productscience.app/releases"
             }
         }
     }
