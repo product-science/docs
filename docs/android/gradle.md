@@ -69,7 +69,7 @@ In the `buildscript` block of the root `build.gradle` file, add the classpaths f
 The productscience plugin will attempt to instrument all modules of the app,
 so it is necessary to provide a repository url for all modules.
 To do this, add the productscience maven repository url to the `dependencyResolutionManagement` block of `settings.gradle`.
-If there is no such block, you can add it at the toplevel.
+If there is no such block in the file, you can add it at the toplevel.
 
 === "Groovy"
     ```groovy title="settings.gradle"
