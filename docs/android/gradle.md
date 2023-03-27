@@ -6,7 +6,7 @@ Product Science shared access credentials (`productscience.properties` file) via
 Please place it in the root directory of your project.
 
 
-## 2. Add Product Science maven repository to buildscript in root build.gradle
+## 2. Add maven repository to buildscript in root `build.gradle`
 
 In the root level `build.gradle` file, add the productscience maven url to the `repositories` block inside of the `buildscript` block. If there is no `buildscript` block, you can add one at the toplevel:  
 
