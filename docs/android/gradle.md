@@ -93,7 +93,10 @@ The productscience plugin will attempt to instrument all modules of the app, so 
         }
     }
     ```
-Note: If you use `RepositoriesMode.FAIL_ON_PROJECT_REPOS` mode you may experience a failure when one or more of the project's modules define their own repositories in their `build.gradle` files. Switching the mode to `RepositoriesMode.PREFER_SETTINGS` may solve this problem. Alternatively, you may add the productscience maven url to these module `build.gradle` files. You can also use the method defined in Case 2 below instead of defining them in `settings.gradle`.
+> **Note**: If you use `RepositoriesMode.FAIL_ON_PROJECT_REPOS` mode you may experience a failure when one or more of the project's modules define their own repositories in their `build.gradle` files.
+> Switching the mode to `RepositoriesMode.PREFER_SETTINGS` may solve this problem.
+> Alternatively, you may add the productscience maven url to these module `build.gradle` files.
+> You can also use the method defined in Case 2 below instead of defining them in `settings.gradle`.
     
 Case 2: Your project defines module dependencies in an `allProjects` block in the root `build.gradle` file
 
