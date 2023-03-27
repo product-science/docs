@@ -101,7 +101,8 @@ If there is no such block, you can add it at the toplevel.
 > Alternatively, you may add the productscience maven url to these module `build.gradle` files.
 > You can also use the method defined in Case 2 below instead of defining them in `settings.gradle`.
     
-Case 2: Your project defines module dependencies in an `allProjects` block in the root `build.gradle` file
+----
+**Case 2:** The project defines module dependencies in an `allprojects` block in the root `build.gradle` file
 
 Add the repository url to the `allprojects` block in the root `build.gradle` file
 === "Groovy"
