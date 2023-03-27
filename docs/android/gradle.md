@@ -2,9 +2,6 @@
 # Gradle Build Instructions - Android
 
 ## 1. Credentials
-Product Science shared access credentials (`productscience.properties` file) via Bitwarden sent. 
-Please place it in the root directory of your project.
-
 
 ## 2. Add Product Science maven repository
 
