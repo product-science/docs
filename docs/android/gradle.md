@@ -62,7 +62,7 @@ In the `buildscript` block of the root `build.gradle` file, add the classpaths f
     ...
     ```
 
-** 4. Add Product Science maven repository url to all modules
+## 4. Add Product Science maven repository url to all modules
 
 Case 1: The project uses `settings.gradle` to specify module dependencies (requires gradle 6.8 or later)
 
