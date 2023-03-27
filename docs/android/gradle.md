@@ -34,7 +34,7 @@ In the root level `build.gradle` file, add the productscience maven url to the `
     }
     ```
     
-## 3. Add Product Science dependencies to buildscript in root build.gradle
+## 3. Add dependencies to buildscript in root `build.gradle`
 
 In the `buildscript` block of the root `build.gradle` file, add the classpaths for the productscience transformer-plugin and transformer-instrumentation artifacts:
 
