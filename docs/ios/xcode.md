@@ -1,12 +1,7 @@
 # iOS Build Instructions - Xcode
 
-### 1. Key Generation Methodology- PSi:  
-* Generates a token (key) via GitHub
-* Saves key in Bitwarden credential storage
-* Shares token with Bitwarden Send 
-* Keys have an expiration date
-
-*This step is not needed if you use standalone build.*
+### 1. Download PSios Plugin Release
+Download latest release from our [public Github release repo](https://github.com/product-science/PSios/releases) 
 
 ### 2. Configure `productscience.yaml`  
 
@@ -100,6 +95,10 @@ When complete, the `MyApp` directory will have been transformed. Use this direct
 **Please label your build with the PSi Plugin Version from above i.e.**  
 `MyAppPSi0.9.1.ipa` 
 **so our AI can learn how its dynamic instrumentation is performing on the build.**
+
+### 6. Distribute Build
+Please follow instructions at [iOS Distribution Instructions](distribution.md) to share your build with us
+
 
 ## Example: Firefox for iOS
 
