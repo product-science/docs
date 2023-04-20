@@ -1,34 +1,11 @@
 # iOS Build Instructions - Xcode
 
-### 1. Key Generation Methodology- PSi:  
-* Generates a token (key) via GitHub
-* Saves key in Bitwarden credential storage
-* Shares token with Bitwarden Send 
-* Keys have an expiration date
-
+### 1. Configure `productscience.yaml`  
+Put this file into root of build directory
+ 
 *This step is not needed if you use standalone build.*
 
-### 2. Configure `productscience.yaml`  
-
- Set up `productscience.yaml` in the Xcode app project directory:  
-```bash
-productscience.github.config: <supplied-by-PSi>
-productscience.github.token: <supplied-by-PSi>
-productscience.token: <supplied-by-PSi>
-```
-
-example `productscience.yaml`:  
-
-```bash
-productscience.github.config: product-science-configs:ios-template-configs:config.yaml:main
-productscience.github.token: ghp_XXXXXXXXXXXXXXX
-productscience.token: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-```
-
-*This step is not needed if you use standalone build.*
-
-### 3. Configure and Test `xcodebuild`
+### 2. Configure and Test `xcodebuild`
 
 Prepare an `xcodebuild` command to build the app in terminal.  
 
@@ -52,11 +29,11 @@ xcodebuild \
 Ensure that your app can build successfully before using the `PSCliCodeInjector`.
 A reference example using the Firefox Fennec iOS app is shown below.
 
-### 4. Install `PSTools` Instrumentation Injection Kit
+### 3. Install `PSTools` Instrumentation Injection Kit
 
 You will need to use the github credentials supplied by PSi to above to follow these steps:
 
-1. Download the latest PSTools-PLATFORM.zip from [this link](https://github.com/product-science/PSios/releases) and unzip it  
+1. Download the latest PSTools-PLATFORM.zip from our [public plugin repo](https://github.com/product-science/PSios/releases) and unzip it  
 2. Install PSTools/PSCliCodeInjector.pkg on your Mac with double-click  
 3. Copy PSTools/PSKit to ps-workdir i.e.  
 `cp -r PSTools/PSKit .`
@@ -67,7 +44,7 @@ See the Firefox example below for sample final directory structure.
 `MyAppPSi0.9.1.ipa` 
 **so our AI can learn how its dynamic instrumentation is performing on the build.**
 
-### 5. Build 
+### 4. Build 
 
 - Ensure that the `PSKit` tool folder is at the same folder level as your project i.e.:  
 ```
@@ -100,6 +77,10 @@ When complete, the `MyApp` directory will have been transformed. Use this direct
 **Please label your build with the PSi Plugin Version from above i.e.**  
 `MyAppPSi0.9.1.ipa` 
 **so our AI can learn how its dynamic instrumentation is performing on the build.**
+
+### 5. Distribute Build
+Please follow instructions at [iOS Distribution Instructions](distribution.md) to share your build with us
+
 
 ## Example: Firefox for iOS
 

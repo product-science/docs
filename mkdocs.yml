@@ -17,6 +17,7 @@ nav:
       - User Flow Annotation: android/user-flow.md
     - iOS:
       - Build / Xcode: ios/xcode.md
+      - App Distribution: ios/distribution.md
 
 
 # Visual
