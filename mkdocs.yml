@@ -1,6 +1,6 @@
 site_name: ""
-site_url: https://github.com/product-science/docs
-repo_url: https://github.com/product-science/docs
+site_url: https://docs.productscience.app
+repo_url: https://docs.productscience.app
 edit_uri: edit/main/docs
 copyright: Copyright Product Science Inc. All rights reserved.
 site_description: >-
@@ -60,7 +60,7 @@ theme:
 
 markdown_extensions:
   - footnotes
-  - admonition
+  # - admonition
   - attr_list
   - pymdownx.tabbed
   - pymdownx.superfences
