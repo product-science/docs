@@ -15,8 +15,11 @@ TestFlight is the default Apple tool for beta testing: [https://developer.apple.
 App can be distributed directly as **IPA** with two options for signing
 
 ### Distribution Process
+1. _Client_: Build PS-injected app and export it as Ad-Hoc
+2. _Client_: Send exported **IPA** to PS
+
 <details>
-  <summary>1. <i>Client</i>: Build PS-injected app and export it as Ad-Hoc</summary>
+  <summary>How to export app as ad-hoc in XCode</summary>
 Product → Archive
   <img src="https://user-images.githubusercontent.com/80590/233219394-d0bfe1bc-08ca-4d84-8f32-50f4b803709c.png" alt="Archive">
 
@@ -27,7 +30,7 @@ Distribute App → Ad-Hoc
 <img src="https://user-images.githubusercontent.com/80590/233219560-9a10ba0c-8182-4348-b7be-fadba787fe62.png" alt="Ad-hoc">
 </details>
 
-2. _Client_: Send exported **IPA** to PS
+
 
 ### Signing Options
 #### Best Option: Add PS Devices to Apple Development Account
