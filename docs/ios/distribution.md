@@ -30,8 +30,6 @@ Distribute App → Ad-Hoc
 <img src="https://user-images.githubusercontent.com/80590/233219560-9a10ba0c-8182-4348-b7be-fadba787fe62.png" alt="Ad-hoc">
 </details>
 
-
-
 ### Signing Options
 #### Best Option: Add PS Devices to Apple Development Account
 App can be distributed directly as **IPA** and installed on device if device’s **UUID** is added to Apple Development account.
