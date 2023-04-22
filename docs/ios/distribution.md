@@ -18,14 +18,13 @@ App can be distributed directly as **IPA** with two options for signing
 <details>
   <summary>1. <i>Client</i>: Build PS-injected app and export it as Ad-Hoc</summary>
 Product → Archive
-
-  ![image](https://user-images.githubusercontent.com/80590/233219394-d0bfe1bc-08ca-4d84-8f32-50f4b803709c.png)
+  <img src="https://user-images.githubusercontent.com/80590/233219394-d0bfe1bc-08ca-4d84-8f32-50f4b803709c.png" alt="Archive">
 
 Window → Organizer
-![image](https://user-images.githubusercontent.com/80590/233219478-dfca5016-a4cd-45dc-80bc-d2ce97fa02d9.png)
+<img src="https://user-images.githubusercontent.com/80590/233219478-dfca5016-a4cd-45dc-80bc-d2ce97fa02d9.png" alt="Organizer">
 
 Distribute App → Ad-Hoc
-![image](https://user-images.githubusercontent.com/80590/233219560-9a10ba0c-8182-4348-b7be-fadba787fe62.png)
+<img src="https://user-images.githubusercontent.com/80590/233219560-9a10ba0c-8182-4348-b7be-fadba787fe62.png" alt="Ad-hoc">
 </details>
 
 2. _Client_: Send exported **IPA** to PS
