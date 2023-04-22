@@ -60,8 +60,9 @@ theme:
 
 markdown_extensions:
   - footnotes
-  # - admonition
+  - admonition
   - attr_list
+  # https://facelessuser.github.io/pymdown-extensions/
   - pymdownx.tabbed
   - pymdownx.superfences
   - pymdownx.highlight
