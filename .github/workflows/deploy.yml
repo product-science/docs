@@ -40,11 +40,11 @@ jobs:
         with:
           repository: product-science/product-science.github.io
           ref: master
-          path: product-science.github.io
+          path: docs.productscience.app
           token: ${{ secrets.PS_GITHUB_TOKEN }}
 
       - name: Deploy
-        working-directory: product-science.github.io
+        working-directory: docs.productscience.app
         run: mkdocs gh-deploy --config-file ../mkdocs.yml --remote-branch master
         env:
           PS_GITHUB_TOKEN: ${{ secrets.PS_GITHUB_TOKEN }}
