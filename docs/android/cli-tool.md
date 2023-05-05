@@ -8,8 +8,8 @@ Follow [Gradle Instructions](gradle.md) to setup build environment
 ```
 rm -rf ./**/build
 ./gradlew clean
-java -jar integration-cli-{{ android_release() }}.jar "./gradlew :app:tfa:assembleDefaultRelease --stacktrace"
+java -jar integration-cli-{{ android_release() }}.jar "./gradlew assemble --stacktrace"
 ```
 
-## 3. Share .apk and ps-output Directory with Us to Debug
+## 3. Share .apk and ps-output Directory
 Upload to Google Drive (or sharing service of your choice) and send to us
