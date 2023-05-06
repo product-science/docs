@@ -6,19 +6,18 @@ copyright: Copyright Product Science Inc. All rights reserved.
 site_description: >-
   Learn to configure and use Product Science
 
-
 # Content
 nav:
   - Home: index.md
   - Integration:
-    - Android:
-      - Build / Gradle: android/gradle.md
-      - CICD / Gradle: android/cicd.md
-      - User Flow Annotation: android/user-flow.md
-    - iOS:
-      - Build / Xcode: ios/xcode.md
-      - App Distribution: ios/distribution.md
-
+      - Android:
+          - Build / Gradle: android/gradle.md
+          - CICD / Gradle: android/cicd.md
+          - User Flow Annotation: android/user-flow.md
+      - iOS:
+          - Build / Xcode: ios/xcode.md
+          - Build / Bazel: ios/bazel.md
+          - App Distribution: ios/distribution.md
 
 # Visual
 theme:
@@ -57,11 +56,11 @@ theme:
     - search.suggest
 #    - toc.integrate
 
-
 markdown_extensions:
   - footnotes
   - admonition
   - attr_list
+  - toc
   # https://facelessuser.github.io/pymdown-extensions/
   - pymdownx.tabbed
   - pymdownx.superfences
@@ -71,19 +70,25 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.keys
-  - pymdownx.superfences
+  - pymdownx.emoji
   - pymdownx.tabbed:
       alternate_style: true
 
 extra_css:
-- stylesheets/extra.css
+  - stylesheets/extra.css
 
 plugins:
   - minify:
       minify_html: false
   - search
   - macros:
-      modules: ['ps-plugin'] 
+      modules: ["ps-plugin"]
+  - mkdocs-video:
+      is_video: true
+      video_muted: true
+      video_controls: true
+      css_style:
+        width: "50%"
 
 extra:
   social:
