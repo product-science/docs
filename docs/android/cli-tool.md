@@ -1,15 +1,25 @@
-# CLI Tool Instructions - Android
+# CLI Tool Integration Instructions - Android
 
 ## 1. Gradle Setup
-Follow [Gradle Instructions](gradle.md) to setup build environment
+First follow [Gradle Instructions](gradle.md) up to step 6: Build your app (this will be used after integration) to setup build environment
 
 
 ## 2. Clean Build Directory and Run .jar
+integration-cli is a CLI on top of Gradle which automates integration with the PS Plugin by receiving your regular gradle build command as input. Please use flag *--stacktrace* together with gradle command.
+
+#### 1. We recommend cleaning your project before starting:
 ```
 rm -rf ./**/build
 ./gradlew clean
-java -jar integration-cli-{{ android_release() }}.jar "./gradlew assemble --stacktrace"
+```
+
+#### 2. Run the jar with your normal Gradle command. 
+
+*Example:*
+If you build the project with `./gradlew assembleRelease` your integration-cli command will look like:
+```
+java -jar integration-cli-{{ android_release() }}.jar "./gradlew assembleRelease --stacktrace"
 ```
 
 ## 3. Share .apk and ps-output Directory
-Upload to Google Drive (or sharing service of your choice) and send to us
+Upload to Google Drive (or sharing service of your choice) and share with us
