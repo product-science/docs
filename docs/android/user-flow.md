@@ -10,7 +10,7 @@ The steps to add and use the library are below.
 
 ```groovy
     dependencies {
-        implementation "com.productscience.userflow:userflow:0.15.1"
+        implementation "com.productscience.userflow:userflow:android_release()"
     }
 ```
 
