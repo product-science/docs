@@ -15,15 +15,19 @@
 [data-md-color-scheme="default"] .md-typeset h4 {
     color: #000;
 }
+
 .md-typeset h1 {
-  font-weight: 600;
+    font-weight: 600;
 }
+
 .md-typeset h2 {
     font-weight: 500;
 }
+
 .md-typeset h3 {
     font-weight: 400;
 }
+
 .md-typeset h4 {
     font-weight: 300;
 }
@@ -34,7 +38,7 @@
 
 [data-md-color-scheme="slate"] .md-header__button.md-logo {
     -webkit-filter: invert(100%);
-            filter: invert(100%);
+    filter: invert(100%);
 }
 
 img {
@@ -67,14 +71,15 @@ a.md-logo img {
     background-color: transparent;
 }
 
-strong.label-button, mark.critic {
+strong.label-button,
+mark.critic {
     padding: 4px 6px;
     /*margin: 0px 2px 0px 2px;*/
     min-width: 88px;
     border-radius: 3px;
     text-align: center;
     /*text-transform: uppercase;*/
-    text-decoration:none;
+    text-decoration: none;
     border: none;
     outline: none;
     font-size: 0.84em;
@@ -96,24 +101,27 @@ strong.label-button, mark.critic {
 }
 
 .label-button.otel {
-    background-color: #f5a800 ;
+    background-color: #f5a800;
 }
 
 .label-button.AWS-yellow {
-    background-color:#ec7211;
+    background-color: #ec7211;
     color: #fff;
     font-weight: 400;
 }
+
 .label-button.AWS-blue {
     background-color: #0073bb;
     color: #fff;
     font-weight: 400;
 }
+
 .label-button.AWS-orange {
     background-color: #eb5f07;
 }
+
 .label-button.AWS-gray {
-    background-color:#879596;
+    background-color: #879596;
     color: #fff;
     font-weight: 400;
 }
@@ -124,7 +132,7 @@ strong.label-button, mark.critic {
 
 .label-button.sfx-ui-button-grey {
     background-color: #eee;
-    color: rgba(0,0,0,.65);
+    color: rgba(0, 0, 0, .65);
     font-weight: 400;
 }
 
@@ -162,11 +170,22 @@ header.md-header {
 }
 
 [data-md-color-scheme="slate"] {
-/*   --md-code-bg-color: #F5F5F5; */
+    /*   --md-code-bg-color: #F5F5F5; */
     --md-code-fg-color: #fff;
 }
+
 /* 28282a */
 
 /* .md-typeset code {
     font-size: .6.5rem;
 } */
+
+.md-typeset .admonition,
+.md-typeset .example {
+    font-size: .8rem;
+}
+
+.md-typeset .admonition .admonition-title,
+.md-typeset .example summary {
+    font-size: .6rem;
+}
