@@ -62,6 +62,12 @@ Before any changes are made to your project, `PSCliCodeInjector` will create a c
 !!! warning "Important"
     When you want to create an instrumented build, be sure to use the original project directory and not the backup directory.
 
+!!! warning "Important"
+    The code changes made by `PSCliCodeInjector` result in a large number of compile-time warnings, which can cause build failure if Bazel's max stdout/stderr log size is exceeded. To prevent this, include the following option in your `bazel build` command:
+    ```
+    --experimental_ui_max_stdouterr_bytes=-1
+    ```
+
 ### Basic use
 
 ```shell

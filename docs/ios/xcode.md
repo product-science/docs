@@ -1,24 +1,24 @@
 # iOS Build Instructions - Xcode
 
-### 1. Configure `productscience.yaml`  
+### 1. Configure `productscience.yaml`
 Put this file into root of build directory
- 
+
 *This step is not needed if you use standalone build.*
 
 ### 2. Configure and Test `xcodebuild`
 
-Prepare an `xcodebuild` command to build the app in terminal.  
+Prepare an `xcodebuild` command to build the app in terminal.
 
-For projects that are organized with `xcworkspace`: 
+For projects that are organized with `xcworkspace`:
 
-```bash 
+```bash
 xcodebuild \
     -workspace MyApp.xcworkspace \
     -scheme MyAppScheme \
     -sdk iphoneos
 ```
 
-For `xcodeproj` based projects:  
+For `xcodeproj` based projects:
 
 ```bash
 xcodebuild \
@@ -33,27 +33,30 @@ A reference example using the Firefox Fennec iOS app is shown below.
 
 You will need to use the github credentials supplied by PSi to above to follow these steps:
 
-1. Download the latest PSTools-PLATFORM.zip from our [public plugin repo](https://github.com/product-science/PSios/releases) and unzip it  
-2. Install PSTools/PSCliCodeInjector.pkg on your Mac with double-click  
-3. Copy PSTools/PSKit to ps-workdir i.e.  
+1. Download the latest PSTools-PLATFORM.zip from our [public plugin repo](https://github.com/product-science/PSios/releases) and unzip it
+2. Install PSTools/PSCliCodeInjector.pkg on your Mac with double-click
+3. Copy PSTools/PSKit to ps-workdir i.e.
 `cp -r PSTools/PSKit .`
 
 See the Firefox example below for sample final directory structure.
 
-**Please label your build with the PSi Plugin Version from above i.e.**  
-`MyAppPSi0.9.1.ipa` 
+**Please label your build with the PSi Plugin Version from above i.e.**
+`MyAppPSi0.9.1.ipa`
 **so our AI can learn how its dynamic instrumentation is performing on the build.**
 
-### 4. Build 
+### 4. Build
 
-- Ensure that the `PSKit` tool folder is at the same folder level as your project i.e.:  
+!!! warning "Important"
+    The code changes made by `PSCliCodeInjector` result in a large number of compile-time warnings. If your project's `SWIFT_TREAT_WARNINGS_AS_ERRORS` setting is enabled, please disable before running code injection.
+
+- Ensure that the `PSKit` tool folder is at the same folder level as your project i.e.:
 ```
 drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit
 drwxr-xr-x@  6 user  staff       192 Jul  5 10:22 PSTools
 drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 MyApp
 ```
 
-- Run PSTool code transformation and configuration fine-tuning. The `PSCliCodeInjector` command must be run at the folder level above where the `.xcodeproj` sits and run against that folder. For example, if the project is `./MyApp/MyApp.xcodeproj` then from the `.` level folder run:  
+- Run PSTool code transformation and configuration fine-tuning. The `PSCliCodeInjector` command must be run at the folder level above where the `.xcodeproj` sits and run against that folder. For example, if the project is `./MyApp/MyApp.xcodeproj` then from the `.` level folder run:
 ```bash
 PSCliCodeInjector MyApp \
     --backup-dir MyApp-BACKUP \
@@ -61,7 +64,7 @@ PSCliCodeInjector MyApp \
     --console-build-command="<BUILD-COMMAND-FROM_STEP-3>"
 ```
 
-This step transforms the code of within the `MyApp` project folder.  
+This step transforms the code of within the `MyApp` project folder.
 A backup of the original `./MyApp` will be created at the same folder level where injection is run i.e. `./MyApp-BACKUP`.
 
 The **BUILD-COMMAND-FROM_STEP-2** is the choice between the xcworkspace or xcodeproj methods and their associated flags. These are examples of xcodebuild templates- yours may differ. See the Firefox app example below.
@@ -74,8 +77,8 @@ When complete, the `MyApp` directory will have been transformed. Use this direct
 - Build and export the app in your default pipeline.
 - Send us MyApp/psfilter.txt if it exists
 
-**Please label your build with the PSi Plugin Version from above i.e.**  
-`MyAppPSi0.9.1.ipa` 
+**Please label your build with the PSi Plugin Version from above i.e.**
+`MyAppPSi0.9.1.ipa`
 **so our AI can learn how its dynamic instrumentation is performing on the build.**
 
 ### 5. Distribute Build
@@ -110,7 +113,7 @@ Create the `productscience.yaml` file in the `firefox-ios` directory as shown in
 
 Download, unzip, and install `PStools` as shown in Step 4 above.
 
-Make sure that the `PSKit` is in the same top level directory level as `firefox-ios`:  
+Make sure that the `PSKit` is in the same top level directory level as `firefox-ios`:
 ```bash
 cp -r PSTools/PSKit .
 ```
