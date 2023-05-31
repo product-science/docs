@@ -145,6 +145,7 @@ To achieve it add the next line to the R8/ProGuard configuration file:
   
 ```proguard title="proguard-rules.pro."
 -keep class com.productscience.transformer.module.** { *; }
+-keep class com.productscience.** { *; }
 ```
 
 Your project may use the other proguard file name.
