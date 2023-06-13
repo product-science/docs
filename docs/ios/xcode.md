@@ -1,89 +1,76 @@
 # iOS Build Instructions - Xcode
 
-### 1. Configure `productscience.yaml`
-Put this file into root of build directory
+The following instructions describe how to add Product Science instrumentation to an iOS application that is built using Xcode. Bazel-specific instructions can be found [here](bazel.md).
 
-*This step is not needed if you use standalone build.*
+## 1. Copy `productscience.yaml` to your project's root directory
 
-### 2. Configure and Test `xcodebuild`
+Product Science will provide you with a `productscience.yaml` file that contains your credentials and configuration details.
 
-Prepare an `xcodebuild` command to build the app in terminal.
+!!! info
+    If you haven't received this file or need to request a new copy, please reach out to your designated integration support contact via email or Slack. If this contact is unavailable, send an email to support@productscience.ai for assistance.
 
-For projects that are organized with `xcworkspace`:
+Once you've received your `productscience.yaml` file, copy the file to your project's root directory (next to your `.xcodeproj` or `.xcworkspace`).
 
-```bash
-xcodebuild \
-    -workspace MyApp.xcworkspace \
-    -scheme MyAppScheme \
-    -sdk iphoneos
-```
+_This step is not needed if you use standalone build._
 
-For `xcodeproj` based projects:
+## 2. Install `PSCliCodeInjector`
 
-```bash
-xcodebuild \
-    -project MyApp.xcodeproj \
-    -scheme MyAppScheme \
-    -sdk iphoneos
-```
-Ensure that your app can build successfully before using the `PSCliCodeInjector`.
-A reference example using the Firefox Fennec iOS app is shown below.
+Download the latest installer package (named `PSCliCodeInjector.pkg`) from our [public plugin repo](https://github.com/product-science/PSios/releases).
 
-### 3. Install `PSTools` Instrumentation Injection Kit
+Double-click the downloaded `.pkg` to start the installation process. By default, `PSCliCodeInjector` will be installed to `/usr/local/bin`.
 
-You will need to use the github credentials supplied by PSi to above to follow these steps:
+![PSCliCodeInjector installer](../img/ios-installer.jpg)
 
-1. Download the latest PSTools-PLATFORM.zip from our [public plugin repo](https://github.com/product-science/PSios/releases) and unzip it
-2. Install PSTools/PSCliCodeInjector.pkg on your Mac with double-click
-3. Copy PSTools/PSKit to ps-workdir i.e.
-`cp -r PSTools/PSKit .`
+## 3. Run `PSCliCodeInjector`
 
-See the Firefox example below for sample final directory structure.
+`PSCliCodeInjector` adds Product Science's instrumentation to your project's source code.
 
-**Please label your build with the PSi Plugin Version from above i.e.**
-`MyAppPSi0.9.1.ipa`
-**so our AI can learn how its dynamic instrumentation is performing on the build.**
+Before any changes are made to your project, `PSCliCodeInjector` will create a copy of your project's directory and save it to a backup location. `PSCliCodeInjector` will then add Product Science's instrumentation to your application's source code. The backup directory will contain the original, un-instrumented code.
 
-### 4. Build
+!!! warning "Important"
+    When you want to create an instrumented build, be sure to use the original project directory and not the backup directory.
 
 !!! warning "Important"
     The code changes made by `PSCliCodeInjector` result in a large number of compile-time warnings. If your project's `SWIFT_TREAT_WARNINGS_AS_ERRORS` setting is enabled, please disable before running code injection.
 
-- Ensure that the `PSKit` tool folder is at the same folder level as your project i.e.:
-```
-drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit
-drwxr-xr-x@  6 user  staff       192 Jul  5 10:22 PSTools
-drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 MyApp
-```
+### Basic use
 
-- Run PSTool code transformation and configuration fine-tuning. The `PSCliCodeInjector` command must be run at the folder level above where the `.xcodeproj` sits and run against that folder. For example, if the project is `./MyApp/MyApp.xcodeproj` then from the `.` level folder run:
-```bash
-PSCliCodeInjector MyApp \
-    --backup-dir MyApp-BACKUP \
-    --sub-folders=. \
-    --console-build-command="<BUILD-COMMAND-FROM_STEP-3>"
+```shell
+PSCliCodeInjector <root-directory> \
+  --console-build-command "<console-build-command>"
 ```
 
-This step transforms the code of within the `MyApp` project folder.
-A backup of the original `./MyApp` will be created at the same folder level where injection is run i.e. `./MyApp-BACKUP`.
+There are only two required parameters when running `PSCliCodeInjector`:
 
-The **BUILD-COMMAND-FROM_STEP-2** is the choice between the xcworkspace or xcodeproj methods and their associated flags. These are examples of xcodebuild templates- yours may differ. See the Firefox app example below.
+1. `root-directory`: This is the path to your project's root directory. There must be either an `.xcodeproj` or an `.xcworkspace` at the top level of this directory.
+2. `console-build-command`: This is the `xcodebuild` command that the tool will use to confirm that your project compiles successfully before and after injection. This command will be run from your project's root directory.
 
-⚠️ Warning: *PSCliCodeInjector parses the command’s output to identify issues with the injected code. Be sure not to pipe the build’s results through tools like xcbeautify, xcpretty, etc. or this logic might not work correctly.*
+!!! warning "Important"
+    PSCliCodeInjector parses `console-build-command`’s output to identify issues with the injected code. Be sure not to pipe the build’s results through tools like `xcbeautify`, `xcpretty`, etc. or this logic might not work correctly.
 
-When complete, the `MyApp` directory will have been transformed. Use this directory for your build.
+### Changing the backup directory
 
-- Open project from `MyApp` directory
-- Build and export the app in your default pipeline.
-- Send us MyApp/psfilter.txt if it exists
+```shell
+PSCliCodeInjector <root-directory> \
+  --console-build-command "<console-build-command>" \
+  --backup-dir <backup-directory>
+```
 
-**Please label your build with the PSi Plugin Version from above i.e.**
-`MyAppPSi0.9.1.ipa`
-**so our AI can learn how its dynamic instrumentation is performing on the build.**
+A backup of your project's root directory will be created before injection is run. By default, this backup directory is created at  `<root-directory>-BACKUP`.
 
-### 5. Distribute Build
-Please follow instructions at [iOS Distribution Instructions](distribution.md) to share your build with us
+You can override the location of the backup directory by including the `--backup-dir` option with a custom directory path.
 
+### Other options
+
+`PSCliCodeInjector` accepts several other options. Pass the `--help` flag to see the full list:
+
+```shell
+PSCliCodeInjector --help
+```
+
+## 4. Distribute Build
+
+Please follow instructions at [iOS Distribution Instructions](distribution.md) to share your build with us.
 
 ## Example: Firefox for iOS
 
@@ -93,53 +80,20 @@ Please follow instructions at [iOS Distribution Instructions](distribution.md) t
 git clone https://github.com/mozilla-mobile/firefox-ios
 ```
 
-### 2. Configure and test `xcodebuild`
+### 2. Copy `productscience.yaml` and install `PSCliCodeInjector`
 
-In the `firefox-ios` directory
+Copy your `productscience.yaml` file to the `firefox-ios` directory as described in Step 1 above.
 
-```bash
-xcodebuild \
-    -project Client.xcodeproj \
-    -scheme Fennec \
-    -destination 'name=iPhone 13 mini' \
-    -sdk iphoneos
-```
-
-Note this example uses `iPhone 13 mini` as the example destination- this can be changed.
-
-### 3. Create Creds and install PStools
-
-Create the `productscience.yaml` file in the `firefox-ios` directory as shown in Step 2 above.
-
-Download, unzip, and install `PStools` as shown in Step 4 above.
-
-Make sure that the `PSKit` is in the same top level directory level as `firefox-ios`:
-```bash
-cp -r PSTools/PSKit .
-```
- i.e.
-
-```bash
-drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit
-drwxr-xr-x@  6 user  staff       192 Jul  5 10:22 PSTools
-drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
-```
+Install `PSCliCodeInjector` as described in Step 2 above.
 
 *If you use standalone put `productscience.zip` archive in project directory.*
 
-### 4. Build with `PSCliCodeInjector`
+### 3. Build with `PSCliCodeInjector`
 
-This is done in the same directory level as the `firefox-ios` directory i.e. the same one as shown above- NOT IN the `firefox-ios` directory:
-
-```bash
-drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit
-drwxr-xr-x@  6 user  staff       192 Jul  5 10:22 PSTools
-drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
-```
+The following example assumes that you are running the command from the cloned `firefox-ios` directory's parent directory, not from inside the `firefox-ios` directory.
 
 ```bash
 PSCliCodeInjector firefox-ios --backup-dir firefox-ios-BACKUP \
-    --sub-folders=. \
     --console-build-command=\
       "xcodebuild \
           -project Client.xcodeproj \
@@ -148,10 +102,10 @@ PSCliCodeInjector firefox-ios --backup-dir firefox-ios-BACKUP \
           -sdk iphoneos"
 ```
 
+Note this example uses `iPhone 13 mini` as the example destination- this can be changed.
+
 When complete, the `firefox-ios` directory will have been transformed. `firefox-ios-BACKUP` is a directory with original project.
 ```bash
-drwxr-xr-x@  5 user  staff       160 Jul 12 16:24 PSKit
-drwxr-xr-x@  6 user  staff       192 Jul  5 10:22 PSTools
 drwxr-xr-x  76 user  staff      2432 Jul 12 16:26 firefox-ios
 drwxr-xr-x  77 user  staff      2464 Jul 12 16:46 firefox-ios-BACKUP
 ```
