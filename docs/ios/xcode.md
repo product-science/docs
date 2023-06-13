@@ -7,11 +7,12 @@ The following instructions describe how to add Product Science instrumentation t
 Product Science will provide you with a `productscience.yaml` file that contains your credentials and configuration details.
 
 !!! info
-    If you haven't received this file or need to request a new copy, please reach out to your designated integration support contact via email or Slack. If this contact is unavailable, send an email to support@productscience.ai for assistance.
+
+    If you haven't received this file or need to request a new copy, please reach out to your designated integration support contact via established communication channel. If this contact is unavailable, send an email to support@productscience.ai for assistance.
 
 Once you've received your `productscience.yaml` file, copy the file to your project's root directory (next to your `.xcodeproj` or `.xcworkspace`).
 
-_This step is not needed if you use standalone build._
+_This step is not needed if you use standalone offline build. PS will provide detailed instructions._
 
 ## 2. Install `PSCliCodeInjector`
 
@@ -42,7 +43,7 @@ PSCliCodeInjector <root-directory> \
 
 There are only two required parameters when running `PSCliCodeInjector`:
 
-1. `root-directory`: This is the path to your project's root directory. There must be either an `.xcodeproj` or an `.xcworkspace` at the top level of this directory.
+1. `root-directory`: This is the path to your project's root directory. There must be either an `.xcodeproj` or an `.xcworkspace` at the top level of this directory. This is the same directory that you added your `productscience.yaml` file to.
 2. `console-build-command`: This is the `xcodebuild` command that the tool will use to confirm that your project compiles successfully before and after injection. This command will be run from your project's root directory.
 
 !!! warning "Important"
@@ -86,14 +87,15 @@ Copy your `productscience.yaml` file to the `firefox-ios` directory as described
 
 Install `PSCliCodeInjector` as described in Step 2 above.
 
-*If you use standalone put `productscience.zip` archive in project directory.*
+*If you use a standalone offline build, put `productscience.zip` archive in the project directory.*
 
 ### 3. Build with `PSCliCodeInjector`
 
 The following example assumes that you are running the command from the cloned `firefox-ios` directory's parent directory, not from inside the `firefox-ios` directory.
 
 ```bash
-PSCliCodeInjector firefox-ios --backup-dir firefox-ios-BACKUP \
+PSCliCodeInjector firefox-ios \
+    --backup-dir firefox-ios-BACKUP \
     --console-build-command=\
       "xcodebuild \
           -project Client.xcodeproj \

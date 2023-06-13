@@ -19,7 +19,7 @@ Product Science will provide you with a `productscience.yaml` file that contains
 
 !!! info
 
-    If you haven't received this file or need to request a new copy, please reach out to your designated integration support contact via email or Slack. If this contact is unavailable, send an email to support@productscience.ai for assistance.
+    If you haven't received this file or need to request a new copy, please reach out to your designated integration support contact via established communication channel. If this contact is unavailable, send an email to support@productscience.ai for assistance.
 
 Once you've received your `productscience.yaml` file, copy the file to your project's [workspace](https://bazel.build/concepts/build-ref#workspace) directory (next to the `WORKSPACE` file).
 
