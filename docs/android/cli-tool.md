@@ -18,7 +18,7 @@ rm -rf ./**/build
 *Example:*
 If you build the project with `./gradlew assembleRelease` your integration-cli command will look like:
 ```
-java -jar integration-cli-{{ android_release() }}.jar "./gradlew assembleRelease --stacktrace"
+java -jar integration-cli.jar "./gradlew assembleRelease --stacktrace"
 ```
 
 ## 3. Share .apk and ps-output Directory
