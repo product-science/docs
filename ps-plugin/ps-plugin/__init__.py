@@ -13,6 +13,7 @@ def get_latest_release(
             headers={'Authorization': f"token {token}"}
         )
         release = response.json()["tag_name"]
+        release = release.split("/")[-1]
         return release[1:]
     except Exception as e:
         return "latest"
