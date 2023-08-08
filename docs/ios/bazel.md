@@ -15,6 +15,8 @@ The following instructions describe how to add Product Science instrumentation t
 
 ## 1. Copy `productscience.yaml` to your project's workspace directory
 
+_NOTE: Skip this step if your build environment does not allow network access. PS will share detailed instructions directly with your team._
+
 Product Science will provide you with a `productscience.yaml` file that contains your credentials and configuration details.
 
 !!! info
@@ -46,6 +48,8 @@ Before running `PSCliCodeInjector` for the first time, you'll need to install `b
 Instructions for installation can be found on the project's [repository](https://github.com/bazelbuild/buildtools/tree/master/buildozer).
 
 ## 3. Install `PSCliCodeInjector`
+
+_NOTE: Offline builds are not hosted on our public repo. If your build environment does not allow network access, PS will work with your team to share offline-compatible builds via a private channel._
 
 Download the latest installer package (named `PSCliCodeInjector.pkg`) from our [public plugin repo](https://github.com/product-science/PSios/releases).
 

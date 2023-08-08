@@ -4,6 +4,8 @@ The following instructions describe how to add Product Science instrumentation t
 
 ## 1. Copy `productscience.yaml` to your project's root directory
 
+_NOTE: Skip this step if your build environment does not allow network access. PS will share detailed instructions directly with your team._
+
 Product Science will provide you with a `productscience.yaml` file that contains your credentials and configuration details.
 
 !!! info
@@ -12,9 +14,9 @@ Product Science will provide you with a `productscience.yaml` file that contains
 
 Once you've received your `productscience.yaml` file, copy the file to your project's root directory (next to your `.xcodeproj` or `.xcworkspace`).
 
-_This step is not needed if you use standalone offline build. PS will provide detailed instructions._
-
 ## 2. Install `PSCliCodeInjector`
+
+_NOTE: Offline builds are not hosted on our public repo. If your build environment does not allow network access, PS will work with your team to share offline-compatible builds via a private channel._
 
 Download the latest installer package (named `PSCliCodeInjector.pkg`) from our [public plugin repo](https://github.com/product-science/PSios/releases).
 
