@@ -217,6 +217,20 @@ You can override the location of the backup directory by including the `--backup
       ...
       ```
 
+### Changing the configuration archive path _(offline-compatible builds only)_
+
+_NOTE: This option is only relevant if your build environment does not allow network access. Standard builds will load this information automatically from our API._
+
+```shell
+PSCliCodeInjector <root-directory> \
+  --console-build-command "<console-build-command>" \
+  --local-config <config-archive>
+```
+
+By default, PSCliCodeInjector expects your configuration archive to be named 'productscience.zip', and to be placed in your project's root directory.
+
+If you'd prefer to keep the archive somewhere else, you can tell PSCliCodeInjector where to look by passing the archive's full path (including name) to the `--local-config` option.
+
 ### Other options
 
 `PSCliCodeInjector` accepts several other options. Pass the `--help` flag to see the full list:
