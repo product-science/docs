@@ -15,6 +15,8 @@ The following instructions describe how to add Product Science instrumentation t
 
 ## 1. Copy `productscience.yaml` to your project's workspace directory
 
+_NOTE: If your build environment does not allow network access, then you will be provided with a 'productscience.zip' archive instead of a .yaml file. Copy the entire .zip archive to your workspace directory (do not unzip the archive)._
+
 Product Science will provide you with a `productscience.yaml` file that contains your credentials and configuration details.
 
 !!! info
@@ -46,6 +48,8 @@ Before running `PSCliCodeInjector` for the first time, you'll need to install `b
 Instructions for installation can be found on the project's [repository](https://github.com/bazelbuild/buildtools/tree/master/buildozer).
 
 ## 3. Install `PSCliCodeInjector`
+
+_NOTE: Offline builds are not hosted on our public repo. If your build environment does not allow network access, PS will work with your team to share offline-compatible builds via a private channel._
 
 Download the latest installer package (named `PSCliCodeInjector.pkg`) from our [public plugin repo](https://github.com/product-science/PSios/releases).
 
@@ -212,6 +216,20 @@ You can override the location of the backup directory by including the `--backup
       -rw-r--r--  1   819 May 16 19:50 WORKSPACE
       ...
       ```
+
+### Changing the configuration archive path _(offline-compatible builds only)_
+
+_NOTE: This option is only relevant if your build environment does not allow network access. Standard builds will load this information automatically from our API._
+
+```shell
+PSCliCodeInjector <root-directory> \
+  --console-build-command "<console-build-command>" \
+  --local-config <config-archive>
+```
+
+By default, PSCliCodeInjector expects your configuration archive to be named 'productscience.zip', and to be placed in your project's root directory.
+
+If you'd prefer to keep the archive somewhere else, you can tell PSCliCodeInjector where to look by passing the archive's full path (including name) to the `--local-config` option.
 
 ### Other options
 
