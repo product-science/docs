@@ -1,6 +1,8 @@
 
 # Gradle Build Instructions - Android
 
+The following instructions describe how to add Product Science instrumentation to an Android application build with Gradle.
+
 !!! info
     If your build environment does not allow network access to our servers `https://prod.productscience.app/api/v1/*`, please add to your allowlist.
     If your network settings prevent adding this endpoint, you will be provided with plugin and config archives detailed in sections below
