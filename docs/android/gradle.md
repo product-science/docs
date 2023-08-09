@@ -1,13 +1,17 @@
 
 # Gradle Build Instructions - Android
 
+!!! info
+    If your build environment does not allow network access to our servers `https://prod.productscience.app/api/v1/*`, please add to your allowlist.
+    If your network settings prevent adding this endpoint, you will be provided with plugin and config archives detailed in sections below
+
 ## 1. Credentials
 Product Science shared access credentials (`productscience.properties` file) via Bitwarden sent. 
 Please place it in the root directory of your project.
 
 !!! info
-    If your build environment does not allow network access, 
-    then you will be provided with a 'productscience.config.N.zip' archive instead of a .properties file.  
+    If your build environment does not allow network access to our servers as specified above, 
+    you will be provided with a 'productscience.config.N.zip' archive instead of a .properties file.  
     Copy the entire .zip archive to your workspace directory (do not unzip the archive).
 
 
@@ -88,8 +92,8 @@ If the project is configured to prefer settings repositories maven source should
 In another case, if `allprojects` is not present in top level `build.gradle` then add it in the top of the file.  
 
 !!! info
-    If your build environment does not allow network access, 
-    then you will be provided with an archive with a local version of PS Plugin. 
+    If your build environment does not allow network access to our servers, 
+    you will be provided with an archive with a local version of PS Plugin. 
     Unarchive it and put maven packages in an internal artifactory or local maven storage (`~/.m2/repository/`).  
     
     Then add internal artifactory or local maven to the project's repositories instead of public PS artifactory:
