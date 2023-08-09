@@ -4,7 +4,7 @@ The following instructions describe how to add Product Science instrumentation t
 
 ## 1. Copy `productscience.yaml` to your project's root directory
 
-_NOTE: Skip this step if your build environment does not allow network access. PS will share detailed instructions directly with your team._
+_NOTE: If your build environment does not allow network access, then you will be provided with a 'productscience.zip' archive instead of a .yaml file. Copy the entire .zip archive to your workspace directory (do not unzip the archive)._
 
 Product Science will provide you with a `productscience.yaml` file that contains your credentials and configuration details.
 
