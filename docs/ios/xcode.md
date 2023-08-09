@@ -2,6 +2,10 @@
 
 The following instructions describe how to add Product Science instrumentation to an iOS application that is built using Xcode. Bazel-specific instructions can be found [here](bazel.md).
 
+!!! info
+    If your build environment does not allow network access to our servers `https://prod.productscience.app/api/v1/*`, please add to your allowlist.
+    If your network settings prevent adding this endpoint, you will be provided with plugin and config archives detailed in sections below
+
 ## 1. Copy `productscience.yaml` to your project's root directory
 
 _**NOTE:** If your build environment does not allow network access, then you will be provided with a 'productscience.zip' archive instead of a .yaml file. Copy the entire .zip archive to your workspace directory (do not unzip the archive)._
