@@ -4,7 +4,7 @@ The following instructions describe how to add Product Science instrumentation t
 
 !!! info
     If your build environment does not allow network access to our servers `https://prod.productscience.app/api/v1/*`, please add to your allowlist.
-    If your network settings prevent adding this endpoint, you will be provided with plugin and config archives detailed in sections below
+    If your network settings prevent adding this endpoint, you will be provided with plugin and config archives detailed in sections below.
 
 ## 1. Copy `productscience.yaml` to your project's root directory
 
