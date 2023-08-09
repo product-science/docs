@@ -2,9 +2,13 @@
 
 The following instructions describe how to add Product Science instrumentation to an iOS application that is built using Xcode. Bazel-specific instructions can be found [here](bazel.md).
 
+!!! info
+    If your build environment does not allow network access to our servers `https://prod.productscience.app/api/v1/*`, please add to your allowlist.
+    If your network settings prevent adding this endpoint, you will be provided with plugin and config archives detailed in sections below.
+
 ## 1. Copy `productscience.yaml` to your project's root directory
 
-_NOTE: If your build environment does not allow network access, then you will be provided with a 'productscience.zip' archive instead of a .yaml file. Copy the entire .zip archive to your workspace directory (do not unzip the archive)._
+_**NOTE:** If your build environment does not allow network access, then you will be provided with a 'productscience.zip' archive instead of a .yaml file. Copy the entire .zip archive to your workspace directory (do not unzip the archive)._
 
 Product Science will provide you with a `productscience.yaml` file that contains your credentials and configuration details.
 
@@ -16,7 +20,7 @@ Once you've received your `productscience.yaml` file, copy the file to your proj
 
 ## 2. Install `PSCliCodeInjector`
 
-_NOTE: Offline builds are not hosted on our public repo. If your build environment does not allow network access, PS will work with your team to share offline-compatible builds via a private channel._
+_**NOTE:** Offline builds are not hosted on our public repo. If your build environment does not allow network access, PS will work with your team to share offline-compatible builds via a private channel._
 
 Download the latest installer package (named `PSCliCodeInjector.pkg`) from our [public plugin repo](https://github.com/product-science/PSios/releases).
 
@@ -65,7 +69,7 @@ You can override the location of the backup directory by including the `--backup
 
 ### Changing the configuration archive path _(offline-compatible builds only)_
 
-_NOTE: This option is only relevant if your build environment does not allow network access. Standard builds will load this information automatically from our API._
+_**NOTE:** This option is only relevant if your build environment does not allow network access. Standard builds will load this information automatically from our API._
 
 ```shell
 PSCliCodeInjector <root-directory> \
