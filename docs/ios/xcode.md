@@ -67,6 +67,18 @@ A backup of your project's root directory will be created before injection is ru
 
 You can override the location of the backup directory by including the `--backup-dir` option with a custom directory path.
 
+### Changing the PSKit package path
+
+```shell
+PSCliCodeInjector <root-directory> \
+  --console-build-command "<console-build-command>" \
+  --pskit-path <pskit-package>
+```
+
+As part of its installation work, `PSCliCodeInjector.pkg` copies the PSKit Swift package to your user's Application Support folder (`~/Library/Application Support/ai.productscience.PSCliCodeInjector/PSKit`). This path is where the `PSCliCodeInjector` tool expects to find PSKit by default.
+
+If you can't run the installer for any reason or prefer to use a different version of PSKit, you can override the package's path with the `--pskit-path` option.
+
 ### Changing the configuration archive path _(offline-compatible builds only)_
 
 _**NOTE:** This option is only relevant if your build environment does not allow network access. Standard builds will load this information automatically from our API._
