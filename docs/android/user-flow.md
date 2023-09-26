@@ -49,7 +49,7 @@ To end a UserFlow, call `UserFlow#end` passing the ID of the UserFlow to end and
 
 ### Sample app
 There is a sample app demonstrating the use of the userflow library at:
-[https://github.com/product-science/demoapps-private/tree/main/Android/userflow-android-example](https://github.com/product-science/demoapps-private/tree/main/Android/userflow-android-example)
+[https://github.com/product-science/demoapps/tree/main/Android/userflow-android-example](https://github.com/product-science/demoapps/tree/main/Android/userflow-android-example)
 
 
 ## Project Integration
