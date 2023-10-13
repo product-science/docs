@@ -45,6 +45,7 @@ To end a UserFlow, call `UserFlow#end` passing the ID of the UserFlow to end and
     
 ## Examples
 ### UserFlow Annotations on PSTool
+An example of a slice added via the UserFlow Annotations library. The gray flag on the trace is automatically created for events marked by these slices.
 ![trace](../images/userflow-trace.png)
 
 ### Sample app
