@@ -67,6 +67,23 @@ A backup of your project's root directory will be created before injection is ru
 
 You can override the location of the backup directory by including the `--backup-dir` option with a custom directory path.
 
+### Injecting package dependencies
+
+If your project depends on Swift packages, you can inject them using the `--inject-packages` option. With this option, each package's source code will be downloaded and added to the project as a local package dependency. This option also requires that you specify either a target or a scheme name:
+
+```shell
+PSCliCodeInjector <root-directory> \
+--inject-packages --target-name <target-name> \
+  --console-build-command "<console-build-command>"
+```
+or
+```shell
+PSCliCodeInjector <root-directory> \
+--inject-packages --scheme-name <scheme-name> \
+  --console-build-command "<console-build-command>"
+```
+
+
 ### Changing the configuration archive path _(offline-compatible builds only)_
 
 _**NOTE:** This option is only relevant if your build environment does not allow network access. Standard builds will load this information automatically from our API._
