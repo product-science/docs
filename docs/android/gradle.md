@@ -258,3 +258,4 @@ Inside the proguard block, add a block corresponding to the build type (must hav
 If the `productScience` block is missing or empty, the plugin will be applied to all build types.
 If one or more build types appear in the `productScience` block,
 the plugin will be applied only to those build types that have `enabled` set to true. 
+
