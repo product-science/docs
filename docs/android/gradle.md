@@ -258,3 +258,65 @@ Inside the proguard block, add a block corresponding to the build type (must hav
 If the `productScience` block is missing or empty, the plugin will be applied to all build types.
 If one or more build types appear in the `productScience` block,
 the plugin will be applied only to those build types that have `enabled` set to true. 
+
+## Disabling Window#setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE) by build type
+
+Some apps disable screen recording for security reasons. For Product Science plugin builds, you may want to keep screen recording enabled so that the screen recording can be synchronized to recorded traces. To do this for a specific build type, it is recommended to create a boolean variable in the `gradle.build` file and use that in code to guard the toggling of the `Window` flags.
+
+For example, if you have the following code in your Activity to disable screen recording:
+
+```
+getWindow.setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE);
+```
+
+Set up the following variable in the `build.gradle` file for the app:
+
+=== "Groovy"
+    ```groovy title="app/build.gradle"
+    ...
+    android {
+        ...
+        buildFeatures {
+            buildConfig true
+        }
+        defaultConfig {
+            buildConfigField "boolean", "disableScreenRecording", "true"
+        }
+        buildTypes {
+            psiRelease {
+                buildConfigField "boolean", "disableScreenRecording", "false"            
+            }
+            release {
+                buildConfigField "boolean", "disableScreenRecording", "true"
+            }
+        }
+    }
+    ```
+=== "Kotlin DSL"
+    ```kotlin title="app/build.gradle"
+    ...
+    android {
+        ...
+        buildFeatures {
+            buildConfig = true
+        }
+        defaultConfig {
+            buildConfigField("boolean", "disableScreenRecording", "true")
+        }
+        buildTypes {
+            psiRelease {
+                buildConfigField("boolean", "disableScreenRecording", "false")            
+            }
+            release {
+                buildConfigField("boolean", "disableScreenRecording", "true")
+            }
+        }
+    }
+    ```
+Then you can wrap the call for `setFlags` to conditionally enable screen recording for the Product Science build.
+
+```
+if (Build.Config.disableScreenRecording) {
+    getWindow.setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE);
+}
+```
