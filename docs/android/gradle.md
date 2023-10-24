@@ -47,7 +47,7 @@ In `build.gradle` add the PS maven artifactory to the repositories for project a
     buildscript {
         repositories {
             maven {
-                url "https://artifactory.productscience.app/releases"
+                url = uri("https://artifactory.productscience.app/releases")
             }
         }
         dependencies { ... }
@@ -56,7 +56,7 @@ In `build.gradle` add the PS maven artifactory to the repositories for project a
     allprojects {
         repositories {
             maven {
-                url "https://artifactory.productscience.app/releases"
+                url = uri("https://artifactory.productscience.app/releases")
             }
         }
     }
@@ -84,7 +84,7 @@ If the project is configured to prefer settings repositories maven source should
         repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
         repositories {
             maven {
-                url "https://artifactory.productscience.app/releases"
+                url = uri("https://artifactory.productscience.app/releases")
             }
         }
     }
@@ -169,7 +169,7 @@ Apply plugin to `app/build.gradle`
 If the application uses obfuscation/shrinking add a new ProGuard rule to your project.
 To achieve it add the next line to the R8/ProGuard configuration file: 
   
-```proguard title="proguard-rules.pro."
+```proguard title="proguard-rules.pro"
 -keep class com.productscience.transformer.module.** { *; }
 -keep class com.productscience.** { *; }
 ```
