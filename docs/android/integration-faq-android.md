@@ -32,8 +32,6 @@ dexOptions { javaMaxHeapSize "12g" }  // build.gradle
 
 
 ## Gradle Settings
-#### Check Gradle Version
-Verify that your project uses Gradle 7. Gradle 8 support currently in development
 
 #### Check Cache Configuration Disabled
 Sometimes cache configuration can cause issues with instrumentation. Support currently in development
