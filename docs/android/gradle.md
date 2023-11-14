@@ -163,8 +163,7 @@ Apply the plugin in the **app/build.gradle** file as follows:
 === "Groovy"
     ```groovy title="app/build.gradle"
     plugins {
-        id "com.android.application"
-        id "kotlin-android"
+        ...
     }
     apply plugin: "com.productscience.transformer.plugin"
     ...
@@ -173,12 +172,13 @@ Apply the plugin in the **app/build.gradle** file as follows:
 === "Kotlin DSL"
     ```kotlin title="app/build.gradle.kts"
     plugins {
-        id("com.android.application")
-        id("kotlin-android")
+        ...
         id("com.productscience.transformer.plugin")
     }
     ...
     ```
+
+For correct integration, ensure the Product Science plugin is applied after all other plugins in your **app/build.gradle** file.
 
 ## 6. Add Proguard rules
 
