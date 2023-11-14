@@ -1,7 +1,7 @@
 
 # Gradle Build Instructions - Android
 
-The following instructions describe how to add Product Science instrumentation to an Android application build with Gradle.
+These instructions guide you through the process of integrating Product Science instrumentation into an Android application's Gradle build process.
 
 !!! info
     If your build environment does not allow network access to our servers `https://prod.productscience.app/api/v1/*`, please add to your allowlist.
@@ -9,7 +9,7 @@ The following instructions describe how to add Product Science instrumentation t
 
 ## 1. Credentials
 Product Science shared access credentials (`productscience.properties` file) via Bitwarden sent. 
-Please place it in the root directory of your project.
+Please place this file in the root directory of your project.
 
 !!! info
     If your build environment does not allow network access to our servers as specified above, 
@@ -17,10 +17,10 @@ Please place it in the root directory of your project.
     Copy the entire .zip archive to your workspace directory (do not unzip the archive).
 
 
-## 2. Add Product Science maven repository
+## 2. Add Product Science maven repository to root project's `buildscript`
 
-In `build.gradle` add the PS maven artifactory to the repositories for project and subprojects:  
-
+In the root level **build.gradle** file, add the productscience maven url to the `repositories` inside of the `buildscript` block.
+If you do not have a `buildscript` block in the file, you can add one at the toplevel.
 
 === "Groovy"
     ```groovy title="build.gradle"
@@ -32,15 +32,7 @@ In `build.gradle` add the PS maven artifactory to the repositories for project a
         }
         dependencies { ... }
     }
-    
-    allprojects {
-        repositories {
-            maven {
-                url "https://artifactory.productscience.app/releases"
-            }
-        }
-    }
-    ```  
+    ```
 
 === "Kotlin DSL"
     ```kotlin title="build.gradle.kts"
@@ -53,63 +45,12 @@ In `build.gradle` add the PS maven artifactory to the repositories for project a
         dependencies { ... }
     }
 
-    allprojects {
-        repositories {
-            maven {
-                url = uri("https://artifactory.productscience.app/releases")
-            }
-        }
-    }
-
     ```
 
-If the project is configured to prefer settings repositories maven source should be added to settings file:
-=== "Groovy"
-    ```groovy title="settings.gradle"
-    ...
-    dependencyResolutionManagement {
-        repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-        repositories {
-            maven {
-                url "https://artifactory.productscience.app/releases"
-            }
-        }
-    }
-    ```
+## 3. Add Product Science dependencies to buildscript in root **build.gradle**
 
-=== "Kotlin DSL"
-    ```kotlin title="settings.gradle.kts"
-    ...
-    dependencyResolutionManagement {
-        repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-        repositories {
-            maven {
-                url = uri("https://artifactory.productscience.app/releases")
-            }
-        }
-    }
-    ```
-
-
-In another case, if `allprojects` is not present in top level `build.gradle` then add it in the top of the file.  
-
-!!! info
-    If your build environment does not allow network access to our servers, 
-    you will be provided with an archive with a local version of PS Plugin. 
-    Unarchive it and put maven packages in an internal artifactory or local maven storage (`~/.m2/repository/`).  
-    
-    Then add internal artifactory or local maven to the project's repositories instead of public PS artifactory:
-    ```
-    repositories {
-        maven {
-            url "https://company.com/artifactory"
-        }
-        mavenLocal() // If local maven is used
-    }
-    ```
-
-
-## 3. Add Product Science plugin to `classpath`
+In the `buildscript` block of the root **build.gradle** file, add the classpaths for the productscience
+`transformer-plugin` and `transformer-instrumentation` artifacts:
 
 === "Groovy"
     ```groovy title="build.gradle"
@@ -135,13 +76,89 @@ In another case, if `allprojects` is not present in top level `build.gradle` the
     ...
     ```
 
-**Please label your build with the PSi Plugin Version from above i.e.**  
-`MyAppPSi0.9.1.apk` 
-**so our AI can learn how its dynamic instrumentation is performing on the build.**
 
-## 4. Apply the Product Science Plugin  
+## 4. Add Product Science maven repository url to all submodules
 
-Apply plugin to `app/build.gradle`  
+The productscience plugin will attempt to instrument all modules of the app, 
+so it is necessary to provide access to dependencies for all submodules. 
+
+To achieve that, product science maven repository has to be visible for all submodules.
+This can be achieved in Gradle in two ways: either using the `allprojects` block in the root **build.gradle**, 
+or the `dependencyResolutionManagement` block in the **settings.gradle**.
+
+
+### Case 1: Project uses **settings.gradle** to specify module dependencies (requires gradle 6.8 or later)
+
+Add the repository url to the `dependencyResolutionManagement` block of the **settings.gradle** file:
+
+=== "Groovy"
+    ```groovy title="settings.gradle"
+    ...
+    dependencyResolutionManagement {
+        ...
+        repositories {
+            maven {
+                url "https://artifactory.productscience.app/releases"
+            }
+        }
+    }
+    ```
+
+=== "Kotlin DSL"
+    ```kotlin title="settings.gradle.kts"
+    ...
+    dependencyResolutionManagement {
+        ...
+        repositories {
+            maven {
+                url = uri("https://artifactory.productscience.app/releases")
+            }
+        }
+    }
+    ```
+
+If this block does not exist, you can create it at the top level of your **settings.gradle** file.
+
+
+### Case 2: Project defines module dependencies in an `allprojects` block in the root **build.gradle** file
+Add the repository url to the `allprojects` block in the root **build.gradle** file:
+
+=== "Groovy"
+    ```groovy title="build.gradle"
+    
+    allprojects {
+        repositories {
+            maven {
+                url "https://artifactory.productscience.app/releases"
+            }
+        }
+    }
+    ```  
+
+=== "Kotlin DSL"
+    ```kotlin title="build.gradle.kts"
+
+    allprojects {
+        repositories {
+            maven {
+                url = uri("https://artifactory.productscience.app/releases")
+            }
+        }
+    }
+    ```
+
+If this block does not exist, you can create it at the top level of your **build.gradle** file.
+
+
+**Note:** If you use `RepositoriesMode.FAIL_ON_PROJECT_REPOS` of `dependencyResolutionManagement` you 
+may experience a failure when one or more modules define their own repositories in their **build.gradle** files.  
+Switching the mode to `RepositoriesMode.PREFER_SETTINGS` may solve this problem.
+Alternatively, you may add the productscience maven repository url to these module **build.gradle** files.
+
+
+## 5. Apply the Product Science Plugin  
+
+Apply the plugin in the **app/build.gradle** file as follows:
 
 === "Groovy"
     ```groovy title="app/build.gradle"
@@ -163,8 +180,7 @@ Apply plugin to `app/build.gradle`
     ...
     ```
 
-
-## 5. Add Proguard rules
+## 6. Add Proguard rules
 
 If the application uses obfuscation/shrinking add a new ProGuard rule to your project.
 To achieve it add the next line to the R8/ProGuard configuration file: 
@@ -179,15 +195,14 @@ Your project may use the other proguard file name.
 More information about R8/ProGuard configuration can be found here:
 [https://developer.android.com/studio/build/shrink-code](https://developer.android.com/studio/build/shrink-code)
 
-## 6. Build your app
+## 7. Build your app
 Now you can build your app with Gradle, i.e.:
 ```bash
 ./gradlew assemble
 ```
 
-**Please label your build with the Plugin Version from above i.e.**  
-`MyApp_PSi-0.14.2.apk` 
-**so our AI can learn how its dynamic instrumentation is performing on the build.**
+Please label your build with the Plugin Version from above i.e. `MyApp_PSi-{{ android_release() }}.apk` 
+so our AI can learn how its dynamic instrumentation is performing on the build.
 
 
 ----
@@ -195,12 +210,12 @@ Now you can build your app with Gradle, i.e.:
 
 ## Enabling the plugin by build type
 
-For plugin versions greater than **0.12.1**, 
-you can integrate Product Science pipeline into your gradle build 
-selectively apply the plugin to a given build type by adding a `productScience` block 
-at the top level of your `app/build.gradle` file. 
+For versions of the plugin exceeding **0.12.1**, you have the option to selectively integrate the productscience plugin into your Gradle build. 
+This can be achieved by applying the plugin only to specific build types. 
 
+To do this, insert a `productScience` block at the top of your **app/build.gradle** file. 
 Inside the proguard block, add a block corresponding to the build type (must have the same name) and set `enabled` to `true`.
+
 === "Groovy"
     ```groovy title="app/build.gradle"
     plugins {
