@@ -5,7 +5,7 @@ The CLI tool is a small wrapper around gradlew build command that reads build ou
 First follow [Gradle Instructions](gradle.md) up to step 6: Build your app (this will be used after integration) to setup build environment
 
 ## 2. Download CLI Tool
-Download the CLI tool .jar from our Artifactory: [Download here](https://artifactory.productscience.app/#/releases/com/productscience/integration/integration-cli/{{ android_release() }}/integration-cli-{{ android_release() }})
+Download the CLI tool .jar from our Artifactory: [Download here](https://artifactory.productscience.app/#/releases/com/productscience/integration/integration-cli/{{ android_release() }}/integration-cli-{{ android_release() }}.jar)
 
 ## 3. Clean Build Directory and Run .jar
 integration-cli is a CLI on top of Gradle which automates integration with the PS Plugin by receiving your regular gradle build command as input. Please use flag *--stacktrace* together with gradle command.
