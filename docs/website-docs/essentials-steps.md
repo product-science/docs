@@ -1,7 +1,7 @@
 Essentials Steps
 ----------------
 
-‍I love lamp.
+
 
 To get unique insights to your code with our PS Tool, follow the step by step below:
 
