@@ -25,11 +25,21 @@ There are three static methods used to annotate user flows:
 
 Each of these methods takes a string argument (UserFlow ID) and a nullable String argument (comment message).
 
+Import UserFlow class.
+
+```kotlin
+import com.productscience.userflow.v2.UserFlow;
+```
+
 ### 1. Starting a UserFlow
 
 To start a UserFlow, call `UserFlow#start` and pass it an ID and a String message.
+
 ```kotlin
+    // ...
     UserFlow.start("appStart")
+    // or
+    UserFlow.start("appStart", "Comment message")
 ```
 
 ### 2. Annotations UserFlow's milestones
@@ -37,14 +47,18 @@ To start a UserFlow, call `UserFlow#start` and pass it an ID and a String messag
 While a UserFlow is in progress, you can make calls to `UserFlow#custom` passing the UserFlow ID and a String message. 
 
 This can be useful to annotate events along the UserFlow (e.g., reaching a milestone or annotating different conditional paths among others).
+
 ```kotlin
     UserFlow.custom("appStart", "UserFlow hit a milestone")
 ```    
 
 ### 3. Ending a UserFlow
 To end a UserFlow, call `UserFlow#end` passing the ID of the UserFlow to end and an optional String message.
+
 ```kotlin
     UserFlow.end("appStart")
+    // or
+    UserFlow.end("appStart", "One more comment message")
 ```
     
 ## Examples
