@@ -1,8 +1,14 @@
-## 1. Install instrumented app
+Android
+---------
+
+### How to start a trace recording
+The 'Record trace' button should be available in your quick settings. If it is not, go back to the section on enabling trace recording **INSERT LINK** and ensure you enabled __Show Quick Settings tile__.
+
+### 1. Install instrumented app
 
 Install the app that you want to analyze instrumented with PS plugin. Don't have the app? Learn [here](https://docs.productscience.app/android/gradle/) how to build instrumented app.
 
-## 2. Select a user flow you want to analyze
+### 2. Select a user flow you want to analyze
 
 At Product Science, performance optimization starts with defining key user flows that bring the most value to users.
 
@@ -17,22 +23,20 @@ Either way, a sequence of functions execute before the user finally arrives at a
 
 **Flows should be short, in the order of 30 seconds, to enable the analysis to be a manageable size.**
 
-## 3. How to start a trace recording
-The 'Record trace' button should appear in your quick settings. If it does not, go back to the section on enabling trace recording **INSERT LINK** and ensure you've enabled __Show Quick Settings tile__.
 
-## 4. Get to the beginning of your user flow
+### 3. Get to the beginning of your user flow
 Before you start recording:
 1. Optionally, [quit all open apps](https://support.google.com/android/answer/9079646?hl=en-IN#zippy=%2Cclose-apps) so nothing slows down the app you are measuring.
 2. Navigate to the beginning of your user flow. If this is launching the app, just navigate to the icon for your app on the Home screen.
 
-## 5. Record the screen and trace recording
+### 4. Start screen and trace recording
 Start both the screen and trace recording as described above.
 
-## 6. Stop recording at the end of your flow
+### 5. Stop recordings at the end of your flow
 - Execute your user flow.
 - When you have reached the end of the user flow, swipe down from the top again to access the Quick Settings and tap both the "Record trace" and "Screen recorder" buttons to turn the recordings off.
 
-## Upload your trace and video
+### 6. Upload your trace and video
 
 - Open your notification panel &gt; “Tap to share you trace”
 - Tap the notification. You will have the option to save it or export it to different apps.
@@ -51,3 +55,6 @@ Start both the screen and trace recording as described above.
 - Wait for the status bar to change from "Video processing in progress" to "Video upload successfully"
 - Tap "Upload"
 - You can now view your trace in the PS Companion App
+
+iOS
+---------
