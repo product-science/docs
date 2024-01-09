@@ -88,7 +88,7 @@ Add the repository url to the `allprojects` block in the root `build.gradle` fil
                 }
             }
         }
-```
+    ```
 
 If there is no `allprojects` block in the root `build.gradle` file, you can add it at the top level of the file.
 
