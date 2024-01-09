@@ -4,11 +4,11 @@ Android
 ## Record
 
 ### How to start a trace recording
-The 'Record trace' button should be available in your quick settings. If it is not, go back to the section on enabling trace recording **INSERT LINK** and ensure you enabled __Show Quick Settings tile__.
+The 'Record trace' button should be available in your quick settings. If it is not, go back to the section on [enabling trace recording](device-set-up.md#3-make-sure-tracing-is-enabled) and ensure you enabled __Show Quick Settings tile__.
 
 ### 1. Install instrumented app
 
-Install the app that you want to analyze instrumented with PS plugin. Don't have the app? Learn [here](https://docs.productscience.app/android/gradle/) how to build instrumented app.
+Install the app that you want to analyze instrumented with PS plugin. Don't have the app? Learn [here](../android/gradle.md) how to build instrumented app.
 
 ### 2. Select a user flow you want to analyze
 
