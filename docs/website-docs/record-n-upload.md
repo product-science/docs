@@ -86,7 +86,7 @@ Either way, a sequence of functions execute before the user finally arrives at a
 
 ### 3. Trace and screen recording
 ‍
-Optimizing any user flow with [cold start](https://www.productscience.ai/documentation?doc=dictionary&sub=cold-app-start) enables you to improve all app processes that are being created from scratch which can enhance the same user flow's performance with warm and [hot starts](https://www.productscience.ai/documentation?doc=dictionary&sub=hot-app-start) as well.
+You can start traace recording from the instrumented app itself. If you want to capture app start on your trace recording, you can kick off trace recording from PS Companion app. 
 
 
 | Step | To record App Start Flow    | To record any Flow other than App Start|
@@ -110,16 +110,15 @@ Optimizing any user flow with [cold start](https://www.productscience.ai/docume
 
 ![share-companion-app](../images/share-companion-app.png)
 
-[Don't see PS Companion app? Customize the share sheet](https://www.productscience.ai/documentation?doc=essentials-steps&sub=customize-share-sheet)
+[Don't see PS Companion app? Customize the share sheet](device-set-up.md#3-customize-share-sheet)
 
--   Name the trace, assign it to the relevant [flow](https://www.productscience.ai/documentation?doc=dictionary&sub=user-flow) and then upload it to PS cloud.
+-   Name the trace, assign it to the relevant flow
+#### Attach screen recording
+- On the same screen, while the trace details screen is still opened, tap "Select"
+
+- Phone library opens &gt; select the screen recording
 
 ![name-trace](../images/name-trace.png)
 
-### Attach screen recording
-
-- On the same screen, while the trace details screen is still opened, tap "Upload"
-![upload-video](../images/select-video.png)
-- Phone library opens &gt; select the screen recording &gt; "Upload"
-- Tap "Upload"
 - Once trace and video finish uploading and processing, you can view your trace in PS Tool. Uploaded trace will appear in your productscience.app Flow Library.
+
