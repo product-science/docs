@@ -54,7 +54,7 @@ Start both the screen and trace recording as described above.
 ### Attach screen recording
 
 - On the same screen, while the trace details screen is still opened, tap "Upload"
-![upload-video](../images/upload-video.png)
+![upload-video](../images/select-video.png)
 - Phone library opens &gt; select the screen recording &gt; "Upload"
 - Tap "Upload"
 - Once trace and video finish uploading and processing, you can view your trace in PS Tool. Uploaded trace will appear in your productscience.app Flow Library.
@@ -67,7 +67,7 @@ iOS
 
 ### 1. Install instrumented app
 
--   Install the app you [instrumented in the previous steps](https://www.productscience.ai/documentation?doc=essentials-steps&sub=instrumentation). *Make sure it is instrumented. *
+-   Install the app you [instrumented in the previous steps](../ios/distribution.md#ios-application-distribution-instructions). *Make sure it is instrumented. *
 
 ### 2. Select a user flow you want to analyze
 
