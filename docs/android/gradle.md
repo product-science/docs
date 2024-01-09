@@ -29,33 +29,35 @@ Place the **productscience.properties** file containing your credentials in the 
     Copy the entire .zip archive to your workspace directory (do not unzip the archive).
 
 
-## 2. Add Product Science maven repository to root project's `buildscript`
+## 2. Add Product Science maven repository for the build
 
 In the __root__ level `build.gradle` (or `build.gradle.kts`) file,  add the `productscience` maven url  to the `repositories` block inside of the `buildscript` block. If you do not have a `buildscript` block in the file, you can add one at the top level of the `build.gradle` file.
 
-=== "Groovy" ```groovy
-buildscript {
-    repositories {
-        ...
-        maven {
-            url "https://artifactory.productscience.app/releases"
+=== "Groovy" 
+    ```groovy
+        buildscript {
+            repositories {
+                ...
+                maven {
+                    url "https://artifactory.productscience.app/releases"
+                }
+            }
+            dependencies { ... }
         }
-    }
-    dependencies { ... }
-}
-```
+    ```
 
-=== "Kotlin"```kotlin
-buildscript {
-    repositories {
-        ...
-        maven {
-            url = uri("https://artifactory.productscience.app/releases")
+=== "Kotlin"
+    ```kotlin
+        buildscript {
+            repositories {
+                ...
+                maven {
+                    url = uri("https://artifactory.productscience.app/releases")
+                }
+            }
+            dependencies { ... }
         }
-    }
-    dependencies { ... }
-}
-```
+    ```
 
 ## 3. Add Product Science maven repository to all modules
 Your __root__ level. project either defines module dependencies in the `build.gradle` file or the `settings.gradle` file. Look in both files to see which.
@@ -64,26 +66,28 @@ Your __root__ level. project either defines module dependencies in the `build.gr
 
 Add the repository url to the `allprojects` block in the root `build.gradle` file
 
-```groovy
-allprojects {
-    repositories {
-        ...
-        maven {
-            url "https://artifactory.productscience.app/releases"
+=== "Groovy" 
+    ```groovy
+        allprojects {
+            repositories {
+                ...
+                maven {
+                    url "https://artifactory.productscience.app/releases"
+                }
+            }
         }
-    }
-}
-```
+    ```
 
-```kotlin
-allprojects {
-    repositories {
-        ...
-        maven {
-            url = uri("https://artifactory.productscience.app/releases")
+=== "Kotlin"
+    ```kotlin
+        allprojects {
+            repositories {
+                ...
+                maven {
+                    url = uri("https://artifactory.productscience.app/releases")
+                }
+            }
         }
-    }
-}
 ```
 
 If there is no `allprojects` block in the root `build.gradle` file, you can add it at the top level of the file.
@@ -92,30 +96,32 @@ If there is no `allprojects` block in the root `build.gradle` file, you can add 
 
 The `productscience` plugin will attempt to instrument all modules of the app, so it is necessary to provide a repository url for all modules. To do this, add the `productscience` maven repository url to the `dependencyResolutionManagement` block of `settings.gradle`. If there is no such block, you can add it at the top level.
 
-```groovy
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        ...
-        maven {
-            url "https://artifactory.productscience.app/releases"
+=== "Groovy"
+    ```groovy
+        dependencyResolutionManagement {
+            repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+            repositories {
+                ...
+                maven {
+                    url "https://artifactory.productscience.app/releases"
+                }
+            }
         }
-    }
-}
-```
+    ```
 
-```kotlin
-...
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
+=== "Kotlin"
+    ```kotlin
         ...
-        maven {
-            url = uri("https://artifactory.productscience.app/releases")
+        dependencyResolutionManagement {
+            repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+            repositories {
+                ...
+                maven {
+                    url = uri("https://artifactory.productscience.app/releases")
+                }
+            }
         }
-    }
-}
-```
+    ```
 
 **Note:** If you use `RepositoriesMode.FAIL_ON_PROJECT_REPOS` mode you may experience a failure when one or more modules define their own repositories in their `build.gradle` files. Switching the mode to `RepositoriesMode.PREFER_SETTINGS` may solve this problem. Alternatively, you may add the `productscience` maven repository url to these modules `build.gradle` files. You can also use the method defined in Case 1 above instead of defining them in `settings.gradle`.
 
@@ -123,52 +129,56 @@ dependencyResolutionManagement {
 
 In the `buildscript` block of the __root__ `build.gradle` file, add the classpaths for the `productscience` `transformer-plugin` and `transformer-instrumentation` artifacts:
 
-```groovy
-buildscript {
-    repositories { ... }
-    dependencies {
+=== "Groovy"
+    ```groovy
+        buildscript {
+            repositories { ... }
+            dependencies {
+                ...
+                classpath "com.productscience.transformer:transformer-plugin:0.18.4"
+                classpath "com.productscience.transformer:transformer-instrumentation:0.18.4"
+            }
+        }
         ...
-        classpath "com.productscience.transformer:transformer-plugin:0.18.4"
-        classpath "com.productscience.transformer:transformer-instrumentation:0.18.4"
-    }
-}
-...
-```
+    ```
 
-```kotlin
-buildscript {
-    repositories { ... }
-    dependencies {
+=== "Kotlin"
+    ```kotlin
+        buildscript {
+            repositories { ... }
+            dependencies {
+                ...
+                classpath("com.productscience.transformer:transformer-plugin:0.18.4")
+                classpath("com.productscience.transformer:transformer-instrumentation:0.18.4")
+            }
+        }
         ...
-        classpath("com.productscience.transformer:transformer-plugin:0.18.4")
-        classpath("com.productscience.transformer:transformer-instrumentation:0.18.4")
-    }
-}
-...
-```
+    ```
 
 
-## 5. ## Apply the Product Science Plugin
+## 5. Apply the Product Science Plugin
 
 Now you need to enable the plugin in your __app__ `build.gradle` file. This is often in a directory named `app`, and will be more verbose than the top level gradle file.
 
-```groovy
-plugins {
-    ...
-    id "com.android.application"
-}
-apply plugin: "com.productscience.transformer.plugin"
-...
-```
-
-```kotlin
-plugins {
+=== "Groovy"
+    ```groovy
+        plugins {
+            ...
+            id "com.android.application"
+        }
+        apply plugin: "com.productscience.transformer.plugin"
         ...
-        id("com.android.application")
-        id("com.productscience.transformer.plugin")
-}
-...
-```
+    ```
+
+=== "Kotlin"
+    ```kotlin
+        plugins {
+            ...
+            id("com.android.application")
+            id("com.productscience.transformer.plugin")
+        }
+        ...
+    ```
 
 ## 6. Add Proguard rules
 
@@ -178,11 +188,13 @@ If the application uses obfuscation/shrinking using Proguard, add a new Proguard
 -keep class com.productscience.transformer.module.** { *; }
 -keep class com.productscience.** { *; }
 ```
+
 The file can have a variety of names but will include the word proguard and have similar lines to this one, and it will be in your __app__ folder.
 
 More information about R8/ProGuard configuration can be found here: https://developer.android.com/studio/build/shrink-code
 
 ## 7. Build your app
+
 Now you can build your app with Gradle, i.e.:
 ```bash
 ./gradlew assemble
