@@ -45,7 +45,7 @@ Start both the screen and trace recording as described above.
 - Open your notification panel &gt; “Tap to share you trace”
 - Tap the notification. You will have the option to save it or export it to different apps.
 
-![upload-trace](https://images.ctfassets.net/tab8wfn9nvlu/6Ax8quUV01SWijAhbaE7mp/611cb00ff510667efb9050f26832bb82/upload-trace.png)
+![upload-trace](../images/upload-trace.png)
 
 - Select the Product Science app (PS)
 
@@ -54,7 +54,7 @@ Start both the screen and trace recording as described above.
 ### Attach screen recording
 
 - On the same screen, while the trace details screen is still opened, tap "Upload"
-![upload-video](https://images.ctfassets.net/tab8wfn9nvlu/7Ct8YPq7xdoqN7I4WAfo93/c9a4fe817c49c36c041d41a184aaa5a6/upload-video.png)
+![upload-video](../images/upload-video.png)
 - Phone library opens &gt; select the screen recording &gt; "Upload"
 - Tap "Upload"
 - Once trace and video finish uploading and processing, you can view your trace in PS Tool. Uploaded trace will appear in your productscience.app Flow Library.
@@ -94,9 +94,9 @@ Optimizing any user flow with [cold start](https://www.productscience.ai/docume
 | 1    | Optionally, quit all open apps so nothing slows down the app you are measuring. | Optionally, quit all open apps so nothing slows down the app you are measuring. |
 | 2    | Open PS Companion app. If you don't have a designated user flow for app start, create a new one. Go to the corresponding flow | Open your instrumented app and perform all the actions before beginning of your user flow. |
 | 3    | Start screen recording      | Start screen recording                 | 
-| 4    | At the bottom right corner, tap the ![](https://assets-global.website-files.com/624bf3a77903d8b7ce4cc457/633ef05ff46b61311e879f55_rec_icon.png) button to start trace recording | At the ![](https://assets-global.website-files.com/624bf3a77903d8b7ce4cc457/633ffc437b9fbf009f15bc23_ios_start_rec.png) panel, tap ![](https://assets-global.website-files.com/624bf3a77903d8b7ce4cc457/633ef05ff46b61311e879f55_rec_icon.png) button to start trace recording |
+| 4    | At the bottom right corner, tap the ![rec-icon](../images/rec-icon.png) button to start trace recording | At the ![ios-start-recording](../images/ios-start-recording.png) panel, tap ![rec-icon](../images/rec-icon.png) button to start trace recording |
 | 5    | Perform the user actions from the [(user) flow](https://www.productscience.ai/documentation?doc=dictionary&sub=user-flow) and that you want to optimize. | Perform the user actions from the [(user) flow](https://www.productscience.ai/documentation?doc=dictionary&sub=user-flow) and that you want to optimize. |
-| 6    | Once the final step is fully loaded, at the ![](https://assets-global.website-files.com/624bf3a77903d8b7ce4cc457/633ffc54367bb5c36b6cf4c6_ios_stop_rec.png) panel, tap ![](https://assets-global.website-files.com/624bf3a77903d8b7ce4cc457/633ef0a4eb698e0328f8c7c7_share_square_icon.png)  button to stop recording. | Once the final step is fully loaded, at the ![](https://assets-global.website-files.com/624bf3a77903d8b7ce4cc457/633ffc54367bb5c36b6cf4c6_ios_stop_rec.png) panel, tap ![](https://assets-global.website-files.com/624bf3a77903d8b7ce4cc457/633ef0a4eb698e0328f8c7c7_share_square_icon.png)  button to stop recording. |
+| 6    | Once the final step is fully loaded, at the ![ios-stop-recording](../images/ios-stop-recording.png) panel, tap ![stop-icon](../images/stop-icon.png)  button to stop recording. | Once the final step is fully loaded, at the ![](../images/ios-stop-recording.png) panel, tap ![stop-icon](../images/stop-icon.png)  button to stop recording. |
 
 ## Upload
 
@@ -104,22 +104,22 @@ Optimizing any user flow with [cold start](https://www.productscience.ai/docume
 
 -   Tap "Export" button to export your trace file.
 
-![](https://assets-global.website-files.com/64be9ec9522055d42cb435e3/64be9ec9522055d42cb438f0_tap_the_icon.png)
+![export-icon](../images/export-icon.png)
 
 -   Choose PS Companion app among sharing options:
 
-![](https://assets-global.website-files.com/64be9ec9522055d42cb435e3/64be9ec9522055d42cb43842_open_with_companion_app.png)
+![share-companion-app](../images/share-companion-app.png)
 
 [Don't see PS Companion app? Customize the share sheet](https://www.productscience.ai/documentation?doc=essentials-steps&sub=customize-share-sheet)
 
 -   Name the trace, assign it to the relevant [flow](https://www.productscience.ai/documentation?doc=dictionary&sub=user-flow) and then upload it to PS cloud.
 
-[![](https://assets-global.website-files.com/64be9ec9522055d42cb435e3/64be9ec9522055d42cb43843_name_trace_modal.png)](https://assets-global.website-files.com/64be9ec9522055d42cb435e3/64be9ec9522055d42cb43843_name_trace_modal.png)
+![name-trace](../images/name-trace.png)
 
 ### Attach screen recording
 
 - On the same screen, while the trace details screen is still opened, tap "Upload"
-![upload-video](https://images.ctfassets.net/tab8wfn9nvlu/7Ct8YPq7xdoqN7I4WAfo93/c9a4fe817c49c36c041d41a184aaa5a6/upload-video.png)
+![upload-video](../images/upload-video.png)
 - Phone library opens &gt; select the screen recording &gt; "Upload"
 - Tap "Upload"
 - Once trace and video finish uploading and processing, you can view your trace in PS Tool. Uploaded trace will appear in your productscience.app Flow Library.
