@@ -49,16 +49,17 @@ Start both the screen and trace recording as described above.
 
 - Select the Product Science app (PS)
 
-- Name the trace, then assign it to the relevant user flow.
+-   Name the trace, assign it to the relevant flow
+  
+#### Attach screen recording
+- On the same screen, while the trace details screen is still opened, tap "Select"
 
-### Attach screen recording
+- Phone library opens &gt; select the screen recording
 
-- On the same screen, while the trace details screen is still opened, tap "Upload"
-![upload-video](../images/select-video.png)
-- Phone library opens &gt; select the screen recording &gt; "Upload"
-- Tap "Upload"
+![name-trace](../images/name-trace-android.png)
+
+
 - Once trace and video finish uploading and processing, you can view your trace in PS Tool. Uploaded trace will appear in your productscience.app Flow Library.
-
 
 iOS
 ---------
