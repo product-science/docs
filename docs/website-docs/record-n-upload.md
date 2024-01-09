@@ -34,13 +34,15 @@ Before you start recording:
 ### 4. Start screen and trace recording
 Start both the screen and trace recording as described above.
 
-### 5. Stop recordings at the end of your flow
-- Execute your user flow.
-- When you have reached the end of the user flow, swipe down from the top again to access the Quick Settings and tap both the "Record trace" and "Screen recorder" buttons to turn the recordings off.
+### 5. Execute your user flow.
+Perform the user action to execute the identified user flow.
+
+### 6. Stop recordings at the end of your flow
+When you have reached the end of the user flow, swipe down from the top again to access the Quick Settings and tap both the "Record trace" and "Screen recorder" buttons to turn the recordings off.
 
 ## Upload
 
-### 6. Upload your trace and video to PS Tool
+### 7. Upload your trace and video to PS Tool
 
 - Open your notification panel &gt; “Tap to share you trace”
 - Tap the notification. You will have the option to save it or export it to different apps.
