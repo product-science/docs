@@ -27,14 +27,14 @@ For complete documentation, see the [Official Android Documentation](https://dev
 - Settings &gt; About Phone &gt; Software information &gt; Build Number
 - Tap the Build Number option __7 times__
 
-![enable-developer-settings](https://images.ctfassets.net/tab8wfn9nvlu/54N2rjGPoLV3gNwjbc0fEQ/3f7085aff9471a77678fa56156fa1da2/enable-developer-settings.png)
+![enable-developer-settings](../images/dev-options.png)
 
 #### Enable tracing and adjust corresponding settings
 
 - Settings &gt; System &gt; Developer Options &gt; Debugging section &gt; System Tracing
 - Make sure to turn off all options in __Categories__ except 'view: View System' and 'sched: CPU Scheduling'.
 
-![enable-tracing](https://images.ctfassets.net/tab8wfn9nvlu/40myKppYxWNrExW8jAwYVx/b5c41fd6bb91711159c87a33023696e0/enable-tracing.png)
+![enable-tracing](../images/enable-tracing.png)
 
 - Set __Per-CPU buffer size__ to maximum
 - Enable __Long traces__
@@ -74,18 +74,18 @@ To complete this step, you can choose any file on your iPhone that can be shared
 
 -   Tap the icon
 
-![](https://assets-global.website-files.com/64be9ec9522055d42cb435e3/64be9ec9522055d42cb438f0_tap_the_icon.png)
+![export-icon](../images/export-icon.png)
 
 -   Once share sheet appears, look for PS Companion app among sharing options
 -   If PS Companion App is not shown, swipe all the way to the right and tap "more"
 
-![](https://assets-global.website-files.com/64be9ec9522055d42cb435e3/64be9ec9522055d42cb438f1_tap_the_icon_more.png)
+![more-icon](../images/more-icon.png)
 
 -   On the top right tap "Edit"
--   Tap the add button ![add button](https://assets-global.website-files.com/624bf3a77903d8b7ce4cc457/63a598696ccbdb98f45ec2a1_lTMLy4rLgKRFfvSXlavweyyO8zHvxRoKSiyBW5yleclgwvJpISfWt67Rh08FzOZ_G0-fMvFg90C4xwz-TdTJokjeh6vgAMYqfemrL9vPPhfj8khYnk-DijuEjmJHDED6CZfapu1V_nYePve3KyCnSJyF1A2hbqhKKgP365cT5wKRP2dBVjI9XjyX23JhTA.png) next to PS Companion app
+-   Tap the add button ![add-button](../images/add-button.png) next to PS Companion app
 
 ### 4. Make sure that Screen Recording is added to Control Center
 
 Source: [Apple](https://support.apple.com/en-us/HT207935)
 
-- Go to Settings &gt; Control Center, then tap the add button ![add button](https://assets-global.website-files.com/624bf3a77903d8b7ce4cc457/63a598696ccbdb98f45ec2a1_lTMLy4rLgKRFfvSXlavweyyO8zHvxRoKSiyBW5yleclgwvJpISfWt67Rh08FzOZ_G0-fMvFg90C4xwz-TdTJokjeh6vgAMYqfemrL9vPPhfj8khYnk-DijuEjmJHDED6CZfapu1V_nYePve3KyCnSJyF1A2hbqhKKgP365cT5wKRP2dBVjI9XjyX23JhTA.png) next to Screen Recording.
+- Go to Settings &gt; Control Center, then tap the add button ![add-button](../images/add-button.png) next to Screen Recording.
