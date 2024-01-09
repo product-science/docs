@@ -1,7 +1,7 @@
 
 # Gradle Build Instructions - Android
 
-Follow these steps to instrument your app with PS Plugin. Once you have successfully installed the build and run the app, you will be able to record and analyze traces.
+Follow these steps to instrument your Java/Kotlin Android app with PS Plugin. Once you have successfully built, installed and run the app, you will be able to record and analyze traces.
 
 If you get stuck, do refer to our [FAQ](https://docs.productscience.app/android/integration-faq-android/) for additional steps and guidance.
 
@@ -29,7 +29,7 @@ Place the **productscience.properties** file containing your credentials in the 
     Copy the entire .zip archive to your workspace directory (do not unzip the archive).
 
 
-## 2. Add Product Science maven repository for the build
+## 3. Add Product Science maven repository for the build
 
 In the __root__ level `build.gradle` (or `build.gradle.kts`) file,  add the `productscience` maven url  to the `repositories` block inside of the `buildscript` block. If you do not have a `buildscript` block in the file, you can add one at the top level of the `build.gradle` file.
 
@@ -59,8 +59,8 @@ In the __root__ level `build.gradle` (or `build.gradle.kts`) file,  add the `pro
         }
     ```
 
-## 3. Add Product Science maven repository to all modules
-Your __root__ level. project either defines module dependencies in the `build.gradle` file or the `settings.gradle` file. Look in both files to see which.
+## 4. Add Product Science maven repository to all modules
+In your __root__ directory the project either defines module dependencies in the `build.gradle` file or the `settings.gradle` file. Look in both files to see which.
 
 ### Case 1: Your project defines module dependencies in an allProjects block in the root build.gradle file
 
@@ -125,7 +125,7 @@ The `productscience` plugin will attempt to instrument all modules of the app, s
 
 **Note:** If you use `RepositoriesMode.FAIL_ON_PROJECT_REPOS` mode you may experience a failure when one or more modules define their own repositories in their `build.gradle` files. Switching the mode to `RepositoriesMode.PREFER_SETTINGS` may solve this problem. Alternatively, you may add the `productscience` maven repository url to these modules `build.gradle` files. You can also use the method defined in Case 1 above instead of defining them in `settings.gradle`.
 
-## 4. Add Product Science plugin to classpath
+## 5. Add Product Science plugin to classpath
 
 In the `buildscript` block of the __root__ `build.gradle` file, add the classpaths for the `productscience` `transformer-plugin` and `transformer-instrumentation` artifacts:
 
@@ -156,7 +156,7 @@ In the `buildscript` block of the __root__ `build.gradle` file, add the classpat
     ```
 
 
-## 5. Apply the Product Science Plugin
+## 6. Apply the Product Science Plugin
 
 Now you need to enable the plugin in your __app__ `build.gradle` file. This is often in a directory named `app`, and will be more verbose than the top level gradle file.
 
@@ -180,7 +180,7 @@ Now you need to enable the plugin in your __app__ `build.gradle` file. This is o
         ...
     ```
 
-## 6. Add Proguard rules
+## 7. Add Proguard rules
 
 If the application uses obfuscation/shrinking using Proguard, add a new Proguard rule to your project. Add the next line to the R8/ProGuard configuration file:
 
@@ -193,7 +193,7 @@ The file can have a variety of names but will include the word proguard and have
 
 More information about R8/ProGuard configuration can be found here: https://developer.android.com/studio/build/shrink-code
 
-## 7. Build your app
+## 8. Build your app
 
 Now you can build your app with Gradle, i.e.:
 ```bash
