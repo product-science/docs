@@ -38,7 +38,12 @@ For complete documentation, see the [Official Android Documentation](https://dev
 
 - Set __Per-CPU buffer size__ to maximum
 - Enable __Long traces__
-- Enable __Show Quick Settings tile__. This will add Record Trace tile to the Quick Settings panel
+- Enable __Show Quick Settings tile__. This will add Record Trace tile to the Quick Settings panel.
+
+<div style="text-align: center;">
+  <img src="../images/quick-settings.png" alt="quick-settings" width="300"/>
+</div>
+
 
 ### 4. Make sure that you have Screen Recording at hand
 
