@@ -38,7 +38,9 @@ Place the __productscience.properties__ file containing your credentials in the 
 
 ## 3. Add Product Science maven repository for the build
 
-In the __root__ level `build.gradle` (or `build.gradle.kts`) file,  add the `productscience` maven url  to the `repositories` block inside of the `buildscript` block. If you do not have a `buildscript` block in the file, you can add one at the top level of the `build.gradle` file.
+In the __root__ level `build.gradle` (or `build.gradle.kts`) file, 
+add the `productscience` maven url  to the `repositories` block inside of the `buildscript` block. 
+If you do not have a `buildscript` block in the file, you can add one at the top level of the `build.gradle` file.
 
 === "Groovy" 
     ```groovy title="build.gradle"
