@@ -25,10 +25,10 @@ containing all the dependencies and settings needed to build your Android app.
 
 If you are an existing Product Science user, credentials have been shared with you via one of the following options:
 
-- via BitWarden as the **productscience.properties** file
+- via BitWarden as the __productscience.properties__ file
 - credentials were issued as a part of self-served onboarding at https://productscience.app/guide/instrument-and-build/android
 
-Place the **productscience.properties** file containing your credentials in the root director of your project.
+Place the __productscience.properties__ file containing your credentials in the root director of your project.
 
 !!! info
     If your build environment does not allow network access to our servers as specified above, 
@@ -130,7 +130,7 @@ The `productscience` plugin will attempt to instrument all modules of the app, s
         }
     ```
 
-**Note:** If you use `RepositoriesMode.FAIL_ON_PROJECT_REPOS` mode you may experience a failure when one or more modules define their own repositories in their `build.gradle` files. Switching the mode to `RepositoriesMode.PREFER_SETTINGS` may solve this problem. Alternatively, you may add the `productscience` maven repository url to these modules `build.gradle` files. You can also use the method defined in Case 1 above instead of defining them in `settings.gradle`.
+__Note:__ If you use `RepositoriesMode.FAIL_ON_PROJECT_REPOS` mode you may experience a failure when one or more modules define their own repositories in their `build.gradle` files. Switching the mode to `RepositoriesMode.PREFER_SETTINGS` may solve this problem. Alternatively, you may add the `productscience` maven repository url to these modules `build.gradle` files. You can also use the method defined in Case 1 above instead of defining them in `settings.gradle`.
 
 ## 5. Add Product Science plugin to classpath
 
@@ -213,10 +213,10 @@ Now you can build your app with Gradle, i.e.:
 
 ## Enabling the plugin by build type
 
-If you are using a productscience plugin version greater that **0.12.1**, you can selectively integrate the productscience plugin into your Gradle build.
+If you are using a productscience plugin version greater that __0.12.1__, you can selectively integrate the productscience plugin into your Gradle build.
 You will do this by applying the plugin only to specific build types.
 
-To do this, insert a `productScience` block at the top of your **app/build.gradle** file. 
+To do this, insert a `productScience` block at the top of your __app/build.gradle__ file. 
 Inside the proguard block, add a block corresponding to the build type (must have the same name) and set `enabled` to `true`.
 
 === "Groovy"
