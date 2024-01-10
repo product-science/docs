@@ -56,7 +56,7 @@ If you do not have a `buildscript` block in the file, you can add one at the top
     ```
 
 === "Kotlin"
-    ```kotlin
+    ```kotlin title="build.gradle.kts"
         buildscript {
             repositories {
                 ...
