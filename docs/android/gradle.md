@@ -111,7 +111,7 @@ If there is no such block, you can add it at the top level.
 === "Groovy"
     ```groovy title="build.gradle"
         dependencyResolutionManagement {
-            repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+            ...
             repositories {
                 ...
                 maven {
@@ -125,7 +125,7 @@ If there is no such block, you can add it at the top level.
     ```kotlin title="build.gradle.kts"
         ...
         dependencyResolutionManagement {
-            repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+            ...
             repositories {
                 ...
                 maven {
