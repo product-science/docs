@@ -1,6 +1,11 @@
 iOS
 ---------
 
+To record a trace, first let’s get you set up.
+
+These preparatory steps only need to be once.
+
+
 ### 1. Install [PS Companion app](https://apps.apple.com/au/app/ps-companion-app/id1634153033)
 
 You will use PS Companion app later to upload traces and screen recordings to PS Tool.
