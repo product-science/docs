@@ -55,7 +55,7 @@ If you do not have a `buildscript` block in the file, you can add one at the top
         }
     ```
 
-=== "Kotlin"
+=== "Kotlin DSL"
     ```kotlin title="build.gradle.kts"
         buildscript {
             repositories {
@@ -75,8 +75,8 @@ In your __root__ directory the project either defines module dependencies in the
 
 Add the repository url to the `allprojects` block in the root `build.gradle` file
 
-=== "Groovy" 
-    ```groovy
+=== "" 
+    ```groovy title="settings.gradle"
         allprojects {
             repositories {
                 ...
@@ -87,8 +87,8 @@ Add the repository url to the `allprojects` block in the root `build.gradle` fil
         }
     ```
 
-=== "Kotlin"
-    ```kotlin
+=== "Kotlin DSL"
+    ```kotlin title="settings.gradle.kts"
         allprojects {
             repositories {
                 ...
@@ -109,7 +109,7 @@ To do this, add the `productscience` maven repository url to the `dependencyReso
 If there is no such block, you can add it at the top level.
 
 === "Groovy"
-    ```groovy
+    ```groovy title="build.gradle"
         dependencyResolutionManagement {
             repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
             repositories {
@@ -121,8 +121,8 @@ If there is no such block, you can add it at the top level.
         }
     ```
 
-=== "Kotlin"
-    ```kotlin
+=== "Kotlin DSL"
+    ```kotlin title="build.gradle.kts"
         ...
         dependencyResolutionManagement {
             repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -142,7 +142,7 @@ __Note:__ If you use `RepositoriesMode.FAIL_ON_PROJECT_REPOS` mode you may exper
 In the `buildscript` block of the __root__ `build.gradle` file, add the classpaths for the `productscience` `transformer-plugin` and `transformer-instrumentation` artifacts:
 
 === "Groovy"
-    ```groovy
+    ```groovy title="build.gradle
         buildscript {
             repositories { ... }
             dependencies {
@@ -154,8 +154,8 @@ In the `buildscript` block of the __root__ `build.gradle` file, add the classpat
         ...
     ```
 
-=== "Kotlin"
-    ```kotlin
+=== "Kotlin DSL"
+    ```kotlin title="build.gradle.kts"
         buildscript {
             repositories { ... }
             dependencies {
@@ -173,7 +173,7 @@ In the `buildscript` block of the __root__ `build.gradle` file, add the classpat
 Now you need to enable the plugin in your __app__ `build.gradle` file. This is often in a directory named `app`, and will be more verbose than the top level gradle file.
 
 === "Groovy"
-    ```groovy
+    ```groovy title="app/build.gradle"
         plugins {
             ...
             id "com.android.application"
@@ -182,8 +182,8 @@ Now you need to enable the plugin in your __app__ `build.gradle` file. This is o
         ...
     ```
 
-=== "Kotlin"
-    ```kotlin
+=== "Kotlin DSL"
+    ```kotlin title="app/build.gradle.kts"
         plugins {
             ...
             id("com.android.application")
