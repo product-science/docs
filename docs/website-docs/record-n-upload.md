@@ -4,7 +4,7 @@ Android
 ## Record
 
 ### How to start a trace recording
-The 'Record trace' button should be available in your quick settings. If it is not, go back to the section on [enabling trace recording](device-set-up.md#3-make-sure-tracing-is-enabled) and ensure you enabled __Show Quick Settings tile__.
+The 'Record trace' button should be available in your quick settings tile. If it is not, go back to the section on [enabling trace recording](device-set-up.md#3-make-sure-tracing-is-enabled) and ensure you enabled __Show Quick Settings tile__.
 
 ### 1. Install instrumented app
 
@@ -18,8 +18,8 @@ At Product Science, performance optimization starts with defining key user flows
 
 There are several ways to select a user flow:
 
-- (**preferred**) __An "Action-Reaction" one step flow__. Here the user starts with an Action (pressing a button, swiping, selecting a menu item, etc) and you measure until a "Reaction", such as a new page being fully displayed. These flows are clean and simple to analyze
-- __More complex flows__. Sometimes, there are multiple that need to be strung together to get an idea of the performance of a feature. It can make sense to have flows like these, but consider carefully if they cannot be broken into smaller parts.
+- (**preferred**) __An "Action-Reaction" one step flow__. Here the user starts with an Action (pressing a button, swiping, selecting a menu item, etc) and you measure until a "Reaction", such as a new page being fully displayed. These flows are clean and simple to analyze.
+- __More complex flows__. Sometimes, there are multiple steps that need to be strung together to get an idea of the performance of a feature. It can make sense to have flows like these, but consider carefully if they cannot be broken into smaller parts.
 
 Either way, a sequence of functions execute before the user finally arrives at a final state. This is where our AI technology comes into play—highlighting these sequences that formed into what we call __execution paths__.
 
@@ -28,8 +28,8 @@ Either way, a sequence of functions execute before the user finally arrives at a
 
 ### 3. Get to the beginning of your user flow
 Before you start recording:
-1. Optionally, [quit all open apps](https://support.google.com/android/answer/9079646?hl=en-IN#zippy=%2Cclose-apps) so nothing slows down the app you are measuring.
-2. Navigate to the beginning of your user flow. If this is launching the app, just navigate to the icon for your app on the Home screen.
+1. Optional Step: [quit all open apps](https://support.google.com/android/answer/9079646?hl=en-IN#zippy=%2Cclose-apps) so nothing slows down the app you are measuring.
+2. Navigate to the beginning of your user flow. If recording a trace for app start, just navigate to the icon for your app on the Home screen.
 
 ### 4. Start screen and trace recording
 Start both the screen and trace recording as described above.
