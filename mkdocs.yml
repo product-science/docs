@@ -20,6 +20,12 @@ nav:
           - Build / Xcode: ios/xcode.md
           - Build / Bazel: ios/bazel.md
           - App Distribution: ios/distribution.md
+  - Device Set-Up:
+      - Android: website-docs/device-set-up-android.md
+      - iOS: website-docs/device-set-up-ios.md
+  - Record + Upload:
+      - Anroid: website-docs/record-n-upload-android.md
+      - iOS: website-docs/record-n-upload-iOS.md
 
 # Visual
 theme:
