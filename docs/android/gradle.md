@@ -170,7 +170,7 @@ In the `buildscript` block of the __root__ `build.gradle` file, add the classpat
 
 ## 6. Apply the Product Science Plugin
 
-Now you need to enable the plugin in your __app__ `build.gradle` file. This is often in a directory named `app`, and will be more verbose than the top level gradle file.
+Now you need to enable the plugin in your __app__ `build.gradle` file. 
 
 === "Groovy"
     ```groovy title="app/build.gradle"
