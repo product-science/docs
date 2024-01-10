@@ -142,8 +142,8 @@ In the `buildscript` block of the __root__ `build.gradle` file, add the classpat
             repositories { ... }
             dependencies {
                 ...
-                classpath "com.productscience.transformer:transformer-plugin:0.18.4"
-                classpath "com.productscience.transformer:transformer-instrumentation:0.18.4"
+                classpath "com.productscience.transformer:transformer-plugin:{{ android_release() }}"
+                classpath "com.productscience.transformer:transformer-instrumentation:{{ android_release() }}"
             }
         }
         ...
@@ -155,8 +155,8 @@ In the `buildscript` block of the __root__ `build.gradle` file, add the classpat
             repositories { ... }
             dependencies {
                 ...
-                classpath("com.productscience.transformer:transformer-plugin:0.18.4")
-                classpath("com.productscience.transformer:transformer-instrumentation:0.18.4")
+                classpath("com.productscience.transformer:transformer-plugin:{{ android_release() }}")
+                classpath("com.productscience.transformer:transformer-instrumentation:{{ android_release() }}")
             }
         }
         ...
