@@ -3,8 +3,6 @@ Android
 
 ## Record
 
-### How to start a trace recording
-The 'Record trace' button should be available in your quick settings tile. If it is not, go back to the section on [enabling trace recording](device-set-up.md#3-make-sure-tracing-is-enabled) and ensure you enabled __Show Quick Settings tile__.
 
 ### 1. Install instrumented app
 
@@ -33,6 +31,12 @@ Before you start recording:
 
 ### 4. Start screen and trace recording
 Start both the screen and trace recording as described above.
+
+The 'Record trace' button should be available in your quick settings tile. If it is not, go back to the section on [enabling trace recording](device-set-up.md#3-make-sure-tracing-is-enabled) and ensure you enabled __Show Quick Settings tile__.
+
+<div style="text-align: center;">
+    <img src="../images/quick-settings.png" alt="quick-settings" width="300"/>
+</div>
 
 ### 5. Execute your user flow.
 Perform the user action to execute the identified user flow.
