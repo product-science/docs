@@ -103,7 +103,10 @@ If there is no `allprojects` block in the root `build.gradle` file, you can add 
 
 ### Case 2: Your project uses settings.gradle to specify module dependencies (requires gradle 6.8 or later)
 
-The `productscience` plugin will attempt to instrument all modules of the app, so it is necessary to provide a repository url for all modules. To do this, add the `productscience` maven repository url to the `dependencyResolutionManagement` block of `settings.gradle`. If there is no such block, you can add it at the top level.
+The `productscience` plugin will attempt to instrument all modules of the app, 
+so it is necessary to provide a repository url for all modules. 
+To do this, add the `productscience` maven repository url to the `dependencyResolutionManagement` block of `settings.gradle`. 
+If there is no such block, you can add it at the top level.
 
 === "Groovy"
     ```groovy
