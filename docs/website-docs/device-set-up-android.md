@@ -1,9 +1,9 @@
+Android
+---------
+
 To record a trace, first let’s get you set up.
 
 These preparatory steps only need to be once.
-
-Android
----------
 
 ### 1. Install [PS Companion app](https://play.google.com/store/apps/details?id=com.ps.companion&hl=en_US&gl=US&pli=1) 
 
