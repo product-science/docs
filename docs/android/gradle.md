@@ -11,8 +11,15 @@ If you get stuck, do refer to our [FAQ](https://docs.productscience.app/android/
 
 ## 1. Identify the two levels of files
 You will be working with and modifying files at two levels:
-1. The __root__ directory. This is the root directory of your Android project. If your repository is entirely your Android project, it will usually be the top level folder. The `build.gradle` (or `build.gradle.kts`) file at this level is usuall fairly terse, defining a few global dependencies and repositories.
-2. The __app__ directory. This is the folder that actually builds your Android app. It is often, though not always, named `app`. The `build.gradle` file at this level is usually more verbose, containing all the dependencies and settings needed to build your Android app.
+
+1. The __root__ directory. This is the root directory of your Android project. 
+If your repository is entirely your Android project, it will usually be the top level folder. 
+The `build.gradle` (or `build.gradle.kts`) file at this level is usuall fairly terse, 
+defining a few global dependencies and repositories.
+
+2. The __app__ directory. This is the folder that actually builds your Android app. 
+It is often, though not always, named `app`. The `build.gradle` file at this level is usually more verbose, 
+containing all the dependencies and settings needed to build your Android app.
    
 ## 2. Credentials
 
