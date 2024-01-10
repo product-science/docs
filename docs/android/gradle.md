@@ -201,7 +201,7 @@ If the application uses obfuscation/shrinking using Proguard, add a new Proguard
 -keep class com.productscience.** { *; }
 ```
 
-The file can have a variety of names but will include the word proguard and have similar lines to this one, and it will be in your __app__ folder.
+Your project may use a different proguard file name.
 
 More information about R8/ProGuard configuration can be found here: https://developer.android.com/studio/build/shrink-code
 
