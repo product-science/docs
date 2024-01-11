@@ -45,7 +45,7 @@ In the __root__ level `build.gradle` (or `build.gradle.kts`) file,
 add the `productscience` maven url  to the `repositories` block inside of the `buildscript` block. 
 If you do not have a `buildscript` block in the file, you can add one at the top-level of the `build.gradle` file.
 
-    === "Groovy" 
+=== "Groovy" 
     ```groovy title="build.gradle"
         buildscript {
             repositories {
@@ -58,7 +58,7 @@ If you do not have a `buildscript` block in the file, you can add one at the top
         }
     ```
 
-    === "Kotlin DSL"
+=== "Kotlin DSL"
     ```kotlin title="build.gradle.kts"
         buildscript {
             repositories {
@@ -76,11 +76,11 @@ In your __root__ directory, the project either defines module dependencies in th
 the `settings.gradle` file. 
 Look in both files to see where it is defined.
 
-### Case 1: Your project defines module dependencies in an allProjects block in the root build.gradle file
+### Case 1: Your project defines module dependencies in an allprojects block in the root build.gradle file
 
 Add the repository url to the `allprojects` block in the root `build.gradle` file.
 
-    === "Groovy" 
+=== "Groovy" 
     ```groovy title="build.gradle"
         allprojects {
             repositories {
@@ -92,7 +92,7 @@ Add the repository url to the `allprojects` block in the root `build.gradle` fil
         }
     ```
 
-    === "Kotlin DSL"
+=== "Kotlin DSL"
     ```kotlin title="build.gradle.kts"
         allprojects {
             repositories {
@@ -113,7 +113,7 @@ so it is necessary to provide a repository url for all modules.
 To do this, add the `productscience` maven repository url to the `dependencyResolutionManagement` block of `settings.gradle`. 
 If there is no such block, you can add it at the top-level.
 
-    === "Groovy"
+=== "Groovy"
     ```groovy title="settings.gradle"
         dependencyResolutionManagement {
             ...
@@ -125,7 +125,8 @@ If there is no such block, you can add it at the top-level.
             }
         }
     ```
-    === "Kotlin DSL"
+
+=== "Kotlin DSL"
     ```kotlin title="settings.gradle.kts"
         ...
         dependencyResolutionManagement {
@@ -150,8 +151,8 @@ You can also use the method defined above in Case 1 instead of defining them in 
 In the `buildscript` block of the __root__ `build.gradle` file, add the classpaths for the `transformer-plugin` 
 and `transformer-instrumentation` artifacts:
     
-    === "Groovy"
-    ```groovy title="build.gradle
+=== "Groovy"
+    ```groovy title="build.gradle"
         buildscript {
             repositories { ... }
             dependencies {
@@ -163,7 +164,7 @@ and `transformer-instrumentation` artifacts:
         ...
     ```
 
-    === "Kotlin DSL"
+=== "Kotlin DSL"
     ```kotlin title="build.gradle.kts"
         buildscript {
             repositories { ... }
@@ -181,7 +182,7 @@ and `transformer-instrumentation` artifacts:
 
 Now you need to enable the plugin in your __app__ `build.gradle` file. 
 
-    === "Groovy"
+=== "Groovy"
     ```groovy title="app/build.gradle"
         plugins {
             ...
@@ -191,7 +192,7 @@ Now you need to enable the plugin in your __app__ `build.gradle` file.
         ...
     ```
 
-    === "Kotlin DSL"
+=== "Kotlin DSL"
     ```kotlin title="app/build.gradle.kts"
         plugins {
             ...
@@ -238,7 +239,7 @@ You will do this by applying the plugin only to specific build types.
 To do this, insert a `productScience` block at the top of your __app/build.gradle__ file. 
 Inside the ProGuard block, add a block corresponding to the build type (must have the same name) and set `enabled` to `true`.
 
-    === "Groovy"
+=== "Groovy"
     ```groovy title="app/build.gradle"
     plugins {
         id "com.android.application"
@@ -263,7 +264,8 @@ Inside the ProGuard block, add a block corresponding to the build type (must hav
         }
     }
     ```
-    === "Kotlin DSL"
+
+=== "Kotlin DSL"
     ```kotlin title="app/build.gradle.kts"
     plugins {
         id("com.android.application")
