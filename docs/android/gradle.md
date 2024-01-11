@@ -8,7 +8,7 @@ If you get stuck, please refer to our [FAQ](https://docs.productscience.app/andr
 additional steps and guidance, or reach out to customer support.
 
 !!! info
-    If your build environment does not allow network access to our `https://prod.productscience.app/api/v1/*`, 
+    If your build environment does not allow network access to our servers `https://prod.productscience.app/api/v1/*`, 
     please add to your allowlist. If your network settings prevent adding this endpoint, 
     please reach out to our sales team or customer support.
 
