@@ -138,7 +138,7 @@ __Note:__ If you use `RepositoriesMode.FAIL_ON_PROJECT_REPOS` mode, you may expe
 
 ## 5. Add Product Science plugin to classpath
 
-In the `buildscript` block of the __root__ `build.gradle` file, add the classpaths for the `productscience` `transformer-plugin` and `transformer-instrumentation` artifacts:
+In the `buildscript` block of the __root__ `build.gradle` file, add the classpaths for the `transformer-plugin` and `transformer-instrumentation` artifacts:
 
 === "Groovy"
     ```groovy title="build.gradle
