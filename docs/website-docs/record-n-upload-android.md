@@ -61,8 +61,6 @@ When you have reached the end of the user flow ("Reaction"), swipe down from the
 
 - Phone library opens &gt; select the screen recording
 
-<div style="text-align: center;">
-    <img src="../images/name-trace-android.png" alt="name-trace-android" width="300"/>
-</div>
+![name-trace-android](../images/name-trace-android.png){ width="300" }
 
 - Once the trace and video finish uploading and processing, you can view your trace in PS Tool. The uploaded trace will appear in your productscience.app User Flow Library.
