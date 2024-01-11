@@ -11,9 +11,9 @@ These preparatory steps only need to be once.
 You will use PS Companion app later to upload traces and screen recordings to PS Tool.
 Additionally, when recording app start, PS Companion app will be the place to start trace recording.
 
-### 2. Log in with your PS Tool credentials
+### 2. Login with your PS Tool credentials
 
-To log in to PS Companion app, you can use the same credentials you created while registering at productscience.app or use Google authentication.
+To login to PS Companion app, you can use the same credentials you created while registering at productscience.app or use Google authentication.
 
 [Click here](https://productscience.app/recovery-token) if you forgot your credentials.
 
