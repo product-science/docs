@@ -56,9 +56,7 @@ You can start trace recording from the instrumented app itself. If you want to c
 
 - Phone library opens &gt; select the screen recording
 
-<div style="text-align: center;">
-    <img src="../images/name-trace-android.png" alt="name-trace" width="300"/>
-</div>
+![name-trace-ios](../images/name-trace.png){ width="300" }
 
 
 - Once the trace and video finish uploading and processing, you can view your trace in PS Tool. The uploaded trace will appear in your productscience.app User Flow Library.
