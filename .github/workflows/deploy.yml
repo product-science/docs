@@ -27,8 +27,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install dependencies
-        working-directory: buildtools
-        run: sh ./mkdocs-setup.sh
+        run: sh ./buildtools/mkdocs-setup.sh
 
       - name: Build and deploy to GitHub Pages
         run: mkdocs build
