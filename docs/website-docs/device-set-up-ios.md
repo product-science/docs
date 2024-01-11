@@ -1,7 +1,7 @@
 iOS
 ---------
 
-To record a trace, first let’s get you set up.
+To record a trace, let’s first get you set up.
 
 These preparatory steps only need to be once.
 
@@ -21,7 +21,7 @@ To log in to PS Companion app, you can use the same credentials you created whil
 
 ### 3. Customize share sheet
 
-To make it easier for upload your traces via PS PS Companion app, we recommend customizing your iPhone share sheet.
+To make it easier to upload your traces via PS Companion app, we recommend customizing your iPhone share sheet.
 
 To complete this step, you can choose any file on your iPhone that can be shared or return to this step when uploading your first trace.
 
@@ -30,7 +30,7 @@ To complete this step, you can choose any file on your iPhone that can be shared
 ![export-icon](../images/export-icon.png)
 
 -   Once share sheet appears, look for PS Companion app among sharing options
--   If PS Companion App is not shown, swipe all the way to the right and tap "more"
+-   If PS Companion App is not shown, swipe all the way to the right and tap "More"
 
 ![more-icon](../images/more-icon.png)
 
@@ -41,5 +41,5 @@ To complete this step, you can choose any file on your iPhone that can be shared
 
 Source: [Apple](https://support.apple.com/en-us/HT207935)
 
-- Go to Settings &gt; Control Center, then tap the add button ![add-button](../images/add-button.png) next to Screen Recording.
+Go to Settings &gt; Control Center, then tap the add button ![add-button](../images/add-button.png) next to Screen Recording.
 
