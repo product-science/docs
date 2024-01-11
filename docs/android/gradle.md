@@ -75,7 +75,7 @@ In your __root__ directory, the project either defines module dependencies in th
 Add the repository url to the `allprojects` block in the root `build.gradle` file.
 
 === "" 
-    ```groovy title="settings.gradle"
+    ```groovy title="build.gradle"
         allprojects {
             repositories {
                 ...
@@ -87,7 +87,7 @@ Add the repository url to the `allprojects` block in the root `build.gradle` fil
     ```
 
 === "Kotlin DSL"
-    ```kotlin title="settings.gradle.kts"
+    ```kotlin title="build.gradle.kts"
         allprojects {
             repositories {
                 ...
@@ -108,7 +108,7 @@ To do this, add the `productscience` maven repository url to the `dependencyReso
 If there is no such block, you can add it at the top-level.
 
 === "Groovy"
-    ```groovy title="build.gradle"
+    ```groovy title="settings.gradle"
         dependencyResolutionManagement {
             ...
             repositories {
@@ -121,7 +121,7 @@ If there is no such block, you can add it at the top-level.
     ```
 
 === "Kotlin DSL"
-    ```kotlin title="build.gradle.kts"
+    ```kotlin title="settings.gradle.kts"
         ...
         dependencyResolutionManagement {
             ...
