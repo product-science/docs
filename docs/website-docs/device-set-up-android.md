@@ -40,10 +40,7 @@ For complete documentation, see the [Official Android Documentation](https://dev
 - Enable __Long traces__
 - Enable __Show Quick Settings tile__ - this will add the Record Trace tile to the Quick Settings panel
 
-<div style="text-align: center;">
-  <img src="../images/quick-settings.png" alt="quick-settings" width="300"/>
-</div>
-
+![quick-settings](../images/quick-settings.png){ align=center width="300" }
 
 ### 4. Make sure that you have Screen Recording at hand
 
