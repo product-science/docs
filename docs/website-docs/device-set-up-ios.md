@@ -1,4 +1,4 @@
-# iOs Device Setup
+# iOS Device Setup
 
 To record a trace, let’s first get you set up.
 
