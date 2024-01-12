@@ -1,4 +1,4 @@
-iOS
+iOS Trace Recording
 ---------
 
 ## Record
@@ -48,7 +48,7 @@ You can start trace recording from the instrumented app itself. If you want to c
 
 ![share-companion-app](../images/share-companion-app.png)
 
-[Don't see PS Companion app? Customize the share sheet.](device-set-up.md#3-customize-share-sheet)
+[Don't see PS Companion app? Customize the share sheet.](device-set-up-android.md#3-customize-share-sheet)
 
 -   Name the trace, and add it to the corresponding user flow folder
 #### Attach screen recording
