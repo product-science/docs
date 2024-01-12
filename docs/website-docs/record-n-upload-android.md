@@ -1,5 +1,4 @@
-Android Trace Recording
----------
+# Android Trace Recording
 
 ## Record
 

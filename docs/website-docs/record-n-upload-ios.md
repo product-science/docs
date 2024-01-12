@@ -1,5 +1,4 @@
-iOS Trace Recording
----------
+# iOS Trace Recording
 
 ## Record
 

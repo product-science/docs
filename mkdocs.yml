@@ -24,7 +24,7 @@ nav:
       - Android: website-docs/device-set-up-android.md
       - iOS: website-docs/device-set-up-ios.md
   - Record + Upload:
-      - Anroid: website-docs/record-n-upload-android.md
+      - Android: website-docs/record-n-upload-android.md
       - iOS: website-docs/record-n-upload-ios.md
 
 # Visual
