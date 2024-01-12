@@ -52,7 +52,6 @@ Instrumentation is the method in which our plugin can extract the necessary info
 ### Slices
 
 The visual representation of a code's function/process. The length of the slice indicates how long it takes that process to execute.
-
 ‍
 
 The width of the slice represents the duration of the executed process and its position indicates the start time.
