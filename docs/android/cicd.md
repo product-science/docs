@@ -6,7 +6,7 @@ Product Science suggests two main approach for integration Gradle plugin in CICD
 
 * [Example App](https://github.com/product-science/demoapps/tree/main/cicd-examples/android-buildvariant)
 * [Example GitHub workflow](https://github.com/product-science/demoapps/blob/main/.github/workflows/cicd-buildvariant.yml)
-* [Build Variant docs](/android/gradle/#enabling-the-plugin-by-build-type)
+* [Build Variant docs](gradle.md#enabling-the-plugin-by-build-type)
 
 
 This approach is based on [Gradle build variant](https://developer.android.com/studio/build/build-variants).
