@@ -97,6 +97,16 @@ plugins:
       video_controls: true
       css_style:
         width: "50%"
+  - redirects:
+      redirect_maps:
+        'android/gradle.md': 'integration/android/gradle.md'
+        'android/cicd.md': 'integration/android/cicd.md'
+        'android/cli-tool.md': 'integration/android/cli-tool.md'
+        'android/integration-faq-android.md': 'integration/android/integration-faq-android.md'
+        'android/user-flow.md': 'integration/android/user-flow.md'
+        'ios/xcode.md': 'integration/ios/xcode.md'
+        'ios/bazel.md': 'integration/ios/bazel.md'
+        'ios/distribution.md': 'integration/ios/distribution.md'
 
 extra:
   social:
