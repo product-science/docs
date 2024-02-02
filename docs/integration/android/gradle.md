@@ -224,9 +224,9 @@ Now you can build your app with Gradle, i.e.:
 ```
 
 Once your app is successfully built, you're all set to record and analyze traces! 
-For first-time setup, follow our [Device Set-Up Guide](../website-docs/device-set-up-android.md). 
+For first-time setup, follow our [Device Set-Up Guide](../../device-set-up/android.md). 
 If you've already completed  setup,
-proceed directly to [Recording & Uploading Instructions](../website-docs/record-n-upload-android.md) for ongoing analysis.
+proceed directly to [Recording & Uploading Instructions](../../record-n-upload/android.md) for ongoing analysis.
 
 ----
 

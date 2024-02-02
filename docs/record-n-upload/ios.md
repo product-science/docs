@@ -4,7 +4,7 @@
 
 ### 1. Install instrumented app
 
-- Install the app you [instrumented in the previous steps](../ios/distribution.md#ios-application-distribution-instructions). 
+- Install the app you [instrumented in the previous steps](../integration/ios/distribution.md#ios-application-distribution-instructions). 
 - Make sure it is instrumented
 
 ### 2. Select a user flow you want to analyze
@@ -56,7 +56,7 @@ If you want to capture app start, you can kick off trace recording from PS Compa
 
 ![share-companion-app](../images/share-companion-app.png)
 
-[Don't see PS Companion app? Customize the share sheet.](device-set-up-android.md#3-customize-share-sheet)
+[Don't see PS Companion app? Customize the share sheet.](../device-set-up/ios.md#3-customize-share-sheet)
 
 - Name the trace, and add it to the corresponding user flow folder
 #### Attach screen recording

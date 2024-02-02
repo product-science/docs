@@ -55,7 +55,7 @@ Download the latest installer package (named `PSCliCodeInjector.pkg`) from our [
 
 Double-click the downloaded `.pkg` to start the installation process. By default, `PSCliCodeInjector` will be installed to `/usr/local/bin`.
 
-![PSCliCodeInjector installer](../img/ios-installer.jpg)
+![PSCliCodeInjector installer](../../images/ios-installer.jpg)
 
 ## 4. Run `PSCliCodeInjector`
 
@@ -151,7 +151,7 @@ There are only two required parameters when running `PSCliCodeInjector`:
 
       To record a trace:
 
-      ![type:video](../video/ios-recording_trace-480.mp4)
+      ![type:video](../../video/ios-recording_trace-480.mp4)
 
 ### Changing the backup directory
 

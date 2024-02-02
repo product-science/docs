@@ -5,7 +5,7 @@
 
 ### 1. Install instrumented app
 
-Install the app you want to analyze that is instrumented with PS plugin. Don't have the app? Learn how to build the instrumented app [here](../android/gradle.md).
+Install the app you want to analyze that is instrumented with PS plugin. Don't have the app? Learn how to build the instrumented app [here](../integration/android/gradle.md).
 
 ### 2. Select a user flow you want to analyze
 
@@ -30,11 +30,9 @@ Before you start recording:
 ### 4. Start screen and trace recording
 Start both the screen and trace recording as described above.
 
-The 'Record trace' button should be available in your quick settings tile. If it is not, go back to the section on [enabling trace recording](device-set-up-android.md#3-make-sure-tracing-is-enabled) and ensure you enabled the __Show Quick Settings tile__.
+The 'Record trace' button should be available in your quick settings tile. If it is not, go back to the section on [enabling trace recording](../device-set-up/android.md#3-make-sure-tracing-is-enabled) and ensure you enabled the __Show Quick Settings tile__.
 
-<div style="text-align: center;">
-    <img src="../images/quick-settings.png" alt="quick-settings" width="300"/>
-</div>
+![quick-settings](../images/quick-settings.png){ width="300" }
 
 ### 5. Execute your user flow
 Perform the user action to execute the user flow you are analyzing.

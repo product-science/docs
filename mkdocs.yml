@@ -21,8 +21,8 @@ nav:
           - Build / Bazel: integration/ios/bazel.md
           - App Distribution: integration/ios/distribution.md
   - Device Set-Up:
-      - Android: device-setup/android.md
-      - iOS: device-setup/ios.md
+      - Android: device-set-up/android.md
+      - iOS: device-set-up/ios.md
   - Record + Upload:
       - Android: record-n-upload/android.md
       - iOS: record-n-upload/ios.md
