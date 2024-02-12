@@ -26,7 +26,7 @@ Download the latest installer package (named `PSCliCodeInjector.pkg`) from our [
 
 Double-click the downloaded `.pkg` to start the installation process. By default, `PSCliCodeInjector` will be installed to `/usr/local/bin`.
 
-![PSCliCodeInjector installer](../img/ios-installer.jpg)
+![PSCliCodeInjector installer](../../images/ios-installer.jpg)
 
 ## 3. Run `PSCliCodeInjector`
 

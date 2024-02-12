@@ -11,21 +11,21 @@ nav:
   - Home: index.md
   - Integration:
       - Android:
-          - Build / Gradle: android/gradle.md
-          - CICD / Gradle: android/cicd.md
-          - CLI Tool: android/cli-tool.md
-          - Integration FAQ: android/integration-faq-android.md
-          - User Flow Annotation: android/user-flow.md
+          - Build / Gradle: integration/android/gradle.md
+          - CICD / Gradle: integration/android/cicd.md
+          - CLI Tool: integration/android/cli-tool.md
+          - Integration FAQ: integration/android/integration-faq-android.md
+          - User Flow Annotation: integration/android/user-flow.md
       - iOS:
-          - Build / Xcode: ios/xcode.md
-          - Build / Bazel: ios/bazel.md
-          - App Distribution: ios/distribution.md
+          - Build / Xcode: integration/ios/xcode.md
+          - Build / Bazel: integration/ios/bazel.md
+          - App Distribution: integration/ios/distribution.md
   - Device Set-Up:
-      - Android: website-docs/device-set-up-android.md
-      - iOS: website-docs/device-set-up-ios.md
+      - Android: device-set-up/android.md
+      - iOS: device-set-up/ios.md
   - Record + Upload:
-      - Android: website-docs/record-n-upload-android.md
-      - iOS: website-docs/record-n-upload-ios.md
+      - Android: record-n-upload/android.md
+      - iOS: record-n-upload/ios.md
 
 # Visual
 theme:
@@ -97,6 +97,19 @@ plugins:
       video_controls: true
       css_style:
         width: "50%"
+  - redirects:
+      redirect_maps:
+        'android/gradle.md': 'integration/android/gradle.md'
+        'android/cicd.md': 'integration/android/cicd.md'
+        'android/cli-tool.md': 'integration/android/cli-tool.md'
+        'android/integration-faq-android.md': 'integration/android/integration-faq-android.md'
+        'android/user-flow.md': 'integration/android/user-flow.md'
+        'ios/xcode.md': 'integration/ios/xcode.md'
+        'ios/bazel.md': 'integration/ios/bazel.md'
+        'ios/distribution.md': 'integration/ios/distribution.md'
+        'website-docs/record-n-upload-ios.md': 'record-n-upload/ios.md'
+        'website-docs/device-set-up-ios.md': 'device-set-up/ios.md'
+        
 
 extra:
   social:
