@@ -107,6 +107,9 @@ plugins:
         'ios/xcode.md': 'integration/ios/xcode.md'
         'ios/bazel.md': 'integration/ios/bazel.md'
         'ios/distribution.md': 'integration/ios/distribution.md'
+        'website-docs/record-n-upload-ios.md': 'record-n-upload/ios.md'
+        'website-docs/device-set-up-ios.md': 'device-set-up/ios.md'
+        
 
 extra:
   social:
