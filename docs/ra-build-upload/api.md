@@ -1,42 +1,118 @@
-# Regression Analysis Build Uploading
+## 1. Obtain upload context ID
 
-To make the most of the Regression Analysis feature, it makes sense to incorporate build uploading into a CI/CD pipeline.
-
-## Overview
-
-1. Fetch upload context ID
-2. Build a non-instrumented APK with enabled [UserFlow](/integration/android/user-flow/) library
-3. Upload a non-instrumented APK to PS Tool
-4. Build an instrumented APK with enabled [UserFlow](/integration/android/user-flow/) library
-5. Upload instrumented APK to PS Tool
-
-Steps 2-3 and 4-5 could be parallelized. 
-
-## Build Uploading API
-
-### 1. Request upload context ID
-
-#### Request
+### Request
 
 ```
 POST /api/v1/projects/{projectName}/build-uploads
 ```
 
-#### Response
+### Response
 
-##### Parameters
+JSON body with parameters:
 
-- `id` – integer upload contextId to use in next steps
-- `dateCreated` – creation date in ISO 8601 format
+- **`id`** (required) – integer upload contextId to use in next steps
+- **`dateCreated`** (required) – creation date in ISO 8601 format
 
-##### Example
+Example:
 
 ```json
 {
-  "id": 123,
+  "id": 28,
   "dateCreated": "2024-03-07T16:55:49.168Z"
 }
 ```
 
+## 2. Submit build metadata and obtain upload URL
+
+Call this endpoint when your build file is ready.
+
+### Request
 
 
+```
+POST /api/v1/projects/{projectName}/builds
+```
+
+JSON body with parameters:
+
+- **`contextId`** (required) – upload context ID obtained in step 1
+- **`buildType`** (required) – possible values are: `APK` or `INSTRUMENTED_APK`  
+- **`buildFileName`** (required) – file name, e.g. `app-play-release.apk` 
+- **`name`** – arbitrary name to distinguish the build, e.g. `release-5.2.8`
+- **`description`** – arbitrary build description
+- **`sourceControlId`** – VCS commit, e.g. git commit hash
+- **`sourceControlIsoTimestamp`** – VCS commit timestamp in ISO 8601 format
+
+Example:
+
+```json
+{
+  "contextId": "28",
+  "buildType": "APK",
+  "buildFileName": "app-play-release.apk",
+  "name": "v5.2.8",
+  "description": "Arbitrary description",
+  "sourceControlId": "e3c0fedc625094db1cbb2823fd425b51ddc0932e",
+  "sourceControlIsoTimestamp": "2024-03-07T14:55:43.540Z"
+}
+```
+
+### Response
+
+JSON body with parameters:
+
+- **`uploadSpec`** (required) – metadata to upload build to a storage
+    * **`method`** (required) – HTTP method
+    * **`url`** (required) – URL
+    * **`headers`** (required) – map of HTTP headers
+- **`build`** (required) – build metadata
+    * **`id`** (required) – build ID number
+    * **`contextId`** (required) – upload context ID obtained in step 1
+    * **`buildType`** (required) – possible values are: `APK` or `INSTRUMENTED_APK`
+    * **`buildFileName`** (required) – file name, e.g. `app-play-release.apk`
+    * **`name`** – arbitrary name to distinguish the build, e.g. `release-5.2.8`
+    * **`description`** – arbitrary build description
+    * **`sourceControlId`** – VCS commit, e.g. git commit hash
+    * **`sourceControlIsoTimestamp`** – VCS commit timestamp in ISO 8601 format
+    * **`uploadState`** – `UPLOADING` or `FINISHED` or `FAILED`
+    * **`dateCreated`** – build creation timestamp 
+
+Example:
+
+```json
+{
+  "uploadSpec": {
+    "method": "PUT",
+    "url": "https://storage.googleapis.com/some/path?someParams=someValue",
+    "headers": {
+      "Content-Type": "application/octet-stream",
+      "X-Goog-Content-Length-Range": "0,1073741824"
+    }
+  },
+  "build": {
+    "id": 70,
+    "contextId": 28,
+    "buildType": "APK",
+    "buildFileName": "app-play-release.apk",
+    "name": "v5.2.8",
+    "description": "Arbitrary description",
+    "sourceControlId": "e3c0fedc625094db1cbb2823fd425b51ddc0932e",
+    "sourceControlIsoTimestamp": "2024-03-07T14:55:43.540Z",
+    "dateCreated": "2024-03-08T14:13:33.143Z",
+    "uploadState": "UPLOADING"
+  }
+}
+```
+
+## 3. Upload file to the obtained URL
+
+Use `uploadSpec` object from the previous response to upload a file as `application/octet-stream`.
+
+```
+{uploadSpec.method} {uploadSpec.url}
+{uploadSpec.hearder1}: {uploadSpec.header1Value}
+{uploadSpec.hearder2}: {uploadSpec.header2Value}
+Content-Length: {YOUR_FILE_LENGTH}
+
+{YOUR_FILE_BINARY_DATA}
+```
