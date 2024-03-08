@@ -114,7 +114,6 @@ plugins:
         'website-docs/record-n-upload-ios.md': 'record-n-upload/ios.md'
         'website-docs/device-set-up-ios.md': 'device-set-up/ios.md'
 
-
 extra:
   social:
     - icon: fontawesome/brands/linkedin
