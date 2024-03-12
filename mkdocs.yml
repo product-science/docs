@@ -26,6 +26,10 @@ nav:
   - Record + Upload:
       - Android: record-n-upload/android.md
       - iOS: record-n-upload/ios.md
+  - RA Build Upload:
+      - Overview: ra-build-upload/overview.md
+      - API endpoints: ra-build-upload/api.md
+      - cURL example: ra-build-upload/example.md
 
 # Visual
 theme:
@@ -109,7 +113,6 @@ plugins:
         'ios/distribution.md': 'integration/ios/distribution.md'
         'website-docs/record-n-upload-ios.md': 'record-n-upload/ios.md'
         'website-docs/device-set-up-ios.md': 'device-set-up/ios.md'
-        
 
 extra:
   social:
