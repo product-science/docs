@@ -1,8 +1,10 @@
-# Regression Analysis Build Uploading
+# Regression Analysis 
+
+## Build Uploading
 
 To make the most of the Regression Analysis feature, it makes sense to incorporate build uploading into a CI/CD pipeline.
 
-## Overview
+### Overview
 
 To upload builds to the PS Tool, follow these steps:
 
@@ -14,7 +16,7 @@ To upload builds to the PS Tool, follow these steps:
 
 Steps 2-3 and 4-5 could be executed in parallel. 
 
-## HTTP API
+### HTTP API
 
 Host:         `productscience.app`  
 Protocol:     `HTTPS`  
@@ -27,4 +29,4 @@ To access the API endpoints, you must supply your `productscience.token` from th
 Authorization: Bearer {YOUR_TOKEN}
 ```
 
-See all the API endpoints [here](/ra-build-upload/api).
+See all the API endpoints [here](/regression-analysis/api).
