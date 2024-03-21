@@ -26,10 +26,10 @@ nav:
   - Record + Upload:
       - Android: record-n-upload/android.md
       - iOS: record-n-upload/ios.md
-  - RA Build Upload:
-      - Overview: ra-build-upload/overview.md
-      - API endpoints: ra-build-upload/api.md
-      - cURL example: ra-build-upload/example.md
+  - Regression Analysis:
+      - Overview: regression-analysis/overview.md
+      - API: regression-analysis/api.md
+      - cURL example: regression-analysis/example.md
 
 # Visual
 theme:

@@ -1,8 +1,10 @@
-# Regression Analysis Build Uploading
+# Regression Analysis 
+
+## Build Uploading
 
 To make the most of the Regression Analysis feature, it makes sense to incorporate build uploading into a CI/CD pipeline.
 
-## Overview
+### Overview
 
 To upload builds to the PS Tool, follow these steps:
 
@@ -12,9 +14,11 @@ To upload builds to the PS Tool, follow these steps:
 4. Build an instrumented APK with the [UserFlow](/integration/android/user-flow/) library enabled
 5. Upload the instrumented APK to PS Tool
 
-Steps 2-3 and 4-5 could be executed in parallel. 
+After receiving a context ID, tasks could be parallelized: building and uploading the non-instrumented version (steps 2 and 3), and building and uploading the instrumented version (steps 4 and 5). The context ID has to be passed to both uploads.
 
-## HTTP API
+The instrumented build is optional for uploading, however, it's recommended to upload as it will help to provide traces and insights in case of regression.  
+
+### HTTP API
 
 Host:         `productscience.app`  
 Protocol:     `HTTPS`  
@@ -27,4 +31,4 @@ To access the API endpoints, you must supply your `productscience.token` from th
 Authorization: Bearer {YOUR_TOKEN}
 ```
 
-See all the API endpoints [here](/ra-build-upload/api).
+See all the API endpoints [here](/regression-analysis/api).
