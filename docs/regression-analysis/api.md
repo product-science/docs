@@ -41,7 +41,7 @@ JSON body with parameters:
 - **`name`** – arbitrary name to distinguish the build, e.g. `release-5.2.8`
 - **`description`** – arbitrary build description
 - **`sourceControlId`** – VCS commit, e.g. git commit hash
-- **`sourceControlIsoTimestamp`** – VCS commit timestamp in ISO 8601 format
+- **`sourceControlIsoTimestamp`** – VCS commit timestamp in ISO 8601 format. To retrieve the timestamp in Git, you can use the following shell command: `git show -s --format='%cI' <commit-hash>`
 
 Example:
 
