@@ -30,6 +30,11 @@ nav:
       - Overview: regression-analysis/overview.md
       - API: regression-analysis/api.md
       - cURL example: regression-analysis/example.md
+  - Cloud Cost:
+      - Overview: cloudcost/overview.md
+      - Integration: cloudcost/integration.md
+      - Usage: cloudcost/usage.md
+
 
 # Visual
 theme:
