@@ -32,7 +32,9 @@ nav:
       - cURL example: regression-analysis/example.md
   - Cloud Cost:
       - Overview: cloudcost/overview.md
-      - Integration: cloudcost/integration.md
+      - Integration: 
+        - Common: cloudcost/integration/integration.md
+        - JVM Agent: cloudcost/integration/jvm-agent.md
       - Usage: cloudcost/usage.md
 
 
