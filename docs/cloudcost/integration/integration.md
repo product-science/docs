@@ -1,4 +1,4 @@
-# Integration
+# Integration of CodeTuner for Cloud
 
 The following instructions describe the integration process for CodeTuner for Cloud with your backend application.
 
