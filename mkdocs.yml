@@ -30,6 +30,9 @@ nav:
       - Overview: regression-analysis/overview.md
       - API: regression-analysis/api.md
       - cURL example: regression-analysis/example.md
+  - Cloud Cost:
+      - Integration: cloudcost/integration/integration.md
+      - JVM Agent: cloudcost/integration/jvm-agent.md
 
 # Visual
 theme:
