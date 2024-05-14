@@ -54,3 +54,7 @@ java -jar code-tuner-agent.jar \
 If you need to analyze several instances, the agent should be attached to all of them. 
 The same URL, application name, and token can be used for each instance.
 
+
+## Configuration
+
+All further CodeTuner configuration will be done automatically based on your application's static and dynamic analysis.
