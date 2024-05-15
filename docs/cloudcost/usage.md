@@ -21,7 +21,7 @@ By leveraging this high-level overview of your cloud resource consumption,
 you can quickly identify the most resource-intensive APIs and take action 
 to optimize them.
 
-## Analyze as part of user session
+## Analyze as part of a user session
 
 For each API, you can select specific user sessions where the API was called. 
 This provides valuable insights into the sequence and context of API calls.
@@ -40,8 +40,8 @@ next section.
 ## Analyze trace 
 
 The Trace View provides a detailed recording of each user session, capturing 
-all direct and indirect API calls, dependencies, and any parallel indirect 
-calls. To open a trace, click on the "View session in trace" button of the 
+all direct and indirect API calls, and highlighting any dependencies between them. 
+To open a trace, click on the "View session in trace" button of the 
 User Session screen. 
 This comprehensive view helps you understand the full context of API 
 interactions and resource usage.
