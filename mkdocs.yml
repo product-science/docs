@@ -31,8 +31,12 @@ nav:
       - API: regression-analysis/api.md
       - cURL example: regression-analysis/example.md
   - Cloud Cost:
-      - Integration: cloudcost/integration/integration.md
-      - JVM Agent: cloudcost/integration/jvm-agent.md
+      - Overview: cloudcost/overview.md
+      - Integration: 
+        - Common: cloudcost/integration/integration.md
+        - JVM Agent: cloudcost/integration/jvm-agent.md
+      - Usage: cloudcost/usage.md
+
 
 # Visual
 theme:
