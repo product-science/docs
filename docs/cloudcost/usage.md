@@ -10,7 +10,7 @@ these metrics for each API.
 ![dashboard-view](../images/cco-dashboard-view.png)
 
 For each API call, you can see a breakdown by Direct and Indirect calls. 
-Direct calls are the code synchronously execute durgin API request, while Indirect calls 
+Direct calls are the code synchronously execute during API request, while Indirect calls 
 represent all side effects as asyncrously executed methods. 
 Additionally, you can view specific 
 user sessions related to each API call, helping you understand the context 
