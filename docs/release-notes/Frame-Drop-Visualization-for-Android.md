@@ -12,4 +12,4 @@ reducing noise.
 
 How it looks now: fewer frames highlighted, clear focus on UI Thread Hangs.
 
-![FDVA](docs/release-notes/FDVA.png){ width="300" }
+![FDVA](FDVA.png)
