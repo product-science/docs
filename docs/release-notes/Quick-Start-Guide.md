@@ -3,7 +3,7 @@
 The Quick Start Guide assists engineers during the onboarding experience by providing concise and simple instructions to help them leverage 
 the full potential of the PS Tool.
 
-![Quick-Start-Guide](docs/images/Quick-Start-Guide.png)
+![Quick-Start-Guide](Quick-Start-Guide.png)
 
 The Quick Start Guide will be accessible to users within the tool at all times, ensuring that immediate support is readily available.
 
