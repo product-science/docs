@@ -36,6 +36,14 @@ nav:
         - Common: cloudcost/integration/integration.md
         - JVM Agent: cloudcost/integration/jvm-agent.md
       - Usage: cloudcost/usage.md
+  - Release Notes:
+      - Frame Drop Visualization for Android: release-notes/Frame-Drop-Visualization-for-Android.md
+      - Product Analytic Tags: release-notes/Product-Analytic-Tags.md
+      - Quick Start Guide: release-notes/Quick-Start-Guide.md
+      - R1.4 - Annotations: release-notes/R1.4-Annotations.md
+      - R1.3 - Video: release-notes/R1.3-Video.md
+      - R1.2 - Admin: release-notes/R1.2-Admin.md
+      - R1.1 - New UX & UI: release-notes/R1.1-New-UX-&-UI.md
 
 
 # Visual
