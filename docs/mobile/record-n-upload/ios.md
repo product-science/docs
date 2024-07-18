@@ -40,9 +40,9 @@ If you want to capture app start, you can kick off trace recording from PS Compa
 | 1    | [Optional] Quit all open apps so nothing slows down the app you are measuring.                                                                                                | [Optional] Quit all open apps so nothing slows down the app you are measuring.                                                                              |
 | 2    | Open PS Companion app. If you don't have a designated folder for app start, create a new one. Open the folder.                                                                | Open your instrumented app and perform all the actions before the beginning of the user flow you are analyzing.                                             |
 | 3    | Start screen recording.                                                                                                                                                       | Start screen recording.                                                                                                                                     | 
-| 4    | At the bottom right corner, tap the![rec-icon](../images/rec-icon.png)button to start trace recording.                                                                        | At the ![ios-start-recording](../images/ios-start-recording.png) panel, tap![rec-icon](../images/rec-icon.png)button to start trace recording.              |
+| 4    | At the bottom right corner, tap the![rec-icon](../../images/rec-icon.png)button to start trace recording.                                                                        | At the ![ios-start-recording](../images/ios-start-recording.png) panel, tap![rec-icon](../images/rec-icon.png)button to start trace recording.              |
 | 5    | Perform the user actions from the[(user) flow](https://www.productscience.ai/documentation?doc=dictionary&sub=user-flow)and that you want to optimize.                        | Perform the user actions from the[(user) flow](https://www.productscience.ai/documentation?doc=dictionary&sub=user-flow)and that you want to optimize.      |
-| 6    | Once the final step is fully loaded, at the ![ios-stop-recording](../images/ios-stop-recording.png) panel, tap![stop-icon](../images/stop-icon.png) button to stop recording. | Once the final step is fully loaded, at the ![](../images/ios-stop-recording.png) panel, tap![stop-icon](../images/stop-icon.png) button to stop recording. |
+| 6    | Once the final step is fully loaded, at the ![ios-stop-recording](../../images/ios-stop-recording.png) panel, tap![stop-icon](../../images/stop-icon.png) button to stop recording. | Once the final step is fully loaded, at the ![](../images/ios-stop-recording.png) panel, tap![stop-icon](../images/stop-icon.png) button to stop recording. |
 
 ## Upload
 
@@ -50,11 +50,11 @@ If you want to capture app start, you can kick off trace recording from PS Compa
 
 - Tap the 'Export' button to export your trace file.
 
-![export-icon](../images/export-icon.png)
+![export-icon](../../images/export-icon.png)
 
 - Choose PS Companion app among sharing options:
 
-![share-companion-app](../images/share-companion-app.png)
+![share-companion-app](../../images/share-companion-app.png)
 
 [Don't see PS Companion app? Customize the share sheet.](../device-set-up/ios.md#3-customize-share-sheet)
 
@@ -64,7 +64,7 @@ If you want to capture app start, you can kick off trace recording from PS Compa
 
 - Phone library opens &gt; select the screen recording
 
-![name-trace-ios](../images/name-trace.png){ width="300" }
+![name-trace-ios](../../images/name-trace.png){ width="300" }
 
 
 - Once the trace and video finish uploading and processing, you can view your trace in PS Tool. 

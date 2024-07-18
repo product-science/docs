@@ -32,7 +32,7 @@ Start both the screen and trace recording as described above.
 
 The 'Record trace' button should be available in your quick settings tile. If it is not, go back to the section on [enabling trace recording](../device-set-up/android.md#3-make-sure-tracing-is-enabled) and ensure you enabled the __Show Quick Settings tile__.
 
-![quick-settings](../images/quick-settings.png){ width="300" }
+![quick-settings](../../images/quick-settings.png){ width="300" }
 
 ### 5. Execute your user flow
 Perform the user action to execute the user flow you are analyzing.
@@ -47,7 +47,7 @@ When you have reached the end of the user flow ("Reaction"), swipe down from the
 - Open your notification panel &gt; “Tap to share you trace”
 - Tap the notification. You will have the option to save it or export it to different apps
 
-![upload-trace](../images/upload-trace.png)
+![upload-trace](../../images/upload-trace.png)
 
 - Select the Product Science app (PS)
 
@@ -58,6 +58,6 @@ When you have reached the end of the user flow ("Reaction"), swipe down from the
 
 - Phone library opens &gt; select the screen recording
 
-![name-trace-android](../images/name-trace-android.png){ width="300" }
+![name-trace-android](../../images/name-trace-android.png){ width="300" }
 
 - Once the trace and video finish uploading and processing, you can view your trace in PS Tool. The uploaded trace will appear in your productscience.app User Flow Library.
