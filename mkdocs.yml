@@ -46,7 +46,7 @@ nav:
 
   - Regression Analysis:
       - Overview: ra/overview.md
-      - API: ra/regression-analysis/api.md
+      - API: ra/api.md
       - cURL example: ra/example.md
 
 
@@ -124,16 +124,16 @@ plugins:
         width: "50%"
   - redirects:
       redirect_maps:
-        'android/gradle.md': 'integration/android/gradle.md'
-        'android/cicd.md': 'integration/android/cicd.md'
-        'android/cli-tool.md': 'integration/android/cli-tool.md'
-        'android/integration-faq-android.md': 'integration/android/integration-faq-android.md'
-        'android/user-flow.md': 'integration/android/user-flow.md'
-        'ios/xcode.md': 'integration/ios/xcode.md'
-        'ios/bazel.md': 'integration/ios/bazel.md'
-        'ios/distribution.md': 'integration/ios/distribution.md'
-        'website-docs/record-n-upload-ios.md': 'record-n-upload/ios.md'
-        'website-docs/device-set-up-ios.md': 'device-set-up/ios.md'
+        'integration/android/gradle.md': 'mobile/integration/android/gradle.md'
+        'integration/android/cicd.md': 'mobile/integration/android/cicd.md'
+        'integration/android/cli-tool.md': 'mobile/integration/android/cli-tool.md'
+        'integration/android/integration-faq-android.md': 'mobile/integration/android/integration-faq-android.md'
+        'integration/android/user-flow.md': 'mobile/integration/android/user-flow.md'
+        'integration/ios/xcode.md': 'mobile/integration/ios/xcode.md'
+        'integration/ios/bazel.md': 'mobile/integration/ios/bazel.md'
+        'integration/ios/distribution.md': 'mobile/integration/ios/distribution.md'
+        'record-n-upload/ios.md': 'mobile/record-n-upload/ios.md'
+        'device-set-up/ios.md': 'mobile/device-set-up/ios.md'
 
 extra:
   social:

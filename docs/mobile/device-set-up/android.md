@@ -26,7 +26,7 @@ For complete documentation, see the [Official Android Documentation](https://dev
 - Settings &gt; About phone &gt; Software information &gt; Build number
 - Tap the Build number option __7 times__
 
-![enable-developer-settings](../images/dev-options.png)
+![enable-developer-settings](../../images/dev-options.png)
 
 ### Enable tracing and adjust corresponding settings
 
