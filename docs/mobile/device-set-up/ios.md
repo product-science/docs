@@ -26,19 +26,19 @@ To complete this step, you can choose any file on your iPhone that can be shared
 
 -   Tap the icon
 
-![export-icon](../images/export-icon.png)
+![export-icon](../../images/export-icon.png)
 
 -   Once share sheet appears, look for PS Companion app among sharing options
 -   If PS Companion App is not shown, swipe all the way to the right and tap "More"
 
-![more-icon](../images/more-icon.png)
+![more-icon](../../images/more-icon.png)
 
 -   On the top right tap "Edit"
--   Tap the add button ![add-button](../images/add-button.png) next to PS Companion app
+-   Tap the add button ![add-button](../../images/add-button.png) next to PS Companion app
 
 ## 4. Make sure that Screen Recording is added to Control Center
 
 Source: [Apple](https://support.apple.com/en-us/HT207935)
 
-Go to Settings &gt; Control Center, then tap the add button ![add-button](../images/add-button.png) next to Screen Recording.
+Go to Settings &gt; Control Center, then tap the add button ![add-button](../../images/add-button.png) next to Screen Recording.
 

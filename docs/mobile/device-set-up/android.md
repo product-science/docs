@@ -26,20 +26,20 @@ For complete documentation, see the [Official Android Documentation](https://dev
 - Settings &gt; About phone &gt; Software information &gt; Build number
 - Tap the Build number option __7 times__
 
-![enable-developer-settings](../images/dev-options.png)
+![enable-developer-settings](../../images/dev-options.png)
 
 ### Enable tracing and adjust corresponding settings
 
 - Settings &gt; System &gt; Developer options &gt; Debugging section &gt; System Tracing
 - Make sure to turn off all options in __Categories__ except 'sched: CPU Scheduling' and 'view: View System' 
 
-![enable-tracing](../images/enable-tracing.png)
+![enable-tracing](../../images/enable-tracing.png)
 
 - Set __Per-CPU buffer size__ to maximum
 - Enable __Long traces__
 - Enable __Show Quick Settings tile__ - this will add the Record Trace tile to the Quick Settings panel
 
-![quick-settings](../images/quick-settings.png){ align=center width="300" }
+![quick-settings](../../images/quick-settings.png){ align=center width="300" }
 
 ## 4. Make sure that you have Screen Recording at hand
 
