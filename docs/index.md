@@ -1,3 +1,13 @@
+<style>
+.md-sidebar {
+    display: none;
+}
+.md-main {
+    margin-left: auto;
+}
+</style>
+
+
 ![PSi](images/psi.svg)  
 
 # Product Science Documentation
@@ -29,7 +39,7 @@ right away.
   </div>
   <div style="flex: 1; padding: 50px;">
     <a href="ra/overview">
-        <img src="/images/Regression2.png" alt="Image Description 3" style="width:100%;">
+        <img src="/images/Regression.png" alt="Image Description 3" style="width:100%;">
         <p style="text-align: center; font-weight: bold;">Regression Analysis for Mobile</p>
     </a>
   </div>
