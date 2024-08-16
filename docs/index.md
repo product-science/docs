@@ -8,8 +8,6 @@
 </style>
 
 
-![PSi](images/psi.svg)  
-
 # Product Science Documentation
 
 [Product Science](https://www.productscience.ai/) 
@@ -25,19 +23,19 @@ right away.
 ## Explore documentation for our products
 
 <div style="display: flex;">
-  <div style="flex: 1; padding: 50px;">
+  <div style="flex: 1; padding: 100px;">
     <a href="cloud/overview">
         <img src="/images/Cloud.png" alt="Image Description 1" style="width:100%;">
         <p style="text-align: center; font-weight: bold;">CodeTuner for Cloud</p>
     </a>
   </div>
-  <div style="flex: 1; padding: 50px;">
+  <div style="flex: 1; padding: 100px;">
     <a href="mobile/overview">
         <img src="/images/Mobile.png" alt="Image Description 2" style="width:100%;">
         <p style="text-align: center; font-weight: bold;">CodeTuner for Mobile</p>
     </a>
   </div>
-  <div style="flex: 1; padding: 50px;">
+  <div style="flex: 1; padding: 100px;">
     <a href="ra/overview">
         <img src="/images/Regression.png" alt="Image Description 3" style="width:100%;">
         <p style="text-align: center; font-weight: bold;">Regression Analysis for Mobile</p>
