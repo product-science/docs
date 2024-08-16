@@ -134,6 +134,7 @@ plugins:
         'integration/ios/distribution.md': 'mobile/integration/ios/distribution.md'
         'record-n-upload/ios.md': 'mobile/record-n-upload/ios.md'
         'device-set-up/ios.md': 'mobile/device-set-up/ios.md'
+        'device-set-up/android.md': 'mobile/device-set-up/android.md'
 
 extra:
   social:
