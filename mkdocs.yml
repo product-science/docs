@@ -15,6 +15,8 @@ nav:
           -  Common: cloud/integration/integration.md
           - JVM Agent: cloud/integration/jvm-agent.md
       - Usage: cloud/usage.md
+      - Release Notes:
+          -  Supported JAVA frameworks: cloud/release-notes/release-note-1.md
   - CodeTuner for Mobile:
       - Overview: mobile/overview.md
       - Integration:

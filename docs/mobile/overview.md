@@ -12,7 +12,7 @@ efficiently by providing unique insights for data
 visualizations to help mobile developers to identify 
 the problem right away.
 
-# Insrtuctions of using CodeTuner for Mobile
+# Insrtuctions for using CodeTuner for Mobile
 
 - Integration for [Android](integration/android/gradle.md) and [iOS](integration/ios/xcode.md)
 - Device set-up for [Android](device-set-up/android.md) and [iOS](device-set-up/ios.md)
@@ -20,4 +20,4 @@ the problem right away.
 
 # Release notes
 
-Our release notes can be found [here](release-notes/Frame-Drop-Visualization-for-Android.md)
+Our release notes can be found [here](release-notes/Frame-Drop-Visualization-for-Android.md).

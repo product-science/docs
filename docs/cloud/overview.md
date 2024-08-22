@@ -13,3 +13,12 @@ CodeTuner provides insight into resource utilization and spending patterns.
 CodeTuner for Cloud's granular approach enables businesses to prioritize optimization efforts with precision, while its intuitive trace viewer ensures optimization without compromising user experience. CodeTuner transcends the limitations of traditional tools, empowering businesses to navigate cloud economics with confidence and clarity and making cost efficiency in the cloud more achievable than ever before.
 
 <img width="932" alt="Screenshot 2024-04-18 at 4 56 11PM" src="https://github.com/product-science/docs/assets/98838786/b9e49c92-39a0-41c1-9464-2d58eb76dbbd">
+
+# Insrtuctions for using CodeTuner for Cloud
+
+- Integration instructions can be found [here](integration/integration.md).
+- Usage instructions can be found [here](usage.md).
+
+# Release notes
+
+Our release notes can be found [here](release-notes/release-note-1.md).
