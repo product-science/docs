@@ -2,11 +2,7 @@
 
 ## Overview
 
-To upload builds to the PS Tool, follow these steps:
-
-1. Obtain the upload context ID
-2. Build an instrumented APK
-3. Upload the instrumented APK to PS Tool
+This page describes the HTTP API for uploading instrumented builds to the Product Science Tool.
 
 ### HTTP API
 
@@ -23,31 +19,7 @@ Authorization: Bearer {YOUR_TOKEN}
 
 ## API
 
-### 1. Obtain upload context ID
-
-#### Request
-
-```
-POST /api/v1/projects/{projectName}/build-uploads
-```
-
-#### Response
-
-JSON body with parameters:
-
-- **`id`** (required) – integer upload contextId to use in next steps
-- **`dateCreated`** (required) – creation date in ISO 8601 format
-
-Example:
-
-```json
-{
-  "id": 28,
-  "dateCreated": "2024-03-07T16:55:49.168Z"
-}
-```
-
-### 2. Submit build metadata and obtain upload URL
+### 1. Submit build metadata and obtain upload URL
 
 Call this endpoint when your build file is ready.
 
@@ -60,7 +32,6 @@ POST /api/v1/projects/{projectName}/builds
 
 JSON body with parameters:
 
-- **`contextId`** (required) – upload context ID obtained in step 1
 - **`buildType`** (required) – `INSTRUMENTED_APK`  
 - **`buildFileName`** (required) – file name, e.g. `app-play-release.apk` 
 - **`name`** – arbitrary name to distinguish the build, e.g. `release-5.2.8`
@@ -129,7 +100,7 @@ Example:
 }
 ```
 
-### 3. Upload file to the obtained URL
+### 2. Upload file to the obtained URL
 
 Use `uploadSpec` object from the previous response to upload a file as `application/octet-stream`.
 
@@ -144,30 +115,7 @@ Content-Length: {YOUR_FILE_LENGTH}
 
 ## cURL example
 
-### 1. Obtain upload context ID
-
-Request: 
-
-```shell
-curl -X "POST" "https://test.productscience.app/api/v1/projects/{projectName}/build-uploads" \
-     -H 'Authorization: Bearer {YOUR_TOKEN}'
-```
-
-Response: 
-
-```
-HTTP/1.1 201 Created
-Content-Type: application/json
-Content-Length: 50
-```
-```json
-{
-  "id": 28,
-  "dateCreated": "2024-03-07T16:55:49.168Z"
-}
-```
-
-### 2. Submit build metadata and obtain upload URL 
+### 1. Submit build metadata and obtain upload URL 
 
 Request: 
 
@@ -176,7 +124,6 @@ curl -X "POST" "https://test.productscience.app/api/v1/projects/{projectName}/bu
      -H 'Authorization: Bearer {YOUR_TOKEN}' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "contextId": 28,
   "buildType": "INSTRUMENTED_APK",
   "buildFileName": "app-play-release.apk",
   "name": "v5.2.8"
@@ -218,7 +165,7 @@ Content-Length: 1430
 }
 ```
 
-### 3. Upload file to the obtained URL
+### 2. Upload file to the obtained URL
 
 Request: 
 
