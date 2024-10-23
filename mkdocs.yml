@@ -12,7 +12,7 @@ nav:
   - CodeTuner for Cloud:
       - Overview: cloud/overview.md
       - Integration:
-          -  Common: cloud/integration/integration.md
+          - Common: cloud/integration/integration.md
           - JVM Agent: cloud/integration/jvm-agent.md
       - Usage: cloud/usage.md
       - Release Notes:
@@ -30,6 +30,7 @@ nav:
               - Build / Xcode: mobile/integration/ios/xcode.md
               - Build / Bazel: mobile/integration/ios/bazel.md
               - App Distribution: mobile/integration/ios/distribution.md
+          - Upload API: mobile/integration/upload-api.md
       - Device Set-Up:
           - Android: mobile/device-set-up/android.md
           - iOS: mobile/device-set-up/ios.md
