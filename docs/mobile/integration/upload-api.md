@@ -32,7 +32,7 @@ POST /api/v1/projects/{projectName}/builds
 
 JSON body with parameters:
 
-- **`buildType`** (required) – `INSTRUMENTED_APK`  
+- **`buildType`** (required) – `INSTRUMENTED_APK` (for iOS also)
 - **`buildFileName`** (required) – file name, e.g. `app-play-release.apk` 
 - **`name`** – arbitrary name to distinguish the build, e.g. `release-5.2.8`
 - **`description`** – arbitrary build description
