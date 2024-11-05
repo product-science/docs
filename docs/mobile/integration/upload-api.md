@@ -43,7 +43,6 @@ Example:
 
 ```json
 {
-  "contextId": "28",
   "buildType": "APK",
   "buildFileName": "app-play-release.apk",
   "name": "v5.2.8",
