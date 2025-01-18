@@ -32,7 +32,7 @@ Start both the screen and trace recording as described above.
 
 The 'Record trace' button should be available in your quick settings tile. If it is not, go back to the section on [enabling trace recording](../device-set-up/android.md#3-make-sure-tracing-is-enabled) and ensure you enabled the __Show Quick Settings tile__.
 
-![quick-settings](../../images/quick-settings.png){ width="300" }
+![quick-settings](../../images/quick-settings.png)
 
 ### 5. Execute your user flow
 Perform the user action to execute the user flow you are analyzing.
@@ -42,7 +42,21 @@ When you have reached the end of the user flow ("Reaction"), swipe down from the
 
 ## Upload
 
-### 7. Upload your trace and video to PS Tool
+There are two ways to upload a trace file and video to PS Tool, via web or via the PS Companion app. 
+
+### 7. Upload your trace and video to PS Tool via web
+
+- To transfer traces from your phone to your computer, use adb pull /data/local/traces/ or any file sharing method of your choice
+- Go to PS Tool https://productscience.app/ on your computer
+- Select or create a user flow folder for the analysis
+- Open the user flow folder and click on Add trace in the top right corner of the screen 
+- Once your trace is uploaded, open it and go to the the Annotations screen
+- From the Annotations screen, click Upload video and select the video file
+
+<img width="550" alt="Screenshot 2025-01-17 at 4 09 17 PM" src="https://github.com/user-attachments/assets/752f3589-a0a9-43ee-ac07-16cd20f1c219" />
+
+
+### 8. Upload your trace and video to PS Tool via the PS Companion app
 
 - Open your notification panel &gt; “Tap to share you trace”
 - Tap the notification. You will have the option to save it or export it to different apps
@@ -58,6 +72,6 @@ When you have reached the end of the user flow ("Reaction"), swipe down from the
 
 - Phone library opens &gt; select the screen recording
 
-![name-trace-android](../../images/name-trace-android.png){ width="300" }
+![name-trace-android](../../images/name-trace-android.png)
 
 - Once the trace and video finish uploading and processing, you can view your trace in PS Tool. The uploaded trace will appear in your productscience.app User Flow Library.
