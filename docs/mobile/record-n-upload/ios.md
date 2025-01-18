@@ -41,12 +41,26 @@ If you want to capture app start, you can kick off trace recording from PS Compa
 | 2    | Open PS Companion app. If you don't have a designated folder for app start, create a new one. Open the folder.                                                                | Open your instrumented app and perform all the actions before the beginning of the user flow you are analyzing.                                             |
 | 3    | Start screen recording.                                                                                                                                                       | Start screen recording.                                                                                                                                     | 
 | 4    | At the bottom right corner, tap the![rec-icon](../../images/rec-icon.png)button to start trace recording.                                                                        | At the ![ios-start-recording](../../images/ios-start-recording.png) panel, tap![rec-icon](../../images/rec-icon.png)button to start trace recording.              |
-| 5    | Perform the user actions from the[(user) flow](https://www.productscience.ai/documentation?doc=dictionary&sub=user-flow)and that you want to optimize.                        | Perform the user actions from the[(user) flow](https://www.productscience.ai/documentation?doc=dictionary&sub=user-flow)and that you want to optimize.      |
+| 5    | Perform the user actions from the[(user) flow](https://www.productscience.ai/documentation?doc=dictionary&sub=user-flow) that you want to optimize.                        | Perform the user actions from the[(user) flow](https://www.productscience.ai/documentation?doc=dictionary&sub=user-flow) that you want to optimize.      |
 | 6    | Once the final step is fully loaded, at the ![ios-stop-recording](../../images/ios-stop-recording.png) panel, tap![stop-icon](../../images/stop-icon.png) button to stop recording. | Once the final step is fully loaded, at the ![](../../images/ios-stop-recording.png) panel, tap![stop-icon](../../images/stop-icon.png) button to stop recording. |
 
 ## Upload
 
-### 4. Upload trace to PS Tool
+There are two ways to upload a trace file and video to PS Tool, via web or via the PS Companion app. 
+
+### 4. Upload your trace and video to PS Tool via web
+
+- To transfer traces from your phone to your computer, use AirDrop or any file sharing method of your choice
+- Go to PS Tool https://productscience.app/ on your computer
+- Select or create a user flow folder for the analysis
+- Open the user flow folder and click on Add trace in the top right corner of the screen 
+- Once your trace is uploaded, open it and go to the the Annotations screen
+- From the Annotations screen, click Upload video and select the video file
+
+<img width="550" alt="Screenshot 2025-01-17 at 4 09 17 PM" src="https://github.com/user-attachments/assets/752f3589-a0a9-43ee-ac07-16cd20f1c219" />
+
+
+### 5. Upload your trace and video to PS Tool via the PS Companion app
 
 - Tap the 'Export' button to export your trace file.
 
