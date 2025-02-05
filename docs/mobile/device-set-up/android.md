@@ -7,6 +7,7 @@ These preparatory steps only need to be once.
 ## 1. Install [PS Companion app](https://play.google.com/store/apps/details?id=com.ps.companion&hl=en_US&gl=US&pli=1) 
 
 You will use PS Companion app later to upload traces and screen recordings to PS Tool.
+Alternative source for downloading [PS Companion app](https://drive.google.com/file/d/19izHe6wv75Bv714KutPN8sRd4SeHZsL3/view?usp=sharing)
 
 ## 2. Log in with your PS Tool credentials
 
