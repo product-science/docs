@@ -1,4 +1,4 @@
-# Product Analytic Tags
+# R1.6 - Product Analytic Tags
 
 This feature allows engineers to see product analytics and custom performance metrics in traces. Got a signal from your APM that screen 
 loading time took longer? With this feature, you will be able to easily find the exact location on a timeline and see the root cause of the 
