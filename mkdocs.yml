@@ -42,10 +42,10 @@ nav:
           - R1.2 - Admin: mobile/release-notes/R1.2-Admin.md
           - R1.3 - Video: mobile/release-notes/R1.3-Video.md
           - R1.4 - Annotations: mobile/release-notes/R1.4-Annotations.md
-          - R1.5 - Frame Drop Visualization for Android: mobile/release-notes/Frame-Drop-Visualization-for-Android.md
-          - R1.6 - Product Analytic Tags: mobile/release-notes/Product-Analytic-Tags.md
-          - R1.7 - Quick Start Guide: mobile/release-notes/Quick-Start-Guide.md
-          - R1.8 - Support of Xcode 16 and Swift 6: mobile/release-notes/support-of-xcode16-and-swift6.md
+          - R1.5 - Frame Drop Visualization for Android: mobile/release-notes/R1.5-Frame-Drop-Visualization-for-Android.md
+          - R1.6 - Product Analytic Tags: mobile/release-notes/R1.6-Product-Analytic-Tags.md
+          - R1.7 - Quick Start Guide: mobile/release-notes/R1.7-Quick-Start-Guide.md
+          - R1.8 - Support of Xcode 16 and Swift 6: mobile/release-notes/R1.8-support-of-xcode16-and-swift6.md
 
   - Regression Analysis:
       - Overview: ra/overview.md
