@@ -1,4 +1,4 @@
-# Quick Start Guide
+# R1.7 - Quick Start Guide
 
 The Quick Start Guide assists engineers during the onboarding experience by providing concise and simple instructions to help them leverage 
 the full potential of the PS Tool.
