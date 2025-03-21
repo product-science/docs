@@ -1,5 +1,4 @@
 # CodeTuner for Mobile
-
 CodeTuner for Mobile 
 increases product metrics for mobile applications and 
 helps apps work faster by providing insights into key 
@@ -13,11 +12,9 @@ visualizations to help mobile developers to identify
 the problem right away.
 
 # Insrtuctions for using CodeTuner for Mobile
-
 - Integration for [Android](integration/android/gradle.md) and [iOS](integration/ios/xcode.md)
 - Device set-up for [Android](device-set-up/android.md) and [iOS](device-set-up/ios.md)
 - Recording and Uploading for [Android](record-n-upload/android.md) and [iOS](record-n-upload/ios.md)
 
 # Release notes
-
-Our release notes can be found [here](release-notes/Frame-Drop-Visualization-for-Android.md).
+Our release notes can be found [here](release-notes/R1.1-New-UX-&-UI.md).
